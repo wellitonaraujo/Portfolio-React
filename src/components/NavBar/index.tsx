@@ -3,7 +3,6 @@ import { NavItem, NavUl, Navbar } from './styles';
 
 type SectionId = 'sobre' | 'skills' | 'contatos';
 
-
 export default function NavBar() {
   const [activeNavItem, setActiveNavItem] = useState<SectionId | null>('sobre');
 
@@ -20,19 +19,19 @@ export default function NavBar() {
         <NavUl>
           <NavItem
             className={activeNavItem === 'sobre' ? 'active' : ''}
-            onClick={() => handleNavItemClick('sobre', 0)}>
+            onClick={() => handleNavItemClick('sobre')}>
             Sobre
           </NavItem>
 
           <NavItem
             className={activeNavItem === 'skills' ? 'active' : ''}
-            onClick={() => handleNavItemClick('skills', 1)}>
+            onClick={() => handleNavItemClick('skills')}>
             Skills
           </NavItem>
 
           <NavItem
             className={activeNavItem === 'contatos' ? 'active' : ''}
-            onClick={() => handleNavItemClick('contatos', 2)}>
+            onClick={() => handleNavItemClick('contatos')}>
             Contato
           </NavItem>
         </NavUl>
