@@ -34,6 +34,7 @@ export const TextDescription = styled.p`
   ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
     font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    margin-top: 1.3rem;
   }
 `;
 
