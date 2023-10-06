@@ -56,7 +56,7 @@ export const Welliton = styled.p`
   font-weight: 800;
   ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
-    font-size: 1.9rem; /* Reduz o tamanho da fonte */
+    font-size: 1.5rem; /* Reduz o tamanho da fonte */
   }
 `;
 
@@ -76,8 +76,7 @@ export const Title = styled.p`
   font-weight: 800;
   ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
-    font-size: 1.9rem; /* Reduz o tamanho da fonte */
-    margin-top: 1.3rem;
+    font-size: 1.5rem; /* Reduz o tamanho da fonte */
   }
 `;
 
