@@ -6,14 +6,38 @@ import {
   Welliton,
   Title,
   StyledAmpersand,
-  Line
+  Line,
+  ScrollToTopButton,
+  Arrow
 } from './styles'
 
 import profile from '../../assets/profile.jpeg'
+import arrow from '../../assets/arrow.png'
 import CardSkill from '../../components/CardSkill';
 import Contato from '../Contato';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setShowScrollButton(true);
+    } else {
+      setShowScrollButton(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  // Adicione um ouvinte de evento para verificar quando a página é rolada
+  window.addEventListener('scroll', handleScroll);
+
   return (
     <>
       <ContainerDescription>
@@ -29,6 +53,11 @@ export default function Home() {
           <TextDescription><Line>Vivência</Line> em desenvolvimento front-end, utilizando as principais tecnologias do mercado.</TextDescription>
         </Description>
 
+        {showScrollButton && (
+          <ScrollToTopButton onClick={scrollToTop}>
+            <Arrow src={arrow} />
+          </ScrollToTopButton>
+        )}
       </ContainerDescription>
       <CardSkill />
 

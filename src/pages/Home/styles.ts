@@ -85,22 +85,22 @@ export const Title = styled.p`
 
 export const pulse = keyframes`
   0% {
-    box-shadow: 0 0 0 10px rgba(245, 132, 0, 0.10),
-                0 0 0 20px rgba(245, 132, 0, 0.05),
-                0 0 0 30px rgba(245, 132, 0, 0.02),
+    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.10),
+                0 0 0 10px rgba(245, 132, 0, 0.05),
+                0 0 0 20px rgba(245, 132, 0, 0.02),
                 0 0 10px rgba(0, 0, 0, 0.5);
   }
   50% {
-    box-shadow: 0 0 0 15px rgba(245, 132, 0, 0.20),
-                0 0 0 25px rgba(245, 132, 0, 0.10),
-                0 0 0 35px rgba(245, 132, 0, 0.05),
+    box-shadow: 0 0 0 10px rgba(245, 132, 0, 0.20),
+                0 0 0 20px rgba(245, 132, 0, 0.10),
+                0 0 0 30px rgba(245, 132, 0, 0.05),
                 0 0 15px rgba(0, 0, 0, 0.6);
   }
   100% {
-    box-shadow: 0 0 0 10px rgba(245, 132, 0, 0.10),
-                0 0 0 20px rgba(245, 132, 0, 0.05),
-                0 0 0 30px rgba(245, 132, 0, 0.02),
-                0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.10),
+                0 0 0 15px rgba(245, 132, 0, 0.05),
+                0 0 0 20px rgba(245, 132, 0, 0.02),
+                0 0 5px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -133,5 +133,46 @@ export const VerticalLine = styled.div`
     bottom: 0; /* Posiciona a linha na parte inferior */
     left: 0; /* Mantém a posição à esquerda */
     border-right: none; /* Remove a borda à direita */
+  }
+`;
+
+
+export const Arrow = styled.img`
+  width: 30px;
+  height: 30px;
+
+  opacity: 0.7;
+  ${mobileMediaQuery} {
+    /* Estilos específicos para dispositivos móveis */
+    width: 50%; /* Reduz o tamanho da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+`;
+
+
+export const ScrollToTopButton = styled.button`
+  position: fixed;
+  width: 4.5rem;
+  height: 4.5rem;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(to bottom, ${colors.primary.s400}, ${colors.primary.s300});;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50%;
+  opacity: 0.7;
+  cursor: pointer;
+  animation: ${pulse} 4s infinite;
+
+  ${mobileMediaQuery} {
+    width: 3.5rem;
+    height: 3.5rem;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px;
+    font-size: 14px;
+    opacity: 0.7;
   }
 `;
