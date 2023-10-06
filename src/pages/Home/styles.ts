@@ -141,7 +141,6 @@ export const Arrow = styled.img`
   width: 30px;
   height: 30px;
 
-  opacity: 0.7;
   ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
     width: 50%; /* Reduz o tamanho da imagem */
@@ -162,17 +161,18 @@ export const ScrollToTopButton = styled.button`
   padding: 10px 20px;
   border: none;
   border-radius: 50%;
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: pointer;
-  animation: ${pulse} 4s infinite;
+
 
   ${mobileMediaQuery} {
     width: 3.5rem;
     height: 3.5rem;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 10px;
     padding: 8px;
     font-size: 14px;
-    opacity: 0.7;
+    opacity: 0.4;
+    
   }
 `;
