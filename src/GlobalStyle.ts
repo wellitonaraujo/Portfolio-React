@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     background-color: ${colors.background};
+    background: linear-gradient(to top, ${colors.grey.s500}, ${colors.black});
     margin: 0 auto;
     text-align: center;
     scroll-behavior: smooth;

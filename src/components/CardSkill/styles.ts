@@ -24,7 +24,7 @@ export const ImageContainer = styled.div`
   flex-direction: column;
   border-radius: 12px;
   border: 2px solid transparent;
-  border-image: linear-gradient(to bottom, ${colors.primary.s400}, ${colors.primary.s300});
+  border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
   border-image-slice: 1; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 190px;
@@ -46,7 +46,7 @@ export const ImageContainer = styled.div`
 
 export const Title = styled.p`
   font-size: 2.6rem;
-  background: linear-gradient(to bottom,  ${colors.primary.s400}, ${colors.primary.s300});
+  background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
   -webkit-background-clip: text;
   background-clip: text; 
   color: transparent;
@@ -63,7 +63,7 @@ export const Title = styled.p`
 
 export const SubTitle = styled.p`
   font-size: 30px;
-  background: linear-gradient(to bottom,  ${colors.primary.s400}, ${colors.primary.s300});
+  background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
   -webkit-background-clip: text; 
   background-clip: text; 
   color: transparent; 

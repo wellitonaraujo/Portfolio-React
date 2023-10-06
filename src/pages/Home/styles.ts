@@ -69,7 +69,7 @@ export const StyledAmpersand = styled.span`
 
 export const Title = styled.p`
   font-size: 4rem;
-  background: linear-gradient(to bottom,  ${colors.primary.s400}, ${colors.primary.s300});
+  background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
   -webkit-background-clip: text; 
   background-clip: text; 
   color: transparent;
@@ -121,9 +121,9 @@ export const VerticalLine = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 5%;
+  width: 4%;
   height: 100%;
-  background: linear-gradient(to bottom, ${colors.primary.s400}, ${colors.primary.s300});
+  background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
   border-right: 5px solid ${colors.white};
   ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
@@ -155,7 +155,7 @@ export const ScrollToTopButton = styled.button`
   height: 4.5rem;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(to bottom, ${colors.primary.s400}, ${colors.primary.s300});;
+  background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});;
   color: #fff;
   font-weight: 700;
   padding: 10px 20px;
@@ -163,7 +163,7 @@ export const ScrollToTopButton = styled.button`
   border-radius: 50%;
   opacity: 0.6;
   cursor: pointer;
-
+  color: inherit;
 
   ${mobileMediaQuery} {
     width: 3.5rem;
@@ -173,6 +173,6 @@ export const ScrollToTopButton = styled.button`
     padding: 8px;
     font-size: 14px;
     opacity: 0.4;
-    
+    color: inherit;
   }
 `;
