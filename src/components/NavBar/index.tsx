@@ -7,7 +7,7 @@ type SectionId = 'sobre' | 'skills' | 'contatos';
 export default function NavBar() {
   const [activeNavItem, setActiveNavItem] = useState<SectionId | null>('sobre');
 
-  const handleNavItemClick = (sectionId: SectionId, index: number) => {
+  const handleNavItemClick = (sectionId: SectionId) => {
     sectionId === 'sobre'
       ? (window.scrollTo({ top: 0, behavior: 'smooth' }), setActiveNavItem(sectionId))
       : (document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' }),
