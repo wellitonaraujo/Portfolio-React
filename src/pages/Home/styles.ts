@@ -76,7 +76,9 @@ export const Title = styled.p`
   font-weight: 800;
   ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
-    font-size: 1.5rem; /* Reduz o tamanho da fonte */
+    font-size: 1.4rem; /* Reduz o tamanho da fonte */
+    margin-top: 1.3rem;
+    
   }
 `;
 
@@ -109,7 +111,7 @@ export const Image = styled.img`
   animation: ${pulse} 3s infinite;
   ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
-    width: 60%; /* Reduz o tamanho da imagem */
+    width: 50%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
   }
 `;
