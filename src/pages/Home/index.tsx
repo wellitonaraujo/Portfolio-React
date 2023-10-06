@@ -12,29 +12,8 @@ import {
 import profile from '../../assets/profile.jpeg'
 import CardSkill from '../../components/CardSkill';
 import Contato from '../Contato';
-import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const text = 'elliton Araujo';
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentIndex < text.length) {
-        setDisplayText((prevText) => prevText + text[currentIndex]);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      } else {
-        setDisplayText('');
-        setCurrentIndex(0);
-      }
-    }, 200); // Ajuste o intervalo de digitação conforme desejado
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentIndex]);
-
   return (
     <>
       <ContainerDescription>

@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../styles/colors";
-import textSizes from "../../styles/text-sizes";
 
 const mobileMediaQuery = `@media (max-width: 767px)`;
 

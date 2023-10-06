@@ -3,6 +3,7 @@ import { NavItem, NavUl, Navbar } from './styles';
 
 type SectionId = 'sobre' | 'skills' | 'contatos';
 
+
 export default function NavBar() {
   const [activeNavItem, setActiveNavItem] = useState<SectionId | null>('sobre');
 
