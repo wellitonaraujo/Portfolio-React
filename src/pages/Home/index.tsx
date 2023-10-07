@@ -14,8 +14,8 @@ import {
 import profile from '../../assets/profile.jpeg'
 import arrow from '../../assets/arrow.png'
 import CardSkill from '../../components/CardSkill';
-import Contato from '../Contato';
 import { useState } from 'react';
+import Form from '../../components/Form';
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -61,7 +61,9 @@ export default function Home() {
       </ContainerDescription>
       <CardSkill />
 
-      <Contato />
+
+
+      <Form />
     </>
   )
 }

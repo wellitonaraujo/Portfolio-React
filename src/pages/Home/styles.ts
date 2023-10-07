@@ -166,13 +166,6 @@ export const ScrollToTopButton = styled.button`
   color: inherit;
 
   ${mobileMediaQuery} {
-    width: 3.5rem;
-    height: 3.5rem;
-    bottom: 15px;
-    right: 10px;
-    padding: 8px;
-    font-size: 14px;
-    opacity: 0.4;
-    color: inherit;
+    display: none;
   }
 `;
