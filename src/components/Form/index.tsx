@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import {
   FormContainer,
   FormGroup,
@@ -15,39 +13,19 @@ import {
 
 
 const Form = () => {
-  const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    mensagem: '',
-  });
-
-  const handleChange = (e: unknown) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e: unknown) => {
-    e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar os dados do formulário para o servidor ou fazer qualquer outra ação desejada.
-    console.log(formData);
-  };
-
   const EmailAddress = 'welliton.araujo@uol.com.br';
   const PhoneNumber = '5591985715267';
 
   return (
     <ContainerContact>
       <FormContainer id='contatos'>
-        <form onSubmit={handleSubmit}>
-
+        <form>
           <FormGroup>
             <Label htmlFor="nome">Nome:</Label>
             <Input
               type="text"
               id="nome"
               name="nome"
-              value={formData.nome}
-              onChange={handleChange}
               required
             />
           </FormGroup>
@@ -58,8 +36,6 @@ const Form = () => {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
               required
             />
           </FormGroup>
@@ -69,12 +45,10 @@ const Form = () => {
             <TextArea
               id="mensagem"
               name="mensagem"
-              value={formData.mensagem}
-              onChange={handleChange}
               required
             />
           </FormGroup>
-          <Button type="submit">Enviar</Button>
+          <Button>Enviar</Button>
 
         </form>
       </FormContainer>
