@@ -22,7 +22,7 @@ export const ContainerContact = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 500px;
+  margin-top: 200px;
 
   ${mobileMediaQuery} {
     flex-direction: column; /* Altere para uma coluna em dispositivos móveis */

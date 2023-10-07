@@ -8,7 +8,9 @@ import {
   StyledAmpersand,
   Line,
   ScrollToTopButton,
-  Arrow
+  Arrow,
+  StyledFontAwesomeIcon,
+  ContainerSolcial
 } from './styles'
 
 import profile from '../../assets/profile.jpeg'
@@ -16,10 +18,11 @@ import arrow from '../../assets/arrow.png'
 import CardSkill from '../../components/CardSkill';
 import { useState } from 'react';
 import Form from '../../components/Form';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
-
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setShowScrollButton(true);
@@ -27,7 +30,6 @@ export default function Home() {
       setShowScrollButton(false);
     }
   };
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -35,17 +37,29 @@ export default function Home() {
     });
   };
 
-  // Adicione um ouvinte de evento para verificar quando a página é rolada
   window.addEventListener('scroll', handleScroll);
+
 
   return (
     <>
       <ContainerDescription>
         <Image src={profile} alt="Eu" id='sobre' />
 
+        <ContainerSolcial>
+          <a href='https://github.com/wellitonaraujo' target="_blank">
+            <StyledFontAwesomeIcon icon={faGithub} />
+          </a>
+
+          <a href='https://www.linkedin.com/in/wellitonaraujo/' target="_blank">
+            <StyledFontAwesomeIcon icon={faLinkedin} />
+          </a>
+
+        </ContainerSolcial>
+
         <Description>
           <TextDescription children='Olá, sou o' style={{ margin: 0 }} />
           <Welliton>Welliton Araujo</Welliton>
+
           <Title>Desenvolvedor Mobile <StyledAmpersand>&</StyledAmpersand> Front-end </Title>
 
           <TextDescription><Line>Com anos de experiência</Line> do mercado de desenvolvimento de software e apaixonado por tecnologia, busco aperfeiçoamento profissional diariamente.</TextDescription>
@@ -60,8 +74,6 @@ export default function Home() {
         )}
       </ContainerDescription>
       <CardSkill />
-
-
 
       <Form />
     </>
