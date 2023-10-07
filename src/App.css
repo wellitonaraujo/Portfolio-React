@@ -3,8 +3,9 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   letter-spacing: 3px;
   font-family: 'Poppins', sans-serif;
-
+  background-color: transparent;
+  /* ou a cor desejada */
 }

@@ -28,7 +28,6 @@ export const EmailLink = styled.a`
     flex-direction: column; /* Altere para uma coluna em dispositivos móveis */
     font-weight: 500;
     font-size: 1.2rem;
-    text-align: left;
   }
 `;
 
@@ -45,7 +44,7 @@ export const Title = styled.p`
     flex-direction: column; /* Altere para uma coluna em dispositivos móveis */
     font-weight: 500;
     font-size: 1.2rem;
-    text-align: left;
+    
   }
 `;
 

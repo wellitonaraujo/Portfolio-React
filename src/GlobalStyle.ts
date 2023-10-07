@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Polegar (thumb) do scrollbar */
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, ${colors.primary.s400}, ${colors.primary.s300}); 
+    background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
     border-radius: 10px;
   }
   }
