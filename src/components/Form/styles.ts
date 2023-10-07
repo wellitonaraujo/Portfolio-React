@@ -42,6 +42,10 @@ export const Label = styled.label`
   background-clip: text;
   text-align: left;
   font-size: 1.5rem;
+
+  ${mobileMediaQuery} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Input = styled.input`
@@ -55,8 +59,10 @@ export const Input = styled.input`
   color: white;
   font-size: 1.1rem;
   outline: none;
+
   ${mobileMediaQuery} {
   width: 90%;
+  padding: 12px;
   }
 `;
 
@@ -71,7 +77,7 @@ export const EmailLink = styled.a`
 
   ${mobileMediaQuery} {
     flex-direction: column; /* Altere para uma coluna em dispositivos móveis */
-    font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    font-size: 1rem; /* Reduz o tamanho da fonte */
   }
 `;
 
@@ -110,7 +116,7 @@ export const Title = styled.p`
   font-weight: 800;
   ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
-    font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    font-size: 1rem; /* Reduz o tamanho da fonte */
     margin-top: 1.3rem;
     margin-bottom: 1.3rem;
     
@@ -129,6 +135,8 @@ export const Button = styled.div`
 
   ${mobileMediaQuery} {
     width: 90%; 
+    padding-bottom: 12px;
+    padding-top: 12px;
   }
 
 `;
