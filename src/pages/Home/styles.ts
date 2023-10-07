@@ -150,14 +150,23 @@ export const Arrow = styled.img`
 
 
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  font-size: 40px;
-  color: ${props => props.color || colors.white};
+  font-size: 35px;
+  width: 40px;
+  height: 40px;
   margin-top: 30px;
   cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid ${colors.white};
+  animation: ${pulse} 3s infinite;
+  padding: 6%;
+  color: ${colors.white};
 
   ${mobileMediaQuery} {
-    font-size: 35px;
     margin: 1.5rem 1.5rem;
+    width: 35px;
+    height: 35px;
+    animation: none;
+    border: none;
   }
 `;
 
@@ -167,12 +176,17 @@ export const ContainerSolcial = styled.div`
   ${mobileMediaQuery} {
     font-size: 10px;
     color: ${props => props.color || colors.white};
-    margin-top: 15px;
-    justify-content: space-around;
-    flex-direction: row;
+    margin-top: 10px;
+    width: 50%;
     display: block;
 
   }
+`;
+
+export const AnimatedTextDescriptionWrapper = styled.div<{ isVisible: boolean }>`
+opacity: ${(props) => (props.isVisible ? '1' : '0')};
+transform: translateY(${(props) => (props.isVisible ? '0' : '20px')});
+transition: opacity 4s ease, transform 1s ease;
 `;
 
 
