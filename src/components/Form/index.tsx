@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import {
   FormContainer,
@@ -21,12 +21,12 @@ const Form = () => {
     mensagem: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: unknown) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: unknown) => {
     e.preventDefault();
     // Aqui você pode adicionar a lógica para enviar os dados do formulário para o servidor ou fazer qualquer outra ação desejada.
     console.log(formData);
