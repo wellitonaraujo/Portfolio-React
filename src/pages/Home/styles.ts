@@ -156,8 +156,8 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
 
   ${mobileMediaQuery} {
-    font-size: 40px;
-    margin: 2rem 2rem;
+    font-size: 35px;
+    margin: 1.5rem 1.5rem;
   }
 `;
 
