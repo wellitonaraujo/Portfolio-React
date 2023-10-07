@@ -1,4 +1,4 @@
-import { Description, Title, EmailLink, WhatsappLink } from './styles'
+import { Description, Title, EmailLink } from './styles'
 
 const EmailAddress = 'welliton.araujo@uol.com.br';
 const PhoneNumber = '5591985715267';
