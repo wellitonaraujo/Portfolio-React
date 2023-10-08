@@ -4,7 +4,7 @@ import colors from '../../styles/colors';
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
 export const FormContainer = styled.div`
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
   display: flex; /* Adicionado para usar flexbox */
   flex-direction: column; /* Os elementos filhos serão empilhados verticalmente */
@@ -98,7 +98,7 @@ export const TextArea = styled.textarea`
 export const Description = styled.div`
    text-align: left;
    margin: 0;
-   padding-left: 4rem;
+   padding-left: 15rem;
    ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
     padding: 0; /* Remove o espaçamento à esquerda */

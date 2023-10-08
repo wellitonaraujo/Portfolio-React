@@ -21,6 +21,7 @@ import { useState } from 'react';
 import Form from '../../components/Form';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useInView } from 'react-intersection-observer';
+import Footer from '../../components/Footer';
 
 const AnimatedTextDescription = ({ children }: React.PropsWithChildren) => {
   const [ref, inView] = useInView({
@@ -55,48 +56,50 @@ export default function Home() {
 
   return (
     <>
-      <AnimatedTextDescription>
-        <ContainerDescription>
-          <Image src={profile} alt="Eu" id='sobre' />
+      <ContainerDescription>
+        <Image src={profile} alt="Eu" id='sobre' />
 
-          <ContainerSolcial>
-            <AnimatedTextDescription>
-              <a href='https://github.com/wellitonaraujo' target="_blank">
-                <StyledFontAwesomeIcon icon={faGithub} />
-              </a>
+        <ContainerSolcial>
+          <a href='https://github.com/wellitonaraujo' target="_blank">
+            <StyledFontAwesomeIcon icon={faGithub} />
+          </a>
 
-              <a href='https://www.linkedin.com/in/wellitonaraujo/' target="_blank">
-                <StyledFontAwesomeIcon icon={faLinkedin} />
-              </a>
-            </AnimatedTextDescription>
-          </ContainerSolcial>
+          <a href='https://www.linkedin.com/in/wellitonaraujo/' target="_blank">
+            <StyledFontAwesomeIcon icon={faLinkedin} />
+          </a>
+        </ContainerSolcial>
 
-          <Description>
-            <TextDescription children='Olá, sou o' style={{ margin: 0 }} />
-            <Welliton>Welliton Araujo</Welliton>
-            <AnimatedTextDescription>
-              <Title>Desenvolvedor Mobile <StyledAmpersand>&</StyledAmpersand> Front-end </Title>
-            </AnimatedTextDescription>
+        <Description>
+          <TextDescription children='Olá, sou o' style={{ margin: 0 }} />
+          <Welliton>Welliton Araujo</Welliton>
+
+          <AnimatedTextDescription>
+            <Title>Desenvolvedor Mobile <StyledAmpersand>&</StyledAmpersand> Front-end </Title>
+          </AnimatedTextDescription>
+
+          <AnimatedTextDescription>
             <TextDescription ><Line>Com anos de experiência</Line> do mercado de desenvolvimento de software e apaixonado por tecnologia, busco aperfeiçoamento profissional diariamente.</TextDescription>
             <TextDescription><Line>Sólida experiência</Line> em todo ciclo de desenvolvimento mobile, da prototipação, arquitetura, desenvolvimento, testes e deploy.</TextDescription>
             <TextDescription><Line>Vivência</Line> em desenvolvimento front-end, utilizando as principais tecnologias do mercado.</TextDescription>
-          </Description>
+          </AnimatedTextDescription>
 
-          {showScrollButton && (
-            <ScrollToTopButton onClick={scrollToTop}>
-              <Arrow src={arrow} />
-            </ScrollToTopButton>
-          )}
-        </ContainerDescription>
+        </Description>
 
-        <AnimatedTextDescription>
-          <CardSkill />
-        </AnimatedTextDescription>
-        <AnimatedTextDescription>
-          <Form />
-        </AnimatedTextDescription>
+        {showScrollButton && (
+          <ScrollToTopButton onClick={scrollToTop}>
+            <Arrow src={arrow} />
+          </ScrollToTopButton>
+        )}
+      </ContainerDescription>
 
+      <AnimatedTextDescription>
+        <CardSkill />
       </AnimatedTextDescription>
+      <AnimatedTextDescription>
+        <Form />
+      </AnimatedTextDescription>
+
+      <Footer />
     </>
   )
 }

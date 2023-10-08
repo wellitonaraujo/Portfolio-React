@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../styles/colors";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
 export const ContainerDescription = styled.div`
@@ -179,14 +180,15 @@ export const ContainerSolcial = styled.div`
     margin-top: 10px;
     width: 50%;
     display: block;
-
-  }
+    flex-direction: row;
+    width: 100%;
+}
 `;
 
 export const AnimatedTextDescriptionWrapper = styled.div<{ isVisible: boolean }>`
-opacity: ${(props) => (props.isVisible ? '1' : '0')};
-transform: translateY(${(props) => (props.isVisible ? '0' : '20px')});
-transition: opacity 4s ease, transform 1s ease;
+  opacity: ${(props) => (props.isVisible ? '1' : '0')};
+  transform: translateY(${(props) => (props.isVisible ? '0' : '20px')});
+  transition: opacity 4s ease, transform 1s ease;
 `;
 
 
@@ -207,6 +209,7 @@ export const ScrollToTopButton = styled.button`
   color: inherit;
 
   ${mobileMediaQuery} {
+    display: none;
     width: 3.1rem;
     height: 3.1rem;
     bottom: 15px;
