@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../styles/colors";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
 export const ContainerDescription = styled.div`
@@ -23,7 +22,7 @@ export const Description = styled.div`
    ${mobileMediaQuery} {
     /* Estilos específicos para dispositivos móveis */
     padding: 0; /* Remove o espaçamento à esquerda */
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 `;
 
@@ -178,7 +177,6 @@ export const ContainerSolcial = styled.div`
     font-size: 10px;
     color: ${props => props.color || colors.white};
     margin-top: 10px;
-    width: 50%;
     display: block;
     flex-direction: row;
     width: 100%;

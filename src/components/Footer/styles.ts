@@ -9,8 +9,9 @@ export const FooterWrapper = styled.footer`
   padding: 20px 0;
   text-align: center;
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 3.5rem;
   ${mobileMediaQuery} {
     width: 100%;
+    font-size: 0.65rem;
   }
 `;

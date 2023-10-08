@@ -10,7 +10,6 @@ export const FormContainer = styled.div`
   flex-direction: column; /* Os elementos filhos serão empilhados verticalmente */
   ${mobileMediaQuery} {
     width: 100%;
-
   }
 `;
 
@@ -66,6 +65,7 @@ export const Input = styled.input`
   }
 `;
 
+
 export const EmailLink = styled.a`
    font-size: 2rem;
   background: linear-gradient(to bottom,  ${colors.primary.s400}, ${colors.primary.s300});
@@ -74,7 +74,7 @@ export const EmailLink = styled.a`
   color: transparent;
   margin: 0;
   font-weight: 800;
-
+animation: normal;
   ${mobileMediaQuery} {
     flex-direction: column; /* Altere para uma coluna em dispositivos móveis */
     font-size: 1rem; /* Reduz o tamanho da fonte */
