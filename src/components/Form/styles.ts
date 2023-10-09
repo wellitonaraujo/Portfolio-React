@@ -50,21 +50,42 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 100%;
   padding: 15px;
-  border: 2px solid transparent; 
-  border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1; 
+  border: 1px solid transparent; 
+  border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
   border-image-slice: 1;
-  border-radius: 4px;
   background-color: ${colors.grey.s500};
   color: white;
   font-size: 1.1rem;
   outline: none;
 
   ${mobileMediaQuery} {
-  width: 90%;
-  padding: 12px;
+    width: 90%;
+    padding: 12px;
+    border: 0.5px solid transparent; 
+    border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
+    border-image-slice: 1;
   }
 `;
 
+export const TextArea = styled.textarea`
+  width: 100%;
+  padding: 15px;
+  border: 1px solid transparent; 
+  border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1;
+  border-image-slice: 1;
+  background-color: ${colors.grey.s500};
+  color: white;
+  font-size: 1.1rem;
+  outline: none;
+  
+  ${mobileMediaQuery} {
+    width: 90%;
+    padding: 12px;
+    border: 0.5px solid transparent; 
+    border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1; 
+    border-image-slice: 1;
+  }
+`;
 
 export const Link = styled.a`
    font-size: 2rem;
@@ -81,21 +102,6 @@ animation: normal;
   }
 `;
 
-export const TextArea = styled.textarea`
-  width: 100%;
-  padding: 15px;
-  border: 2px solid transparent; 
-  border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1;
-  border-image-slice: 1;
-  border-radius: 4px;
-  background-color: ${colors.grey.s500};
-  color: white;
-  font-size: 1.1rem;
-  
-  ${mobileMediaQuery} {
-    width: 90%;
-  }
-`;
 export const Description = styled.div`
    text-align: left;
    margin: 0;
@@ -171,3 +177,4 @@ export const ContainerIcons = styled.div`
     margin-bottom: 30px;
   }
 `;
+//Agendar até dia 24/10

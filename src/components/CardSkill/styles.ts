@@ -23,15 +23,12 @@ export const DataContainer = styled.div`
     flex-wrap: wrap; 
     margin: 0;
     padding: 0;
-  
-
   }
 `;
 
 export const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  border-radius: 12px;
   border: 2px solid transparent;
   border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
   border-image-slice: 1; 
@@ -51,7 +48,9 @@ export const ImageContainer = styled.div`
     width: 45%;
     margin: 0 auto;
     margin-bottom: 10px ;
-    
+    border: 1px solid transparent;
+    border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
+    border-image-slice: 1; 
   }
 `;
 

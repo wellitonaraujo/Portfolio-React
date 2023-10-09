@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../styles/colors";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
 export const ContainerDescription = styled.div`
@@ -26,8 +27,8 @@ export const Description = styled.div`
   }
 `;
 
-export const TextDescription = styled.p`
-  color: ${colors.white};
+export const TextDescription = styled.p<{ darkMode: boolean }>`
+   color: ${(props) => (props.darkMode ? '#fff' : '#000')};
   align-content: flex-end;
   line-height: 1.7;
   font-size: 1.1rem;
@@ -50,9 +51,9 @@ export const Line = styled.span`
   }
 `;
 
-export const Welliton = styled.p`
+export const Welliton = styled.p<{ darkMode: boolean }>`
   font-size: 3rem;
-  color: ${colors.white};
+  color: ${(props) => (props.darkMode ? '#fff' : '#000')};
   margin: 0 auto;
   font-weight: 800;
 
@@ -61,8 +62,8 @@ export const Welliton = styled.p`
   }
 `;
 
-export const StyledAmpersand = styled.span`
-  color: white;
+export const StyledAmpersand = styled.span<{ darkMode: boolean }>`
+  color: ${(props) => (props.darkMode ? '#fff' : '#000')};
   font-weight: bold;
   white-space: pre-line;
 `;
@@ -120,16 +121,17 @@ export const pulse = keyframes`
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled.img<{ darkMode: boolean }>`
   width: 30%; 
   height: 30%;
   border-radius: 50%;
-  border: 10px solid ${colors.white};
+  border: 10px solid ${(props) => (props.darkMode ? '#fff' : '#000')};;
   animation: ${pulse} 3s infinite;
 
   ${mobileMediaQuery} {
-    width: 50%; /* Reduz o tamanho da imagem */
+    width: 40%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
+    border: 5px solid ${(props) => (props.darkMode ? '#fff' : '#000')};;
   }
 `;
 
@@ -216,15 +218,14 @@ export const pulseIcon = keyframes`
 `;
 
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  font-size: 35px;
-  width: 40px;
-  height: 40px;
-  margin-top: 30px;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 50%;
   cursor: pointer;
   border-radius: 50%;
   border: 1px solid ${colors.white};
   transition: transform 0.3s ease;
-  padding: 6%;
+  padding: 10%;
   color: ${colors.white};
   animation: ${pulseIcon} 5s infinite;
 
@@ -233,7 +234,7 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   }
 
   ${mobileMediaQuery} {
-    margin: 1.5rem 1.5rem;
+    margin: 1rem 1rem;
     width: 35px;
     height: 35px;
     animation: none;
@@ -247,7 +248,7 @@ export const ContainerSolcial = styled.div`
   ${mobileMediaQuery} {
     font-size: 10px;
     color: ${props => props.color || colors.white};
-    margin-top: 10px;
+    margin-top: 1px;
     display: block;
     flex-direction: row;
     width: 100%;
@@ -262,20 +263,20 @@ export const AnimatedTextDescriptionWrapper = styled.div<{ isVisible: boolean }>
 
 export const ScrollToTopButton = styled.button`
   position: fixed;
-  width: 4.2rem;
-  height: 4.2rem;
-  bottom: 20px;
-  right: 20px;
+  width: 3.5rem;
+  height: 3.5rem;
+  bottom: 40px;
+  right: 40px;
   background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});;
   color: #fff;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 10px;
   border: none;
   border-radius: 50%;
-  opacity: 0.6;
+  opacity: 0.8;
   cursor: pointer;
   color: inherit;
-
+  animation: ${pulseicon} 3s infinite;
   ${mobileMediaQuery} {
     display: none;
     width: 3.1rem;
@@ -290,8 +291,8 @@ export const ScrollToTopButton = styled.button`
 `;
 
 export const Arrow = styled.img`
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
 
   ${mobileMediaQuery} {
     width: 50%; /* Reduz o tamanho da imagem */

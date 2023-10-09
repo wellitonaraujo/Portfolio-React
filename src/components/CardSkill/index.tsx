@@ -12,7 +12,6 @@ import figma from '../../assets/figma.png';
 import nodejs from '../../assets/nodejs.png';
 import postgres from '../../assets/postgresql.png';
 import siwft from '../../assets/swift.png';
-import { Line } from '../../pages/Home/styles';
 import TitleSkills from '../TitleSkills';
 
 const skillsData = [
@@ -27,8 +26,7 @@ const skillsData = [
 export default function CardSkill() {
   return (
     <div style={{ marginTop: '30%' }} >
-      <Line><Title id="skills">Skills</Title></Line>
-
+      <Title id="skills">Skills</Title>
       <Container>
 
         <DataContainer>

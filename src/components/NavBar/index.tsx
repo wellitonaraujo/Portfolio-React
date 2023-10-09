@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavItem, NavUl, Navbar } from './styles';
+import Header from '../isDarkMode';
 
 type SectionId = 'sobre' | 'skills' | 'contatos';
 
@@ -17,6 +18,9 @@ export default function NavBar() {
     <>
       <Navbar>
         <NavUl>
+          <div style={{ marginRight: '70px' }}>
+            <Header />
+          </div>
           <NavItem
             className={activeNavItem === 'sobre' ? 'active' : ''}
             onClick={() => handleNavItemClick('sobre')}>
@@ -35,6 +39,7 @@ export default function NavBar() {
             Contato
           </NavItem>
         </NavUl>
+
       </Navbar>
     </>
   )
