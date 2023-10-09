@@ -16,8 +16,6 @@ export const Navbar = styled.nav`
     ${mobileMediaQuery} {
     display: none
   }
-
-
 `;
 
 export const NavUl = styled.ul`
@@ -26,13 +24,11 @@ export const NavUl = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  
-
 `;
 
-export const NavItem = styled.li`
+export const NavItem = styled.li<{ darkMode: boolean }>`
   font-size: 20px;
-  color: ${colors.white};
+  color: ${(props) => (props.darkMode ? '#fff' : '#000')};;;
   margin-right: 60px;
   border-bottom: 5px solid transparent;
   transition: transform 0.2s;

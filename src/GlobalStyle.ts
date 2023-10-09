@@ -1,14 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 import colors from './styles/colors';
-
-import { useTheme } from './context/ThemeContext';
-
 // Definir variáveis globais
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ darkMode: boolean }>`
   :root {
     
     line-height: 1.5;
-    background: linear-gradient(to top, ${colors.grey.s500}, ${colors.black});
+    background: ${props => props.darkMode
+    ? `linear-gradient(to top,${colors.grey.s500}, ${colors.black})`
+    : `linear-gradient(to top, ${colors.grey.s100}, ${colors.grey.s100})`
+  }; 
+
     margin: 0 auto;
     text-align: center;
     scroll-behavior: smooth;

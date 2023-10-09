@@ -13,6 +13,8 @@ import nodejs from '../../assets/nodejs.png';
 import postgres from '../../assets/postgresql.png';
 import siwft from '../../assets/swift.png';
 import TitleSkills from '../TitleSkills';
+import { useEffect, useState } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 const skillsData = [
   { src: reactjs, alt: 'React Native', description: 'React Native' },
@@ -24,6 +26,13 @@ const skillsData = [
 ];
 
 export default function CardSkill() {
+  const { darkMode } = useTheme(); // Obtenha o estado do tema do contexto
+  const [localDarkMode, setLocalDarkMode] = useState(false);
+
+  useEffect(() => {
+    setLocalDarkMode(darkMode);
+  }, [darkMode]);
+
   return (
     <div style={{ marginTop: '30%' }} >
       <Title id="skills">Skills</Title>
@@ -33,7 +42,7 @@ export default function CardSkill() {
           {skillsData.map((skill, index) => (
             <ImageContainer key={index}>
               <Image src={skill.src} alt={skill.alt} />
-              <TextDescription>{skill.description}</TextDescription>
+              <TextDescription darkMode={localDarkMode}>{skill.description}</TextDescription>
             </ImageContainer>
           ))}
         </DataContainer>

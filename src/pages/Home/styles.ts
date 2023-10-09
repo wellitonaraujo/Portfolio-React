@@ -28,7 +28,7 @@ export const Description = styled.div`
 `;
 
 export const TextDescription = styled.p<{ darkMode: boolean }>`
-   color: ${(props) => (props.darkMode ? '#fff' : '#000')};
+  color: ${(props) => (props.darkMode ? '#CECECE' : '#1c1c1c')};
   align-content: flex-end;
   line-height: 1.7;
   font-size: 1.1rem;
@@ -53,7 +53,7 @@ export const Line = styled.span`
 
 export const Welliton = styled.p<{ darkMode: boolean }>`
   font-size: 3rem;
-  color: ${(props) => (props.darkMode ? '#fff' : '#000')};
+  color: ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};
   margin: 0 auto;
   font-weight: 800;
 
@@ -63,7 +63,7 @@ export const Welliton = styled.p<{ darkMode: boolean }>`
 `;
 
 export const StyledAmpersand = styled.span<{ darkMode: boolean }>`
-  color: ${(props) => (props.darkMode ? '#fff' : '#000')};
+  color: ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};
   font-weight: bold;
   white-space: pre-line;
 `;
@@ -125,13 +125,13 @@ export const Image = styled.img<{ darkMode: boolean }>`
   width: 30%; 
   height: 30%;
   border-radius: 50%;
-  border: 10px solid ${(props) => (props.darkMode ? '#fff' : '#000')};;
+  border: 10px solid ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};;
   animation: ${pulse} 3s infinite;
 
   ${mobileMediaQuery} {
     width: 40%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
-    border: 5px solid ${(props) => (props.darkMode ? '#fff' : '#000')};;
+    border: 5px solid ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};;
   }
 `;
 

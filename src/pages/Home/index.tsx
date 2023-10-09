@@ -40,11 +40,11 @@ const AnimatedTextDescription = ({ children }: React.PropsWithChildren) => {
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const { darkMode } = useTheme(); // Obtenha o estado do tema do contexto
+
   const [localDarkMode, setLocalDarkMode] = useState(false);
+  const { darkMode } = useTheme();
 
   useEffect(() => {
-    // Use um estado local para alternar entre o modo escuro e claro
     setLocalDarkMode(darkMode);
   }, [darkMode]);
 

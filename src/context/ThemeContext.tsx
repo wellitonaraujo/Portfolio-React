@@ -9,7 +9,6 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {

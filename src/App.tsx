@@ -1,5 +1,6 @@
+
 import './App.css'
-import { GlobalStyle } from './GlobalStyle'
+import Global from './Global'
 import NavBar from './components/NavBar'
 import { ThemeProvider } from './context/ThemeContext'
 import { StyledFontAwesomeIcon, VerticalLine } from './pages/Home/styles'
@@ -12,7 +13,7 @@ function App() {
   return (
     <ThemeProvider>
       <NavBar />
-      <GlobalStyle />
+      <Global />
       <AppRoutes />
       <VerticalLine>
         <a href='https://github.com/wellitonaraujo' target="_blank">

@@ -47,13 +47,13 @@ export const Label = styled.label`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<{ darkMode: boolean }>`
   width: 100%;
   padding: 15px;
   border: 1px solid transparent; 
   border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
   border-image-slice: 1;
-  background-color: ${colors.grey.s500};
+  background-color: $${(props) => (props.darkMode ? '#231F20' : '#2e2e2e')};
   color: white;
   font-size: 1.1rem;
   outline: none;
@@ -67,13 +67,13 @@ export const Input = styled.input`
   }
 `;
 
-export const TextArea = styled.textarea`
+export const TextArea = styled.textarea<{ darkMode: boolean }>`
   width: 100%;
   padding: 15px;
   border: 1px solid transparent; 
   border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1;
   border-image-slice: 1;
-  background-color: ${colors.grey.s500};
+  background-color: $${(props) => (props.darkMode ? '#231F20' : '#2e2e2e')};
   color: white;
   font-size: 1.1rem;
   outline: none;
@@ -84,6 +84,7 @@ export const TextArea = styled.textarea`
     border: 0.5px solid transparent; 
     border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1; 
     border-image-slice: 1;
+    background-color: $${(props) => (props.darkMode ? '#231F20' : '#2e2e2e')};
   }
 `;
 

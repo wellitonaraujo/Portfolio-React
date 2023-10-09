@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
@@ -18,6 +18,7 @@ import {
 } from './styles';
 
 import { StyledFontAwesomeIcon } from './styles';
+import { useTheme } from '../../context/ThemeContext';
 
 type Errors = {
   nome: string | null;
@@ -34,6 +35,14 @@ const Form = () => {
     email: null,
     mensagem: null,
   });
+
+
+  const [localDarkMode, setLocalDarkMode] = useState(false);
+  const { darkMode } = useTheme();
+
+  useEffect(() => {
+    setLocalDarkMode(darkMode);
+  }, [darkMode]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -99,6 +108,7 @@ const Form = () => {
           <FormGroup>
             <Label htmlFor="nome">Nome:</Label>
             <Input
+              darkMode={localDarkMode}
               type="text"
               id="nome"
               name="nome"
@@ -112,6 +122,7 @@ const Form = () => {
           <FormGroup>
             <Label htmlFor="email">Email:</Label>
             <Input
+              darkMode={localDarkMode}
               id="email"
               name="email"
               value={email}
@@ -124,6 +135,7 @@ const Form = () => {
           <FormGroup>
             <Label htmlFor="mensagem">Mensagem:</Label>
             <TextArea
+              darkMode={localDarkMode}
               id="mensagem"
               name="mensagem"
               value={mensagem}

@@ -95,8 +95,8 @@ export const Image = styled.img`
  justify-content: center;
 `;
 
-export const TextDescription = styled.p`
-  color: ${colors.white};
+export const TextDescription = styled.p<{ darkMode: boolean }>`
+  color: ${(props) => (props.darkMode ? '#fff' : '#000')};;
   align-content: flex-end;
   line-height: 1.7;
   font-size: 1.1rem;
