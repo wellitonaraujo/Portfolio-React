@@ -4,6 +4,7 @@ import {
   ImageContainer,
   Image,
   Title,
+  TextDescription
 } from './styles';
 
 import reactjs from '../../assets/reactjs.png';
@@ -11,7 +12,7 @@ import figma from '../../assets/figma.png';
 import nodejs from '../../assets/nodejs.png';
 import postgres from '../../assets/postgresql.png';
 import siwft from '../../assets/swift.png';
-import { Line, TextDescription } from '../../pages/Home/styles';
+import { Line } from '../../pages/Home/styles';
 import TitleSkills from '../TitleSkills';
 
 const skillsData = [

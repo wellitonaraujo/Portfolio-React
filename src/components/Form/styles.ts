@@ -118,7 +118,6 @@ export const Title = styled.p`
 
   ${mobileMediaQuery} {
     font-size: 0.8rem; 
-    background-color: red;
   }
 `;
 
@@ -152,8 +151,8 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   }
 
   ${mobileMediaQuery} {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     align-items: center;
     border: none;
   }

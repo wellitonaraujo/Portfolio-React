@@ -17,6 +17,15 @@ export const Container = styled.div`
 export const DataContainer = styled.div`
   display: flex;
   flex-wrap: wrap; 
+  
+  ${mobileMediaQuery} {
+    column-count: 2;
+    flex-wrap: wrap; 
+    margin: 0;
+    padding: 0;
+  
+
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -39,8 +48,10 @@ export const ImageContainer = styled.div`
   }
 
   ${mobileMediaQuery} {
-    width: 100%; /* Ocupa toda a largura em dispositivos móveis */
-    margin: 20px 0; /* Ajuste a margem superior e inferior em dispositivos móveis */
+    width: 45%;
+    margin: 0 auto;
+    margin-bottom: 10px ;
+    
   }
 `;
 
@@ -80,7 +91,20 @@ export const SubTitle = styled.p`
 export const Image = styled.img`
   width: 35%;
   height: auto; 
-  margin: 10px auto ;
+  margin: 5px auto ;
   object-fit: cover;
  justify-content: center;
 `;
+
+export const TextDescription = styled.p`
+  color: ${colors.white};
+  align-content: flex-end;
+  line-height: 1.7;
+  font-size: 1.1rem;
+
+  ${mobileMediaQuery} {
+    font-size: 0.7rem; /* Reduz o tamanho da fonte */
+    //margin-top: 1.3rem;
+  }
+`;
+
