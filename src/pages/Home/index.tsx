@@ -11,7 +11,8 @@ import {
   Arrow,
   StyledFontAwesomeIcon,
   ContainerSolcial,
-  AnimatedTextDescriptionWrapper
+  AnimatedTextDescriptionWrapper,
+  TitleContact
 } from './styles'
 
 import profile from '../../assets/profile.jpeg'
@@ -53,7 +54,6 @@ export default function Home() {
 
   window.addEventListener('scroll', handleScroll);
 
-
   return (
     <>
       <ContainerDescription>
@@ -82,7 +82,6 @@ export default function Home() {
             <TextDescription><Line>Sólida experiência</Line> em todo ciclo de desenvolvimento mobile, da prototipação, arquitetura, desenvolvimento, testes e deploy.</TextDescription>
             <TextDescription><Line>Vivência</Line> em desenvolvimento front-end, utilizando as principais tecnologias do mercado.</TextDescription>
           </AnimatedTextDescription>
-
         </Description>
 
         {showScrollButton && (
@@ -96,7 +95,10 @@ export default function Home() {
         <CardSkill />
       </AnimatedTextDescription>
       <AnimatedTextDescription>
+
+        <TitleContact>Contato</TitleContact>
         <Form />
+
       </AnimatedTextDescription>
 
       <Footer />

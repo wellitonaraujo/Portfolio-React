@@ -8,8 +8,8 @@ export const ContainerDescription = styled.div`
   margin-top: 10%;
   align-items: center;
   flex-direction: row;
+
   ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
     flex-direction: column; /* Altera a direção para empilhamento */
     text-align: center; /* Centraliza o texto */
   }
@@ -19,8 +19,8 @@ export const Description = styled.div`
    text-align: left;
    margin: 0;
    padding-left: 4rem;
+
    ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
     padding: 0; /* Remove o espaçamento à esquerda */
     margin-top: 1rem;
   }
@@ -31,8 +31,8 @@ export const TextDescription = styled.p`
   align-content: flex-end;
   line-height: 1.7;
   font-size: 1.1rem;
+
   ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
     font-size: 0.9rem; /* Reduz o tamanho da fonte */
     margin-top: 1.3rem;
   }
@@ -44,7 +44,7 @@ export const Line = styled.span`
   margin: 10px auto;
   border-radius: 0 0 0 5px;
   ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
+  
     width: 50%; /* Reduz a largura da linha */
     border-bottom: 2px solid ${colors.primary.s300};
   }
@@ -55,8 +55,8 @@ export const Welliton = styled.p`
   color: ${colors.white};
   margin: 0 auto;
   font-weight: 800;
+
   ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
     font-size: 1.5rem; /* Reduz o tamanho da fonte */
   }
 `;
@@ -80,6 +80,22 @@ export const Title = styled.p`
     font-size: 1.4rem; /* Reduz o tamanho da fonte */
     margin-top: 1.3rem;
     
+  }
+`;
+
+export const TitleContact = styled.p`
+margin-top: 200px;
+font-size: 2.6rem;
+  background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent;
+  text-align: left;
+  font-weight: 800;
+
+  ${mobileMediaQuery} {
+    text-align: center;
+    font-size: 1.6rem; /* Reduz o tamanho da fonte */
   }
 `;
 
@@ -110,8 +126,8 @@ export const Image = styled.img`
   border-radius: 50%;
   border: 10px solid ${colors.white};
   animation: ${pulse} 3s infinite;
+
   ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
     width: 50%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
   }
@@ -125,8 +141,8 @@ export const VerticalLine = styled.div`
   height: 100%;
   background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
   border-right: 5px solid ${colors.white};
+
   ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
     width: 100%; /* Preenche a largura da tela */
     height: 5px; /* Define a altura da linha */
     top: auto; /* Remove a posição fixa para a parte superior */
@@ -136,18 +152,68 @@ export const VerticalLine = styled.div`
   }
 `;
 
-
-export const Arrow = styled.img`
-  width: 30px;
-  height: 30px;
-
-  ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
-    width: 50%; /* Reduz o tamanho da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-  }
+export const pulseicon = keyframes`
+0% {
+  transform: scale(1);
+}
+50% {
+  transform: scale(1.1);
+}
+100% {
+  transform: scale(1);
+}
 `;
 
+export const pulseIcon = keyframes`
+  0% {
+    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
+                0 0 0 5px rgba(245, 132, 0, 0.05),
+                0 0 0 10px rgba(245, 132, 0, 0.02),
+                0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  10% {
+    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
+                0 0 0 10px rgba(245, 132, 0, 0.10),
+                0 0 0 20px rgba(245, 132, 0, 0.05),
+                0 0 10px rgba(0, 0, 0, 0.6);
+  }
+
+  30% {
+    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
+                0 0 0 10px rgba(245, 132, 0, 0.10),
+                0 0 0 20px rgba(245, 132, 0, 0.05),
+                0 0 10px rgba(0, 0, 0, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
+                0 0 0 10px rgba(245, 132, 0, 0.10),
+                0 0 0 20px rgba(245, 132, 0, 0.05),
+                0 0 10px rgba(0, 0, 0, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
+                0 0 0 10px rgba(245, 132, 0, 0.05),
+                0 0 0 15px rgba(245, 132, 0, 0.02),
+                0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  80% {
+    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
+                0 0 0 10px rgba(245, 132, 0, 0.05),
+                0 0 0 15px rgba(245, 132, 0, 0.02),
+                0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
+                0 0 0 10px rgba(245, 132, 0, 0.05),
+                0 0 0 15px rgba(245, 132, 0, 0.02),
+                0 0 2px rgba(0, 0, 0, 0.5);
+  }
+`;
 
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   font-size: 35px;
@@ -157,9 +223,14 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
   border-radius: 50%;
   border: 1px solid ${colors.white};
-  animation: ${pulse} 3s infinite;
+  transition: transform 0.3s ease;
   padding: 6%;
   color: ${colors.white};
+  animation: ${pulseIcon} 5s infinite;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   ${mobileMediaQuery} {
     margin: 1.5rem 1.5rem;
@@ -189,11 +260,10 @@ export const AnimatedTextDescriptionWrapper = styled.div<{ isVisible: boolean }>
   transition: opacity 4s ease, transform 1s ease;
 `;
 
-
 export const ScrollToTopButton = styled.button`
   position: fixed;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4.2rem;
+  height: 4.2rem;
   bottom: 20px;
   right: 20px;
   background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});;
@@ -217,5 +287,14 @@ export const ScrollToTopButton = styled.button`
     opacity: 0.4;
     color: inherit;
   }
+`;
 
+export const Arrow = styled.img`
+  width: 25px;
+  height: 25px;
+
+  ${mobileMediaQuery} {
+    width: 50%; /* Reduz o tamanho da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+  }
 `;
