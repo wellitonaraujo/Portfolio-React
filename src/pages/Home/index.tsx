@@ -71,7 +71,6 @@ export default function Home() {
         <Image darkMode={localDarkMode} src={profile} alt="Eu" id='sobre' />
 
         <ContainerSolcial>
-          <Header />
           <a href='https://github.com/wellitonaraujo' target="_blank">
             <StyledFontAwesomeIcon icon={faGithub} />
           </a>
@@ -82,8 +81,8 @@ export default function Home() {
         </ContainerSolcial>
 
         <Description>
-
-          <TextDescription darkMode={localDarkMode} children='Olá, sou o' style={{ margin: 0 }} />
+          <Header />
+          <TextDescription darkMode={localDarkMode} children='Olá, sou o' style={{ margin: 0, marginTop: '20px' }} />
           <Welliton darkMode={localDarkMode}>Welliton Araujo</Welliton>
 
           <AnimatedTextDescription>
