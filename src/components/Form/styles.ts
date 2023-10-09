@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
@@ -14,20 +15,19 @@ export const FormContainer = styled.div`
 `;
 
 export const FormGroup = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 export const ContainerContact = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 200px;
+  //margin-top: 200px;
 
   ${mobileMediaQuery} {
     flex-direction: column; /* Altere para uma coluna em dispositivos móveis */
     padding: 1rem;
-    align-items: center;
-
+    align-items: cenfter;
     flex: 1;
   }
 `;
@@ -66,7 +66,7 @@ export const Input = styled.input`
 `;
 
 
-export const EmailLink = styled.a`
+export const Link = styled.a`
    font-size: 2rem;
   background: linear-gradient(to bottom,  ${colors.primary.s400}, ${colors.primary.s300});
   -webkit-background-clip: text; 
@@ -91,6 +91,7 @@ export const TextArea = styled.textarea`
   background-color: ${colors.grey.s500};
   color: white;
   font-size: 1.1rem;
+  
   ${mobileMediaQuery} {
     width: 90%;
   }
@@ -99,8 +100,8 @@ export const Description = styled.div`
    text-align: left;
    margin: 0;
    padding-left: 15rem;
+
    ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
     padding: 0; /* Remove o espaçamento à esquerda */
     margin-top: 3rem;
   }
@@ -114,12 +115,10 @@ export const Title = styled.p`
   color: transparent;
   margin: 0;
   font-weight: 800;
+
   ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
-    font-size: 1rem; /* Reduz o tamanho da fonte */
-    margin-top: 1.3rem;
-    margin-bottom: 1.3rem;
-    
+    font-size: 0.8rem; 
+    background-color: red;
   }
 `;
 
@@ -138,5 +137,38 @@ export const Button = styled.div`
     padding-bottom: 12px;
     padding-top: 12px;
   }
+`;
 
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  font-size: 45px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  padding: 2%;
+  margin-right: 10px;
+  color: ${colors.white};
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  ${mobileMediaQuery} {
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    border: none;
+  }
+`;
+
+export const ContainerIcons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+   
+   ${mobileMediaQuery} {
+    display: flex; /* Exibir os elementos em uma linha (row) */
+    align-items: center; /* Alinhar verticalmente no centro */
+    border-bottom: 0.1px solid ${colors.grey.s400};
+    margin-bottom: 30px;
+  }
 `;
