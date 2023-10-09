@@ -9,11 +9,12 @@ export const FooterWrapper = styled.footer`
   padding: 20px 0;
   text-align: center;
   width: 100%;
-  margin-top: 15rem;
+  margin-top: 10rem;
 
   ${mobileMediaQuery} {
     width: 100%;
     font-size: 0.65rem;
     margin: 0;
+    margin-top: 2rem;
   }
 `;

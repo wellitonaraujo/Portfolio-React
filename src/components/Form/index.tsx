@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import emailjs from '@emailjs/browser';
 
 import {
   FormContainer,
@@ -17,17 +18,31 @@ import {
 } from './styles';
 
 import { StyledFontAwesomeIcon } from './styles';
+import { useTheme } from '../../context/ThemeContext';
 
+type Errors = {
+  nome: string | null;
+  email: string | null;
+  mensagem: string | null;
+};
 
 const Form = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [mensagem, setMensagem] = useState('');
-  const [errors, setErrors] = useState({
-    nome: '',
-    email: '',
-    mensagem: '',
+  const [errors, setErrors] = useState<Errors>({
+    nome: null,
+    email: null,
+    mensagem: null,
   });
+
+
+  const [localDarkMode, setLocalDarkMode] = useState(false);
+  const { darkMode } = useTheme();
+
+  useEffect(() => {
+    setLocalDarkMode(darkMode);
+  }, [darkMode]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -42,50 +57,58 @@ const Form = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Realize a validação aqui
-    const newErrors = {
-      nome: '',
-      email: '',
-      mensagem: '',
+  const validarForm = () => {
+    const novosErros: Errors = {
+      nome: null,
+      email: null,
+      mensagem: null,
     };
 
-    if (nome.trim() === '') {
-      newErrors.nome = 'O campo Nome é obrigatório.';
+    if (!nome.trim()) {
+      novosErros.nome = 'O campo Nome é obrigatório.';
     }
 
-    if (email.trim() === '') {
-      newErrors.email = 'O campo Email é obrigatório.';
+    if (!email.trim()) {
+      novosErros.email = 'O campo Email é obrigatório.';
     }
 
-    if (mensagem.trim() === '') {
-      newErrors.mensagem = 'O campo Mensagem é obrigatório.';
+    if (!mensagem.trim()) {
+      novosErros.mensagem = 'O campo Mensagem é obrigatório.';
     }
 
-    // Atualize o estado com os erros encontrados
-    setErrors(newErrors);
+    setErrors(novosErros);
+    return Object.values(novosErros).every((error) => error === null);
+  };
 
-    // Se não houver erros, você pode prosseguir com o envio do formulário
-    if (Object.values(newErrors).every((error) => error === '')) {
-      // Coloque aqui a lógica para enviar o formulário
-      console.log('Formulário válido. Enviando...');
+  const enviarEmail = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (validarForm()) {
+      emailjs
+        .sendForm('seu_servico_emailjs', 'seu_template_emailjs', e.currentTarget, 'seu_usuario_emailjs')
+        .then((response) => {
+          console.log('E-mail enviado com sucesso!', response);
+          // Lógica para mostrar uma mensagem de sucesso ao usuário
+        })
+        .catch((error) => {
+          console.error('Erro ao enviar e-mail:', error);
+          // Lógica para mostrar uma mensagem de erro ao usuário
+        });
     }
   };
+
 
   const EmailAddress = 'welliton.araujo@uol.com.br';
   const PhoneNumber = '5591985715267';
 
   return (
     <ContainerContact>
-
-
       <FormContainer id='contatos'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={enviarEmail}>
           <FormGroup>
             <Label htmlFor="nome">Nome:</Label>
             <Input
+              darkMode={localDarkMode}
               type="text"
               id="nome"
               name="nome"
@@ -93,24 +116,26 @@ const Form = () => {
               onChange={handleInputChange}
               required
             />
-            {errors.nome && <span className="error" style={{ display: 'block', margin: 0, padding: 0, color: '#ff0000' }}>{errors.nome}</span>}
+            {errors.nome && <span className="error">{errors.nome}</span>}
           </FormGroup>
 
           <FormGroup>
             <Label htmlFor="email">Email:</Label>
             <Input
+              darkMode={localDarkMode}
               id="email"
               name="email"
               value={email}
               onChange={handleInputChange}
               required
             />
-            {errors.email && <span className="error" style={{ display: 'block', color: '#ff0000' }}>{errors.email}</span>}
+            {errors.email && <span className="error">{errors.email}</span>}
           </FormGroup>
 
           <FormGroup>
             <Label htmlFor="mensagem">Mensagem:</Label>
             <TextArea
+              darkMode={localDarkMode}
               id="mensagem"
               name="mensagem"
               value={mensagem}
@@ -118,18 +143,17 @@ const Form = () => {
               required
             />
 
-            {errors.mensagem && <span className="error" style={{ display: 'block', color: '#ff0000' }}>{errors.mensagem}</span>}
+            {errors.mensagem && <span className="error">{errors.mensagem}</span>}
           </FormGroup>
           <Button>Enviar</Button>
-
         </form>
+
       </FormContainer>
 
       <Description id='contatos'>
         {/*<Title> Teresina, PI - Brasil </Title>*/}
 
         <ContainerIcons >
-
           <StyledFontAwesomeIcon icon={faEnvelope} />
           <Link href={`mailto:${EmailAddress}`}>
             <Title>{EmailAddress}</Title>
@@ -142,7 +166,6 @@ const Form = () => {
             <Title>(91) 98571-5267</Title>
           </ContainerIcons>
         </Link>
-
       </Description>
     </ContainerContact>
   );
