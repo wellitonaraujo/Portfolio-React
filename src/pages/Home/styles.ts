@@ -53,7 +53,7 @@ export const Line = styled.span`
 
 export const Welliton = styled.p<{ darkMode: boolean }>`
   font-size: 3rem;
-  color: ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};
+  color: ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
   margin: 0 auto;
   font-weight: 800;
 
@@ -63,7 +63,7 @@ export const Welliton = styled.p<{ darkMode: boolean }>`
 `;
 
 export const StyledAmpersand = styled.span<{ darkMode: boolean }>`
-  color: ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};
+  color: ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
   font-weight: bold;
   white-space: pre-line;
 `;
@@ -125,13 +125,13 @@ export const Image = styled.img<{ darkMode: boolean }>`
   width: 30%; 
   height: 30%;
   border-radius: 50%;
-  border: 8px solid ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};;
+  border: 8px solid ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};;
   animation: ${pulse} 3s infinite;
 
   ${mobileMediaQuery} {
     width: 40%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
-    border: 4px solid ${(props) => (props.darkMode ? '#fff' : '#1c1c1c')};;
+    border: 4px solid ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};;
   }
 `;
 
@@ -239,6 +239,7 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon) <{ darkMode: boolea
     height: 35px;
     animation: none;
     border: none;
+    color: ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
   }
 `;
 

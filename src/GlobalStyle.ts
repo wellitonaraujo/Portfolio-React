@@ -3,12 +3,13 @@ import colors from './styles/colors';
 // Definir variáveis globais
 export const GlobalStyle = createGlobalStyle<{ darkMode: boolean }>`
   :root {
-    
     line-height: 1.5;
     background: ${props => props.darkMode
     ? `linear-gradient(to top,${colors.grey.s500}, ${colors.black})`
     : `linear-gradient(to top, ${colors.grey.s100}, ${colors.grey.s100})`
+
   }; 
+  
 
     margin: 0 auto;
     text-align: center;

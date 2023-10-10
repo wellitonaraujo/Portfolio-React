@@ -40,7 +40,7 @@ export default function CardSkill() {
 
         <DataContainer>
           {skillsData.map((skill, index) => (
-            <ImageContainer key={index}>
+            <ImageContainer darkMode={localDarkMode} key={index}>
               <Image src={skill.src} alt={skill.alt} />
               <TextDescription darkMode={localDarkMode}>{skill.description}</TextDescription>
             </ImageContainer>

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import colors from "../../styles/colors";
 
-
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
 export const Container = styled.div`
@@ -26,12 +25,10 @@ export const DataContainer = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div<{ darkMode: boolean }>`
   display: flex;
   flex-direction: column;
-  border: 2px solid transparent;
-  border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
-  border-image-slice: 1; 
+  border: 1px solid ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 190px;
   height: 207px;
@@ -48,9 +45,9 @@ export const ImageContainer = styled.div`
     width: 45%;
     margin: 0 auto;
     margin-bottom: 10px ;
-    border: 1px solid transparent;
-    border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
-    border-image-slice: 1; 
+;
+    border: 0.5px solid ${(props) => (props.darkMode ? '#F58400' : '#3b3a3a')};
+
   }
 `;
 
@@ -96,7 +93,7 @@ export const Image = styled.img`
 `;
 
 export const TextDescription = styled.p<{ darkMode: boolean }>`
-  color: ${(props) => (props.darkMode ? '#fff' : '#000')};;
+  color: ${(props) => (props.darkMode ? '#fff' : '#000')};
   align-content: flex-end;
   line-height: 1.7;
   font-size: 1.1rem;

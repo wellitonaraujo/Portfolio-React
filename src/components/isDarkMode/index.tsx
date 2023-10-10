@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../context/ThemeContext';
+import colors from '../../styles/colors';
 
 
 const ToggleSwitch = styled.label`
@@ -17,7 +18,7 @@ const ToggleSlider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
   border-radius: 34px;
 
   &:before {
@@ -37,7 +38,7 @@ const ToggleInput = styled.input`
   display: none;
 
   &:checked + ${ToggleSlider} {
-    background-color: #d7a500;
+    background: #3b3a3a;
   }
 
   &:checked + ${ToggleSlider}:before {
