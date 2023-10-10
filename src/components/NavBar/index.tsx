@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { NavItem, NavUl, Navbar } from './styles';
-import Header from '../isDarkMode';
 import { useTheme } from '../../context/ThemeContext';
 
 type SectionId = 'sobre' | 'skills' | 'contatos';
