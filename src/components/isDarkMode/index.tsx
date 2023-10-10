@@ -11,6 +11,7 @@ const Toggle: React.FC = () => {
       onChange={toggleTheme}
       checked={darkMode}
       size={80}
+      speed={3}
     />
   );
 };
