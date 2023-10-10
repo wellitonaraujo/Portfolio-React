@@ -24,7 +24,7 @@ import Form from '../../components/Form';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useInView } from 'react-intersection-observer';
 import { useTheme } from '../../context/ThemeContext';
-import Header from '../../components/isDarkMode';
+import Toggle from '../../components/isDarkMode';
 
 const AnimatedTextDescription = ({ children }: React.PropsWithChildren) => {
   const [ref, inView] = useInView({
@@ -81,7 +81,7 @@ export default function Home() {
         </ContainerSolcial>
 
         <Description>
-          <Header />
+          <Toggle />
           <TextDescription darkMode={localDarkMode} children='Olá, sou o' style={{ margin: 0, marginTop: '20px' }} />
           <Welliton darkMode={localDarkMode}>Welliton Araujo</Welliton>
 
