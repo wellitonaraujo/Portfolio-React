@@ -2,11 +2,10 @@
 import './App.css'
 import Global from './Global'
 import NavBar from './components/NavBar'
+import Vertical from './components/VerticalLine'
 import { ThemeProvider } from './context/ThemeContext'
-import { StyledFontAwesomeIcon, VerticalLine } from './pages/Home/styles'
 import AppRoutes from './routes/app.routes'
 
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
 
@@ -15,15 +14,7 @@ function App() {
       <NavBar />
       <Global />
       <AppRoutes />
-      <VerticalLine>
-        <a href='https://github.com/wellitonaraujo' target="_blank">
-          <StyledFontAwesomeIcon icon={faGithub} style={{ marginTop: 400 }} />
-        </a>
-
-        <a href='https://www.linkedin.com/in/wellitonaraujo/' target="_blank">
-          <StyledFontAwesomeIcon icon={faLinkedin} />
-        </a>
-      </VerticalLine>
+      <Vertical />
     </ThemeProvider>
   )
 }

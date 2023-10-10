@@ -13,7 +13,8 @@ import {
   ContainerSolcial,
   AnimatedTextDescriptionWrapper,
   TitleContact,
-  FooterWrapper
+  FooterWrapper,
+  ContainerToggle
 } from './styles'
 
 import profile from '../../assets/profile.jpeg'
@@ -67,9 +68,7 @@ export default function Home() {
   return (
     <>
       <ContainerDescription>
-
         <Image darkMode={localDarkMode} src={profile} alt="Eu" id='sobre' />
-
         <ContainerSolcial>
           <a href='https://github.com/wellitonaraujo' target="_blank">
             <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faGithub} />
@@ -81,7 +80,10 @@ export default function Home() {
         </ContainerSolcial>
 
         <Description>
-          <Toggle />
+          <ContainerToggle>
+            <Toggle />
+          </ContainerToggle>
+
           <TextDescription darkMode={localDarkMode} children='Olá, sou o' style={{ margin: 0, marginTop: '20px' }} />
           <Welliton darkMode={localDarkMode}>Welliton Araujo</Welliton>
 

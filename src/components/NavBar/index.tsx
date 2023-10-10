@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavItem, NavUl, Navbar } from './styles';
 import { useTheme } from '../../context/ThemeContext';
+import Toggle from '../isDarkMode';
 
 type SectionId = 'sobre' | 'skills' | 'contatos';
 
@@ -26,7 +27,7 @@ export default function NavBar() {
       <Navbar>
         <NavUl>
           <div style={{ marginRight: '70px' }}>
-            {/*<Header />*/}
+            <Toggle />
           </div>
           <NavItem darkMode={localDarkMode}
             className={activeNavItem === 'sobre' ? 'active' : ''}

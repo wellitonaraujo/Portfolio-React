@@ -16,6 +16,14 @@ export const ContainerDescription = styled.div`
   }
 `;
 
+export const ContainerToggle = styled.div`
+  display: none;
+  ${mobileMediaQuery} {
+   display: block;
+
+  }
+`;
+
 export const Description = styled.div`
    text-align: left;
    margin: 0;
@@ -70,14 +78,14 @@ export const StyledAmpersand = styled.span<{ darkMode: boolean }>`
 
 export const Title = styled.p`
   font-size: 4rem;
-  background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
+  background: linear-gradient(to top,  ${colors.primary.s300}, ${colors.primary.s400});
   -webkit-background-clip: text; 
   background-clip: text; 
   color: transparent;
   margin: 0;
   font-weight: 800;
+  
   ${mobileMediaQuery} {
-    /* Estilos específicos para dispositivos móveis */
     font-size: 1.4rem; /* Reduz o tamanho da fonte */
     margin-top: 1.3rem;
     
@@ -85,8 +93,8 @@ export const Title = styled.p`
 `;
 
 export const TitleContact = styled.p`
-margin-top: 200px;
-font-size: 2.6rem;
+  margin-top: 200px;
+  font-size: 2.6rem;
   background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
   -webkit-background-clip: text; 
   background-clip: text; 
@@ -132,6 +140,7 @@ export const Image = styled.img<{ darkMode: boolean }>`
     width: 40%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
     border: 4px solid ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};;
+    animation: none
   }
 `;
 

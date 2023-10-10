@@ -28,7 +28,8 @@ export const DataContainer = styled.div`
 export const ImageContainer = styled.div<{ darkMode: boolean }>`
   display: flex;
   flex-direction: column;
-  border: 1px solid ${(props) => (props.darkMode ? colors.primary.s400 : '#3b3a3a')};
+  background-color: ${(props) => (props.darkMode ? '#231F20' : '#F5F5F5')};
+  border: 0.5px solid ${(props) => (props.darkMode ? colors.primary.s400 : '#3b3a3a')};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   width: 190px;
@@ -44,6 +45,7 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     width: 45%;
+    height: 150px;
     margin: 0 auto;
     margin-bottom: 10px ;
 ;
@@ -54,7 +56,7 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
 
 export const Title = styled.p`
   font-size: 2.6rem;
-  background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
+  background: linear-gradient(to top,  ${colors.primary.s300}, ${colors.primary.s400});
   -webkit-background-clip: text;
   background-clip: text; 
   color: transparent;

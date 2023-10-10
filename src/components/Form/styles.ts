@@ -50,9 +50,7 @@ export const Label = styled.label`
 export const Input = styled.input<{ darkMode: boolean }>`
   width: 100%;
   padding: 15px;
-  border: 1px solid transparent; 
-  border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
-  border-image-slice: 1;
+  border:  0.5px solid ${(props) => (props.darkMode ? colors.primary.s400 : '#3b3a3a')};
   background-color: ${(props) => (props.darkMode ? '#231F20' : '#F5F5F5')};
   color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};;
   font-size: 1.1rem;
@@ -60,20 +58,16 @@ export const Input = styled.input<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     width: 90%;
-    padding: 12px;
-    border: 0.5px solid transparent; 
-    border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
-    border-image-slice: 1;
-    color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};;
+    padding: 10px;
+    border: 0.5px solid ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};
+    color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};
   }
 `;
 
 export const TextArea = styled.textarea<{ darkMode: boolean }>`
   width: 100%;
   padding: 15px;
-  border: 1px solid transparent; 
-  border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1;
-  border-image-slice: 1;
+  border: 0.5px solid ${(props) => (props.darkMode ? colors.primary.s400 : '#3b3a3a')};
   background-color: ${(props) => (props.darkMode ? '#231F20' : '#F5F5F5')};
   color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};;
   font-size: 1.1rem;
@@ -82,10 +76,8 @@ export const TextArea = styled.textarea<{ darkMode: boolean }>`
   ${mobileMediaQuery} {
     width: 90%;
     padding: 12px;
-    border: 0.5px solid transparent; 
-    border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1; 
-    border-image-slice: 1;
-    color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};;
+    border: 0.5px solid ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};
+    color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};
   }
 `;
 
@@ -97,7 +89,7 @@ export const Link = styled.a`
   color: transparent;
   margin: 0;
   font-weight: 800;
-animation: normal;
+
   ${mobileMediaQuery} {
     flex-direction: column; /* Altere para uma coluna em dispositivos móveis */
     font-size: 1rem; /* Reduz o tamanho da fonte */
@@ -126,7 +118,8 @@ export const Title = styled.p`
   font-weight: 800;
 
   ${mobileMediaQuery} {
-    font-size: 0.8rem; 
+    font-size: 0.7rem; 
+    padding-right: 25px;
   }
 `;
 
