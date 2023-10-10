@@ -115,6 +115,7 @@ export const Description = styled.div`
   }
 `;
 
+
 export const Title = styled.p`
   font-size: 2rem;
   background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});

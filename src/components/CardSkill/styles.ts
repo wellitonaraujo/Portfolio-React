@@ -28,8 +28,9 @@ export const DataContainer = styled.div`
 export const ImageContainer = styled.div<{ darkMode: boolean }>`
   display: flex;
   flex-direction: column;
-  border: 1px solid ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
+  border: 1px solid ${(props) => (props.darkMode ? colors.primary.s400 : '#3b3a3a')};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
   width: 190px;
   height: 207px;
   flex-shrink: 0;
