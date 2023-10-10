@@ -53,8 +53,8 @@ export const Input = styled.input<{ darkMode: boolean }>`
   border: 1px solid transparent; 
   border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
   border-image-slice: 1;
-  background-color: $${(props) => (props.darkMode ? '#231F20' : '#2e2e2e')};
-  color: white;
+  background-color: ${(props) => (props.darkMode ? '#231F20' : '#F5F5F5')};
+  color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};;
   font-size: 1.1rem;
   outline: none;
 
@@ -64,6 +64,7 @@ export const Input = styled.input<{ darkMode: boolean }>`
     border: 0.5px solid transparent; 
     border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
     border-image-slice: 1;
+    color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};;
   }
 `;
 
@@ -73,8 +74,8 @@ export const TextArea = styled.textarea<{ darkMode: boolean }>`
   border: 1px solid transparent; 
   border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1;
   border-image-slice: 1;
-  background-color: $${(props) => (props.darkMode ? '#231F20' : '#2e2e2e')};
-  color: white;
+  background-color: ${(props) => (props.darkMode ? '#231F20' : '#F5F5F5')};
+  color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};;
   font-size: 1.1rem;
   outline: none;
   
@@ -84,7 +85,7 @@ export const TextArea = styled.textarea<{ darkMode: boolean }>`
     border: 0.5px solid transparent; 
     border-image: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}) 1; 
     border-image-slice: 1;
-    background-color: $${(props) => (props.darkMode ? '#231F20' : '#2e2e2e')};
+    color:  ${(props) => (props.darkMode ? '#F5F5F5' : '#231F20')};;
   }
 `;
 
@@ -145,14 +146,14 @@ export const Button = styled.div`
   }
 `;
 
-export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon) <{ darkMode: boolean }>`
   font-size: 45px;
   cursor: pointer;
   border-radius: 50%;
   transition: transform 0.3s ease;
   padding: 2%;
   margin-right: 10px;
-  color: ${colors.white};
+  color: ${(props) => (props.darkMode ? '#DDD9D9' : '#585858')};
   &:hover {
     transform: scale(1.1);
   }

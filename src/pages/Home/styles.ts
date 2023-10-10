@@ -125,13 +125,13 @@ export const Image = styled.img<{ darkMode: boolean }>`
   width: 30%; 
   height: 30%;
   border-radius: 50%;
-  border: 10px solid ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};;
+  border: 8px solid ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};;
   animation: ${pulse} 3s infinite;
 
   ${mobileMediaQuery} {
     width: 40%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
-    border: 5px solid ${(props) => (props.darkMode ? '#fff' : '#2e2e2e')};;
+    border: 4px solid ${(props) => (props.darkMode ? '#fff' : '#1c1c1c')};;
   }
 `;
 
@@ -217,7 +217,7 @@ export const pulseIcon = keyframes`
   }
 `;
 
-export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon) <{ darkMode: boolean }>`
   width: 2rem;
   height: 2rem;
   margin-top: 50%;
@@ -297,5 +297,21 @@ export const Arrow = styled.img`
   ${mobileMediaQuery} {
     width: 50%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
+  }
+`;
+
+export const FooterWrapper = styled.footer<{ darkMode: boolean }>`
+  background-color: ${(props) => (props.darkMode ? '#242424' : '#CECECE')};
+  color: ${(props) => (props.darkMode ? '#CECECE' : '#231F20')};
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 10rem;
+
+  ${mobileMediaQuery} {
+    width: 100%;
+    font-size: 0.65rem;
+    margin: 0;
+    margin-top: 2rem;
   }
 `;

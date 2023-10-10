@@ -36,7 +36,6 @@ const Form = () => {
     mensagem: null,
   });
 
-
   const [localDarkMode, setLocalDarkMode] = useState(false);
   const { darkMode } = useTheme();
 
@@ -154,7 +153,7 @@ const Form = () => {
         {/*<Title> Teresina, PI - Brasil </Title>*/}
 
         <ContainerIcons >
-          <StyledFontAwesomeIcon icon={faEnvelope} />
+          <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faEnvelope} />
           <Link href={`mailto:${EmailAddress}`}>
             <Title>{EmailAddress}</Title>
           </Link>
@@ -162,7 +161,7 @@ const Form = () => {
 
         <Link href={`https://wa.me/${PhoneNumber}`} target="_blank">
           <ContainerIcons>
-            <StyledFontAwesomeIcon icon={faWhatsapp} />
+            <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faWhatsapp} />
             <Title>(91) 98571-5267</Title>
           </ContainerIcons>
         </Link>

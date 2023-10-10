@@ -12,7 +12,8 @@ import {
   StyledFontAwesomeIcon,
   ContainerSolcial,
   AnimatedTextDescriptionWrapper,
-  TitleContact
+  TitleContact,
+  FooterWrapper
 } from './styles'
 
 import profile from '../../assets/profile.jpeg'
@@ -22,7 +23,6 @@ import { useEffect, useState } from 'react';
 import Form from '../../components/Form';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useInView } from 'react-intersection-observer';
-import Footer from '../../components/Footer';
 import { useTheme } from '../../context/ThemeContext';
 import Header from '../../components/isDarkMode';
 
@@ -72,11 +72,11 @@ export default function Home() {
 
         <ContainerSolcial>
           <a href='https://github.com/wellitonaraujo' target="_blank">
-            <StyledFontAwesomeIcon icon={faGithub} />
+            <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faGithub} />
           </a>
 
           <a href='https://www.linkedin.com/in/wellitonaraujo/' target="_blank">
-            <StyledFontAwesomeIcon icon={faLinkedin} />
+            <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faLinkedin} />
           </a>
         </ContainerSolcial>
 
@@ -113,7 +113,9 @@ export default function Home() {
 
       </AnimatedTextDescription>
 
-      <Footer />
+      <FooterWrapper darkMode={localDarkMode}>
+        Welliton Araújo - Todos os direitos reservados
+      </FooterWrapper>
     </>
   )
 }

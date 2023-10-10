@@ -27,7 +27,7 @@ export default function NavBar() {
       <Navbar>
         <NavUl>
           <div style={{ marginRight: '70px' }}>
-            <Header />
+            {/*<Header />*/}
           </div>
           <NavItem darkMode={localDarkMode}
             className={activeNavItem === 'sobre' ? 'active' : ''}
