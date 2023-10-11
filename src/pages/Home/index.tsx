@@ -1,22 +1,3 @@
-import {
-  Description,
-  Image,
-  TextDescription,
-  ContainerDescription,
-  Welliton,
-  Title,
-  StyledAmpersand,
-  Line,
-  ScrollToTopButton,
-  Arrow,
-  StyledFontAwesomeIcon,
-  ContainerSolcial,
-  AnimatedTextDescriptionWrapper,
-  TitleContact,
-  FooterWrapper,
-  ContainerToggle
-} from './styles';
-
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useInView } from 'react-intersection-observer';
 import { useTheme } from '../../context/ThemeContext';
@@ -26,6 +7,24 @@ import profile from '../../assets/profile.jpeg'
 import { useEffect, useState } from 'react';
 import arrow from '../../assets/arrow.png'
 import Form from '../../components/Form';
+import {
+  AnimatedTextDescriptionWrapper,
+  StyledFontAwesomeIcon,
+  ContainerDescription,
+  ScrollToTopButton,
+  ContainerSolcial,
+  TextDescription,
+  StyledAmpersand,
+  ContainerToggle,
+  FooterWrapper,
+  TitleContact,
+  Description,
+  Welliton,
+  Arrow,
+  Image,
+  Title,
+  Line,
+} from './styles';
 
 const AnimatedTextDescription = ({ children }: React.PropsWithChildren) => {
   const [ref, inView] = useInView({
@@ -109,11 +108,10 @@ export default function Home() {
       <AnimatedTextDescription>
         <CardSkill />
       </AnimatedTextDescription>
-      <AnimatedTextDescription>
 
+      <AnimatedTextDescription>
         <TitleContact>Contato</TitleContact>
         <Form />
-
       </AnimatedTextDescription>
 
       <FooterWrapper darkMode={localDarkMode}>

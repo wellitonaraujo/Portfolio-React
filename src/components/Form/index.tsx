@@ -1,23 +1,22 @@
-import {
-  FormContainer,
-  FormGroup,
-  Label,
-  Input,
-  TextArea,
-  Button,
-  Description,
-  Title,
-  Link,
-  ContainerContact,
-  ContainerIcons
-} from './styles';
-
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FormEvent, useEffect, useState } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import { StyledFontAwesomeIcon } from './styles';
 import emailjs from '@emailjs/browser';
+import {
+  ContainerContact,
+  ContainerIcons,
+  FormContainer,
+  Description,
+  FormGroup,
+  TextArea,
+  Button,
+  Label,
+  Input,
+  Title,
+  Link,
+} from './styles';
 
 type Errors = {
   nome: string | null;
