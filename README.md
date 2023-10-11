@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# Portfólio React + TypeScript + Vite
 
 Este projeto representa a materialização de um portfólio pessoal desenvolvido com tecnologias de ponta, com o objetivo de apresentar minhas habilidades e experiências de maneira eficaz e cativante. Utilizando as melhores práticas de desenvolvimento web, criei uma única rota contendo seções dedicadas ao meu perfil, habilidades e informações de contato. Este portfólio foi construído com foco na usabilidade, desempenho e estética, visando fornecer uma experiência excepcional ao visitante.
 
@@ -23,3 +23,6 @@ Este projeto representa a materialização de um portfólio pessoal desenvolvido
 ### Contato: A seção "Contato" fornece informações para que os visitantes possam entrar em contato comigo, incluindo e-mail, links para redes sociais e um formulário de mensagem.
 
 Este portfólio é resultado de um processo de desenvolvimento focado em boas práticas de engenharia de software, testes, otimização de desempenho e acessibilidade. Estou orgulhoso de apresentar este projeto, que reflete minha paixão pelo desenvolvimento web e meu compromisso em proporcionar uma experiência agradável aos visitantes.
+
+
+## Produção: https://welliton-araujo.vercel.app/
