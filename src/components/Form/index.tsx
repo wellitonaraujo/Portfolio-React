@@ -1,8 +1,3 @@
-import { FormEvent, useEffect, useState } from 'react';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import emailjs from '@emailjs/browser';
-
 import {
   FormContainer,
   FormGroup,
@@ -17,8 +12,12 @@ import {
   ContainerIcons
 } from './styles';
 
-import { StyledFontAwesomeIcon } from './styles';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FormEvent, useEffect, useState } from 'react';
 import { useTheme } from '../../context/ThemeContext';
+import { StyledFontAwesomeIcon } from './styles';
+import emailjs from '@emailjs/browser';
 
 type Errors = {
   nome: string | null;
@@ -96,7 +95,6 @@ const Form = () => {
     }
   };
 
-
   const EmailAddress = 'welliton.araujo@uol.com.br';
   const PhoneNumber = '5591985715267';
 
@@ -144,7 +142,7 @@ const Form = () => {
 
             {errors.mensagem && <span className="error">{errors.mensagem}</span>}
           </FormGroup>
-          <Button>Enviar</Button>
+          <Button disabled>Enviar</Button>
         </form>
 
       </FormContainer>

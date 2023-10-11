@@ -30,7 +30,7 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
   flex-direction: column;
   background-color: ${(props) => (props.darkMode ? '#231F20' : '#F5F5F5')};
   border: 0.5px solid ${(props) => (props.darkMode ? colors.primary.s400 : '#3b3a3a')};
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   width: 190px;
   height: 207px;

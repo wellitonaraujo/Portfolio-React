@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { GlobalStyle } from '../GlobalStyle';
 import { useTheme } from '../context/ThemeContext';
+import { GlobalStyle } from '../GlobalStyle';
+import { useEffect, useState } from 'react';
 
 export default function Global() {
   const [localDarkMode, setLocalDarkMode] = useState(false);

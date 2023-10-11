@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react';
-import { NavItem, NavUl, Navbar } from './styles';
 import { useTheme } from '../../context/ThemeContext';
+import { NavItem, NavUl, Navbar } from './styles';
+import { useEffect, useState } from 'react';
 import Toggle from '../isDarkMode';
 
 type SectionId = 'sobre' | 'skills' | 'contatos';
 
 export default function NavBar() {
   const [activeNavItem, setActiveNavItem] = useState<SectionId | null>('sobre');
-
   const [localDarkMode, setLocalDarkMode] = useState(false);
   const { darkMode } = useTheme();
 

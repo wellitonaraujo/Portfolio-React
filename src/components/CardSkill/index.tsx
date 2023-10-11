@@ -7,14 +7,14 @@ import {
   TextDescription
 } from './styles';
 
-import reactjs from '../../assets/reactjs.png';
-import figma from '../../assets/figma.png';
-import nodejs from '../../assets/nodejs.png';
+import { useTheme } from '../../context/ThemeContext';
 import postgres from '../../assets/postgresql.png';
+import reactjs from '../../assets/reactjs.png';
+import nodejs from '../../assets/nodejs.png';
+import { useEffect, useState } from 'react';
+import figma from '../../assets/figma.png';
 import siwft from '../../assets/swift.png';
 import TitleSkills from '../TitleSkills';
-import { useEffect, useState } from 'react';
-import { useTheme } from '../../context/ThemeContext';
 
 const skillsData = [
   { src: reactjs, alt: 'React Native', description: 'React Native' },

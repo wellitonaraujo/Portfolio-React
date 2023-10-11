@@ -122,8 +122,11 @@ export const Title = styled.p`
     padding-right: 25px;
   }
 `;
+interface ButtonProps {
+  disabled?: boolean;
+}
 
-export const Button = styled.div`
+export const Button = styled.div<ButtonProps>`
   background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
   width: 100%;
   font-size: 1.1rem;
@@ -131,12 +134,17 @@ export const Button = styled.div`
   padding: 15px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  //cursor: pointer;
+
+  ${({ disabled }) => disabled && `
+    cursor: not-allowed;
+  `}
 
   ${mobileMediaQuery} {
     width: 90%; 
     padding-bottom: 12px;
     padding-top: 12px;
+    
   }
 `;
 

@@ -1,4 +1,4 @@
-import { SubTitle } from "../CardSkill/styles"
+import { SubTitle } from "../CardSkill/styles";
 
 const TitleSkills = () => {
   return (

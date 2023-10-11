@@ -15,17 +15,17 @@ import {
   TitleContact,
   FooterWrapper,
   ContainerToggle
-} from './styles'
+} from './styles';
 
-import profile from '../../assets/profile.jpeg'
-import arrow from '../../assets/arrow.png'
-import CardSkill from '../../components/CardSkill';
-import { useEffect, useState } from 'react';
-import Form from '../../components/Form';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useInView } from 'react-intersection-observer';
 import { useTheme } from '../../context/ThemeContext';
+import CardSkill from '../../components/CardSkill';
 import Toggle from '../../components/isDarkMode';
+import profile from '../../assets/profile.jpeg'
+import { useEffect, useState } from 'react';
+import arrow from '../../assets/arrow.png'
+import Form from '../../components/Form';
 
 const AnimatedTextDescription = ({ children }: React.PropsWithChildren) => {
   const [ref, inView] = useInView({
@@ -41,8 +41,8 @@ const AnimatedTextDescription = ({ children }: React.PropsWithChildren) => {
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
-
   const [localDarkMode, setLocalDarkMode] = useState(false);
+
   const { darkMode } = useTheme();
 
   useEffect(() => {
@@ -56,6 +56,7 @@ export default function Home() {
       setShowScrollButton(false);
     }
   };
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

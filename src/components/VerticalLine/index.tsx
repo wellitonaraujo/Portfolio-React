@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { StyledFontAwesomeIcon, VerticalLine } from './styles';
 import { useTheme } from '../../context/ThemeContext';
+import { useEffect, useState } from 'react';
 
 function Vertical() {
   const [localDarkMode, setLocalDarkMode] = useState(false);
@@ -12,7 +12,6 @@ function Vertical() {
   }, [darkMode]);
 
   return (
-
     <VerticalLine darkMode={localDarkMode}>
       <a href='https://github.com/wellitonaraujo' target="_blank">
         <StyledFontAwesomeIcon icon={faGithub} style={{ marginTop: 400 }} />
@@ -22,8 +21,7 @@ function Vertical() {
         <StyledFontAwesomeIcon icon={faLinkedin} />
       </a>
     </VerticalLine>
-
   )
 }
 
-export default Vertical
+export default Vertical;

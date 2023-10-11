@@ -1,27 +1,25 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto representa a materialização de um portfólio pessoal desenvolvido com tecnologias de ponta, com o objetivo de apresentar minhas habilidades e experiências de maneira eficaz e cativante. Utilizando as melhores práticas de desenvolvimento web, criei uma única rota contendo seções dedicadas ao meu perfil, habilidades e informações de contato. Este portfólio foi construído com foco na usabilidade, desempenho e estética, visando fornecer uma experiência excepcional ao visitante.
 
-Currently, two official plugins are available:
+## Tecnologias e Recursos Principais:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### React e Vite: Este projeto foi desenvolvido com o framework React e a ferramenta Vite para oferecer uma aplicação web altamente eficiente e de carregamento rápido.
 
-## Expanding the ESLint configuration
+### TypeScript: A implementação do TypeScript garante uma base de código mais robusta, com tipagem estática e detecção de erros em tempo de compilação, resultando em um código mais seguro e manutenível.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Styled Components: Utilizei a biblioteca Styled Components para a estilização da aplicação, permitindo a criação de componentes reutilizáveis e uma fácil manutenção do CSS, além de garantir a escalabilidade do projeto.
 
-- Configure the top-level `parserOptions` property like this:
+### useState e useEffect: Recorri aos hooks useState e useEffect do React para gerenciar o estado interno da aplicação e lidar com efeitos colaterais, permitindo uma experiência de usuário interativa e dinâmica.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### useContext: Para a gestão de estado global e compartilhamento de informações em toda a aplicação, utilizei o hook useContext, garantindo a consistência dos dados em todas as seções do portfólio.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Estrutura do Portfólio:
+
+### Sobre: A seção "Sobre" contém uma breve descrição pessoal, destacando minha formação, experiência profissional e interesses.
+
+### Habilidades: Na seção "Habilidades", destaco minhas competências e conhecimentos em diversas áreas, fornecendo uma visão abrangente das tecnologias e ferramentas com as quais estou familiarizado.
+
+### Contato: A seção "Contato" fornece informações para que os visitantes possam entrar em contato comigo, incluindo e-mail, links para redes sociais e um formulário de mensagem.
+
+Este portfólio é resultado de um processo de desenvolvimento focado em boas práticas de engenharia de software, testes, otimização de desempenho e acessibilidade. Estou orgulhoso de apresentar este projeto, que reflete minha paixão pelo desenvolvimento web e meu compromisso em proporcionar uma experiência agradável aos visitantes.

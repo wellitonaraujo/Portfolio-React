@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import colors from './styles/colors';
-// Definir variáveis globais
+
 export const GlobalStyle = createGlobalStyle<{ darkMode: boolean }>`
   :root {
     line-height: 1.5;
@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle<{ darkMode: boolean }>`
 
   }; 
   
-
     margin: 0 auto;
     text-align: center;
     scroll-behavior: smooth;

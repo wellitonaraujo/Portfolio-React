@@ -1,4 +1,11 @@
-import React, { ReactNode, createContext, useContext, useState } from 'react';
+import
+React,
+{
+  ReactNode,
+  createContext,
+  useContext,
+  useState
+} from 'react';
 
 type ThemeContextType = {
   darkMode: boolean;
