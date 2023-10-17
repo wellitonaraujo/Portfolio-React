@@ -1,7 +1,8 @@
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { useCallback, useEffect, useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 import { Engine } from "tsparticles-engine";
+import { StyledParticles } from "./styles";
+import { loadFull } from "tsparticles";
 
 const ParticlesContainer = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -9,15 +10,16 @@ const ParticlesContainer = () => {
   }, []);
 
   const particlesLoaded = useCallback(async () => {}, []);
+  const [localDarkMode, setLocalDarkMode] = useState(false);
+
+  const { darkMode } = useTheme();
+
+  useEffect(() => {
+    setLocalDarkMode(darkMode);
+  }, [darkMode]);
 
   return (
-    <Particles
-      style={{
-        width: "1280px",
-        height: "100%",
-        position: "absolute",
-        transform: "translateZ(0)",
-      }}
+    <StyledParticles
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
@@ -56,8 +58,8 @@ const ParticlesContainer = () => {
             value: "#e68e2e",
           },
           links: {
-            color: "#f5d393",
-            distance: 150,
+            color: localDarkMode ? "#f5deb5" : "#1b1b1b",
+            distance: 160,
             enable: true,
             opacity: 0.5,
             width: 1,
@@ -94,7 +96,7 @@ const ParticlesContainer = () => {
         },
         detectRetina: true,
       }}
-    ></Particles>
+    ></StyledParticles>
   );
 };
 

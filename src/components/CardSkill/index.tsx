@@ -1,11 +1,11 @@
-import { useTheme } from '../../context/ThemeContext';
-import postgres from '../../assets/postgresql.png';
-import reactjs from '../../assets/reactjs.png';
-import nodejs from '../../assets/nodejs.png';
-import { useEffect, useState } from 'react';
-import figma from '../../assets/figma.png';
-import siwft from '../../assets/swift.png';
-import TitleSkills from '../TitleSkills';
+import { useTheme } from "../../context/ThemeContext";
+import postgres from "../../assets/postgresql.png";
+import reactjs from "../../assets/reactjs.png";
+import nodejs from "../../assets/nodejs.png";
+import { useEffect, useState } from "react";
+import figma from "../../assets/figma.png";
+import siwft from "../../assets/swift.png";
+import TitleSkills from "../TitleSkills";
 import {
   TextDescription,
   ImageContainer,
@@ -13,15 +13,15 @@ import {
   Container,
   Image,
   Title,
-} from './styles';
+} from "./styles";
 
 const skillsData = [
-  { src: reactjs, alt: 'React Native', description: 'React Native' },
-  { src: nodejs, alt: 'NodeJS', description: 'NodeJS' },
-  { src: siwft, alt: 'Swift', description: 'Swift' },
-  { src: postgres, alt: 'PostgreSQL', description: 'PostgreSQL' },
-  { src: reactjs, alt: 'ReactJS', description: 'ReactJS' },
-  { src: figma, alt: 'Figma', description: 'Figma' },
+  { src: reactjs, alt: "React Native", description: "React Native" },
+  { src: nodejs, alt: "NodeJS", description: "NodeJS" },
+  { src: siwft, alt: "Swift", description: "Swift" },
+  { src: postgres, alt: "PostgreSQL", description: "PostgreSQL" },
+  { src: reactjs, alt: "ReactJS", description: "ReactJS" },
+  { src: figma, alt: "Figma", description: "Figma" },
 ];
 
 export default function CardSkill() {
@@ -33,15 +33,16 @@ export default function CardSkill() {
   }, [darkMode]);
 
   return (
-    <div style={{ marginTop: '30%' }} >
+    <div style={{ marginTop: "30%" }}>
       <Title id="skills">Skills</Title>
       <Container>
-
         <DataContainer>
           {skillsData.map((skill, index) => (
             <ImageContainer darkMode={localDarkMode} key={index}>
               <Image src={skill.src} alt={skill.alt} />
-              <TextDescription darkMode={localDarkMode}>{skill.description}</TextDescription>
+              <TextDescription darkMode={localDarkMode}>
+                {skill.description}
+              </TextDescription>
             </ImageContainer>
           ))}
         </DataContainer>
@@ -49,5 +50,5 @@ export default function CardSkill() {
         <TitleSkills />
       </Container>
     </div>
-  )
+  );
 }
