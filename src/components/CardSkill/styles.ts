@@ -15,11 +15,11 @@ export const Container = styled.div`
 
 export const DataContainer = styled.div`
   display: flex;
-  flex-wrap: wrap; 
-  
+  flex-wrap: wrap;
+
   ${mobileMediaQuery} {
     column-count: 2;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
   }
@@ -28,8 +28,9 @@ export const DataContainer = styled.div`
 export const ImageContainer = styled.div<{ darkMode: boolean }>`
   display: flex;
   flex-direction: column;
-  background-color: ${(props) => (props.darkMode ? '#231F20' : '#F5F5F5')};
-  border: 0.5px solid ${(props) => (props.darkMode ? colors.primary.s400 : '#3b3a3a')};
+  background-color: ${(props) => (props.darkMode ? "#121214" : "#F5F5F5")};
+  border: 0.5px solid
+    ${(props) => (props.darkMode ? colors.primary.s400 : "#3b3a3a")};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   width: 190px;
@@ -39,7 +40,7 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
   transition: transform 0.3s ease-in-out;
   margin: 20px 20px 20px 0;
   &:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
     cursor: pointer;
   }
 
@@ -47,18 +48,20 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
     width: 45%;
     height: 150px;
     margin: 0 auto;
-    margin-bottom: 10px ;
-;
-    border: 0.5px solid ${(props) => (props.darkMode ? '#F58400' : '#3b3a3a')};
-
+    margin-bottom: 10px;
+    border: 0.5px solid ${(props) => (props.darkMode ? "#F58400" : "#3b3a3a")};
   }
 `;
 
 export const Title = styled.p`
   font-size: 2.6rem;
-  background: linear-gradient(to top,  ${colors.primary.s300}, ${colors.primary.s400});
+  background: linear-gradient(
+    to top,
+    ${colors.primary.s300},
+    ${colors.primary.s400}
+  );
   -webkit-background-clip: text;
-  background-clip: text; 
+  background-clip: text;
   color: transparent;
   font-weight: 800;
   text-align: start;
@@ -73,15 +76,19 @@ export const Title = styled.p`
 
 export const SubTitle = styled.p`
   font-size: 30px;
-  background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
-  -webkit-background-clip: text; 
-  background-clip: text; 
-  color: transparent; 
+  background: linear-gradient(
+    to top,
+    ${colors.primary.s400},
+    ${colors.primary.s300}
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-weight: 800;
   text-align: start;
-   max-width: 700px;
+  max-width: 700px;
 
-   ${mobileMediaQuery} {
+  ${mobileMediaQuery} {
     font-size: 1.3rem; /* Reduza o tamanho da fonte para dispositivos móveis */
     text-align: center; /* Centralize o texto em dispositivos móveis */
   }
@@ -89,14 +96,14 @@ export const SubTitle = styled.p`
 
 export const Image = styled.img`
   width: 35%;
-  height: auto; 
-  margin: 5px auto ;
+  height: auto;
+  margin: 5px auto;
   object-fit: cover;
- justify-content: center;
+  justify-content: center;
 `;
 
 export const TextDescription = styled.p<{ darkMode: boolean }>`
-  color: ${(props) => (props.darkMode ? '#fff' : '#000')};
+  color: ${(props) => (props.darkMode ? "#fff" : "#000")};
   align-content: flex-end;
   line-height: 1.7;
   font-size: 1.1rem;
@@ -106,4 +113,3 @@ export const TextDescription = styled.p<{ darkMode: boolean }>`
     //margin-top: 1.3rem;
   }
 `;
-

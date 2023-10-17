@@ -4,7 +4,6 @@ import colors from "../../styles/colors";
 
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
-
 export const pulseIcon = keyframes`
   0% {
     box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
@@ -56,7 +55,9 @@ export const pulseIcon = keyframes`
   }
 `;
 
-export const StyledFontAwesomeIcon = styled(FontAwesomeIcon) <{ darkMode: boolean }>`
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
+  darkMode: boolean;
+}>`
   width: 2rem;
   height: 2rem;
   margin-top: 50%;
@@ -78,20 +79,24 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon) <{ darkMode: boolea
     height: 35px;
     animation: none;
     border: none;
-    color: ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
+    color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   }
 `;
 
-
 export const VerticalLine = styled.div<{ darkMode: boolean }>`
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 4%;
   height: 100%;
-  background: linear-gradient(to top, ${colors.primary.s300}, ${colors.primary.s400});
-  
-  border-right: 4px solid ${(props) => (props.darkMode ? '#CECECE' : '#3b3a3a')};
+  background: linear-gradient(
+    to top,
+    ${colors.primary.s300},
+    ${colors.primary.s400}
+  );
+
+  border-right: 4px solid ${(props) => (props.darkMode ? "#CECECE" : "#3b3a3a")};
 
   ${mobileMediaQuery} {
     width: 100%; /* Preenche a largura da tela */
@@ -102,4 +107,3 @@ export const VerticalLine = styled.div<{ darkMode: boolean }>`
     border-right: none; /* Remove a borda à direita */
   }
 `;
-

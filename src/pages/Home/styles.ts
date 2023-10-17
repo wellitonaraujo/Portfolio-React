@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../styles/colors";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
@@ -19,24 +19,22 @@ export const ContainerDescription = styled.div`
 export const ContainerToggle = styled.div`
   display: none;
   ${mobileMediaQuery} {
-   display: block;
-
+    display: block;
   }
 `;
 
 export const Description = styled.div`
-   text-align: left;
-   margin: 0;
-   padding-left: 4rem;
+  text-align: left;
+  margin: 0;
+  padding-left: 4rem;
 
-   ${mobileMediaQuery} {
+  ${mobileMediaQuery} {
     padding: 0; /* Remove o espaçamento à esquerda */
-    margin-top: 1rem;
   }
 `;
 
 export const TextDescription = styled.p<{ darkMode: boolean }>`
-  color: ${(props) => (props.darkMode ? '#CECECE' : '#1c1c1c')};
+  color: ${(props) => (props.darkMode ? "#CECECE" : "#1c1c1c")};
   align-content: flex-end;
   line-height: 1.7;
   font-size: 1.1rem;
@@ -53,7 +51,6 @@ export const Line = styled.span`
   margin: 10px auto;
   border-radius: 0 0 0 5px;
   ${mobileMediaQuery} {
-  
     width: 50%; /* Reduz a largura da linha */
     border-bottom: 2px solid ${colors.primary.s300};
   }
@@ -61,7 +58,7 @@ export const Line = styled.span`
 
 export const Welliton = styled.p<{ darkMode: boolean }>`
   font-size: 3rem;
-  color: ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
+  color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   margin: 0 auto;
   font-weight: 800;
 
@@ -71,33 +68,40 @@ export const Welliton = styled.p<{ darkMode: boolean }>`
 `;
 
 export const StyledAmpersand = styled.span<{ darkMode: boolean }>`
-  color: ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
+  color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   font-weight: bold;
   white-space: pre-line;
 `;
 
 export const Title = styled.p`
   font-size: 4rem;
-  background: linear-gradient(to top,  ${colors.primary.s300}, ${colors.primary.s400});
-  -webkit-background-clip: text; 
-  background-clip: text; 
+  background: linear-gradient(
+    to top,
+    ${colors.primary.s300},
+    ${colors.primary.s400}
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   margin: 0;
   font-weight: 800;
-  
+
   ${mobileMediaQuery} {
     font-size: 1.4rem; /* Reduz o tamanho da fonte */
     margin-top: 1.3rem;
-    
   }
 `;
 
 export const TitleContact = styled.p`
   margin-top: 200px;
   font-size: 2.6rem;
-  background: linear-gradient(to top,  ${colors.primary.s400}, ${colors.primary.s300});
-  -webkit-background-clip: text; 
-  background-clip: text; 
+  background: linear-gradient(
+    to top,
+    ${colors.primary.s400},
+    ${colors.primary.s300}
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   text-align: left;
   font-weight: 800;
@@ -130,17 +134,17 @@ export const pulse = keyframes`
 `;
 
 export const Image = styled.img<{ darkMode: boolean }>`
-  width: 30%; 
+  width: 30%;
   height: 30%;
   border-radius: 50%;
-  border: 8px solid ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};;
+  border: 8px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   animation: ${pulse} 3s infinite;
 
   ${mobileMediaQuery} {
     width: 40%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
-    border: 4px solid ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};;
-    animation: none
+    border: 4px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
+    animation: none;
   }
 `;
 
@@ -150,7 +154,11 @@ export const VerticalLine = styled.div`
   left: 0;
   width: 4%;
   height: 100%;
-  background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
+  background: linear-gradient(
+    to top,
+    ${colors.primary.s400},
+    ${colors.primary.s300}
+  );
   border-right: 5px solid ${colors.white};
 
   ${mobileMediaQuery} {
@@ -226,7 +234,9 @@ export const pulseIcon = keyframes`
   }
 `;
 
-export const StyledFontAwesomeIcon = styled(FontAwesomeIcon) <{ darkMode: boolean }>`
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
+  darkMode: boolean;
+}>`
   width: 2rem;
   height: 2rem;
   margin-top: 50%;
@@ -244,11 +254,11 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon) <{ darkMode: boolea
 
   ${mobileMediaQuery} {
     margin: 1rem 1rem;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     animation: none;
     border: none;
-    color: ${(props) => (props.darkMode ? '#fff' : '#3b3a3a')};
+    color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   }
 `;
 
@@ -256,18 +266,19 @@ export const ContainerSolcial = styled.div`
   display: none;
 
   ${mobileMediaQuery} {
-    font-size: 10px;
-    color: ${props => props.color || colors.white};
-    margin-top: 1px;
-    display: block;
+    color: ${(props) => props.color || colors.white};
+    display: flex;
     flex-direction: row;
     width: 100%;
-}
+    justify-content: flex-end;
+  }
 `;
 
-export const AnimatedTextDescriptionWrapper = styled.div<{ isVisible: boolean }>`
-  opacity: ${(props) => (props.isVisible ? '1' : '0')};
-  transform: translateY(${(props) => (props.isVisible ? '0' : '20px')});
+export const AnimatedTextDescriptionWrapper = styled.div<{
+  isVisible: boolean;
+}>`
+  opacity: ${(props) => (props.isVisible ? "1" : "0")};
+  transform: translateY(${(props) => (props.isVisible ? "0" : "20px")});
   transition: opacity 4s ease, transform 1s ease;
 `;
 
@@ -277,7 +288,11 @@ export const ScrollToTopButton = styled.button`
   height: 3.5rem;
   bottom: 40px;
   right: 40px;
-  background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});;
+  background: linear-gradient(
+    to top,
+    ${colors.primary.s400},
+    ${colors.primary.s300}
+  );
   color: #fff;
   font-weight: 700;
   padding: 10px;
@@ -311,8 +326,8 @@ export const Arrow = styled.img`
 `;
 
 export const FooterWrapper = styled.footer<{ darkMode: boolean }>`
-  background-color: ${(props) => (props.darkMode ? '#242424' : '#CECECE')};
-  color: ${(props) => (props.darkMode ? '#CECECE' : '#231F20')};
+  background-color: ${(props) => (props.darkMode ? "#242424" : "#CECECE")};
+  color: ${(props) => (props.darkMode ? "#CECECE" : "#231F20")};
   padding: 20px 0;
   text-align: center;
   width: 100%;

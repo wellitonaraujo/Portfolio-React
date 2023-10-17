@@ -2,7 +2,6 @@ import { useTheme } from "../../context/ThemeContext";
 import { NavItem, NavUl, Navbar } from "./styles";
 import { useEffect, useState } from "react";
 import Toggle from "../Toggle";
-import ParticlesContainer from "../ParticlesContainer";
 
 type SectionId = "sobre" | "skills" | "contatos";
 
@@ -27,12 +26,12 @@ export default function NavBar() {
 
   return (
     <>
-      <ParticlesContainer />
       <Navbar>
         <NavUl>
-          <div style={{ marginRight: "70px" }}>
+          <li style={{ paddingRight: 100 }}>
             <Toggle />
-          </div>
+          </li>
+
           <NavItem
             darkMode={localDarkMode}
             className={activeNavItem === "sobre" ? "active" : ""}

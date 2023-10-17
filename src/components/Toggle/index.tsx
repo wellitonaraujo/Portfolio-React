@@ -1,17 +1,15 @@
+import { ToggleInput, ToggleSlider, ToggleSwitch } from "./styles";
 import { useTheme } from "../../context/ThemeContext";
-import DarkModeToggle from "react-dark-mode-toggle";
 import React from "react";
 
 const Toggle: React.FC = () => {
-  const { toggleTheme, darkMode } = useTheme();
+  const { toggleTheme } = useTheme();
 
   return (
-    <DarkModeToggle
-      onChange={toggleTheme}
-      checked={darkMode}
-      size={80}
-      speed={2}
-    />
+    <ToggleSwitch>
+      <ToggleInput type="checkbox" onClick={toggleTheme} />
+      <ToggleSlider />
+    </ToggleSwitch>
   );
 };
 

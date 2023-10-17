@@ -15,12 +15,16 @@ export const ToggleSlider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300});
+  background: linear-gradient(
+    to top,
+    ${colors.primary.s400},
+    ${colors.primary.s200}
+  );
   border-radius: 34px;
 
   &:before {
     position: absolute;
-    content: '';
+    content: "";
     height: 26px;
     width: 26px;
     left: 4px;
