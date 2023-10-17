@@ -1,4 +1,5 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import ParticlesContainer from "../../components/ParticlesContainer";
 import { AnimatedText } from "../../components/AnimatedText";
 import { useTheme } from "../../context/ThemeContext";
 import CardSkill from "../../components/CardSkill";
@@ -24,7 +25,6 @@ import {
   Title,
   Line,
 } from "./styles";
-import ParticlesContainer from "../../components/ParticlesContainer";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
