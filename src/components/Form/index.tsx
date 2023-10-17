@@ -1,9 +1,9 @@
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FormEvent, useEffect, useState } from 'react';
-import { useTheme } from '../../context/ThemeContext';
-import { StyledFontAwesomeIcon } from './styles';
-import emailjs from '@emailjs/browser';
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FormEvent, useEffect, useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
+import { StyledFontAwesomeIcon } from "./styles";
+import emailjs from "@emailjs/browser";
 import {
   ContainerContact,
   ContainerIcons,
@@ -16,7 +16,7 @@ import {
   Input,
   Title,
   Link,
-} from './styles';
+} from "./styles";
 
 type Errors = {
   nome: string | null;
@@ -25,9 +25,9 @@ type Errors = {
 };
 
 const Form = () => {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [mensagem, setMensagem] = useState('');
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [mensagem, setMensagem] = useState("");
   const [errors, setErrors] = useState<Errors>({
     nome: null,
     email: null,
@@ -41,15 +41,17 @@ const Form = () => {
     setLocalDarkMode(darkMode);
   }, [darkMode]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
 
     // Atualize o estado com os valores dos campos de entrada
-    if (name === 'nome') {
+    if (name === "nome") {
       setNome(value);
-    } else if (name === 'email') {
+    } else if (name === "email") {
       setEmail(value);
-    } else if (name === 'mensagem') {
+    } else if (name === "mensagem") {
       setMensagem(value);
     }
   };
@@ -62,15 +64,15 @@ const Form = () => {
     };
 
     if (!nome.trim()) {
-      novosErros.nome = 'O campo Nome é obrigatório.';
+      novosErros.nome = "O campo Nome é obrigatório.";
     }
 
     if (!email.trim()) {
-      novosErros.email = 'O campo Email é obrigatório.';
+      novosErros.email = "O campo Email é obrigatório.";
     }
 
     if (!mensagem.trim()) {
-      novosErros.mensagem = 'O campo Mensagem é obrigatório.';
+      novosErros.mensagem = "O campo Mensagem é obrigatório.";
     }
 
     setErrors(novosErros);
@@ -82,24 +84,29 @@ const Form = () => {
 
     if (validarForm()) {
       emailjs
-        .sendForm('seu_servico_emailjs', 'seu_template_emailjs', e.currentTarget, 'seu_usuario_emailjs')
+        .sendForm(
+          "seu_servico_emailjs",
+          "seu_template_emailjs",
+          e.currentTarget,
+          "seu_usuario_emailjs"
+        )
         .then((response) => {
-          console.log('E-mail enviado com sucesso!', response);
+          console.log("E-mail enviado com sucesso!", response);
           // Lógica para mostrar uma mensagem de sucesso ao usuário
         })
         .catch((error) => {
-          console.error('Erro ao enviar e-mail:', error);
+          console.error("Erro ao enviar e-mail:", error);
           // Lógica para mostrar uma mensagem de erro ao usuário
         });
     }
   };
 
-  const EmailAddress = 'welliton.araujo@uol.com.br';
-  const PhoneNumber = '5591985715267';
+  const EmailAddress = "welliton.araujo@uol.com.br";
+  const PhoneNumber = "5591985715267";
 
   return (
     <ContainerContact>
-      <FormContainer id='contatos'>
+      <FormContainer id="contatos">
         <form onSubmit={enviarEmail}>
           <FormGroup>
             <Label htmlFor="nome">Nome:</Label>
@@ -139,17 +146,18 @@ const Form = () => {
               required
             />
 
-            {errors.mensagem && <span className="error">{errors.mensagem}</span>}
+            {errors.mensagem && (
+              <span className="error">{errors.mensagem}</span>
+            )}
           </FormGroup>
           <Button disabled>Enviar</Button>
         </form>
-
       </FormContainer>
 
-      <Description id='contatos'>
+      <Description id="contatos">
         {/*<Title> Teresina, PI - Brasil </Title>*/}
 
-        <ContainerIcons >
+        <ContainerIcons>
           <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faEnvelope} />
           <Link href={`mailto:${EmailAddress}`}>
             <Title>{EmailAddress}</Title>

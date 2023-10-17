@@ -1,6 +1,6 @@
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from "../../context/ThemeContext";
 import DarkModeToggle from "react-dark-mode-toggle";
-import React from 'react';
+import React from "react";
 
 const Toggle: React.FC = () => {
   const { toggleTheme, darkMode } = useTheme();
@@ -10,7 +10,7 @@ const Toggle: React.FC = () => {
       onChange={toggleTheme}
       checked={darkMode}
       size={80}
-      speed={3}
+      speed={2}
     />
   );
 };
