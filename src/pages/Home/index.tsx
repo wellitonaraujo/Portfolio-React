@@ -1,14 +1,13 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { useInView } from 'react-intersection-observer';
-import { useTheme } from '../../context/ThemeContext';
-import CardSkill from '../../components/CardSkill';
-import Toggle from '../../components/isDarkMode';
-import profile from '../../assets/profile.jpeg'
-import { useEffect, useState } from 'react';
-import arrow from '../../assets/arrow.png'
-import Form from '../../components/Form';
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { AnimatedText } from "../../components/AnimatedText";
+import { useTheme } from "../../context/ThemeContext";
+import CardSkill from "../../components/CardSkill";
+import profile from "../../assets/profile.jpeg";
+import Toggle from "../../components/Toggle";
+import { useEffect, useState } from "react";
+import arrow from "../../assets/arrow.png";
+import Form from "../../components/Form";
 import {
-  AnimatedTextDescriptionWrapper,
   StyledFontAwesomeIcon,
   ContainerDescription,
   ScrollToTopButton,
@@ -24,19 +23,8 @@ import {
   Image,
   Title,
   Line,
-} from './styles';
-
-const AnimatedTextDescription = ({ children }: React.PropsWithChildren) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Garante que a animação ocorra apenas uma vez quando o elemento entra no viewport.
-  });
-
-  return (
-    <AnimatedTextDescriptionWrapper ref={ref} isVisible={inView}>
-      {children}
-    </AnimatedTextDescriptionWrapper>
-  );
-};
+} from "./styles";
+import ParticlesContainer from "../../components/ParticlesContainer";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -59,22 +47,23 @@ export default function Home() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 
   return (
     <>
       <ContainerDescription>
-        <Image darkMode={localDarkMode} src={profile} alt="Eu" id='sobre' />
+        <Image darkMode={localDarkMode} src={profile} alt="Eu" id="sobre" />
+        <ParticlesContainer />
         <ContainerSolcial>
-          <a href='https://github.com/wellitonaraujo' target="_blank">
+          <a href="https://github.com/wellitonaraujo" target="_blank">
             <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faGithub} />
           </a>
 
-          <a href='https://www.linkedin.com/in/wellitonaraujo/' target="_blank">
+          <a href="https://www.linkedin.com/in/wellitonaraujo/" target="_blank">
             <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faLinkedin} />
           </a>
         </ContainerSolcial>
@@ -84,18 +73,37 @@ export default function Home() {
             <Toggle />
           </ContainerToggle>
 
-          <TextDescription darkMode={localDarkMode} children='Olá, sou o' style={{ margin: 0, marginTop: '20px' }} />
+          <TextDescription
+            darkMode={localDarkMode}
+            children="Olá, sou o"
+            style={{ margin: 0, marginTop: "20px" }}
+          />
           <Welliton darkMode={localDarkMode}>Welliton Araujo</Welliton>
 
-          <AnimatedTextDescription>
-            <Title>Desenvolvedor Mobile <StyledAmpersand darkMode={localDarkMode}>&</StyledAmpersand> Front-end </Title>
-          </AnimatedTextDescription>
+          <AnimatedText>
+            <Title>
+              Desenvolvedor Mobile{" "}
+              <StyledAmpersand darkMode={localDarkMode}>&</StyledAmpersand>{" "}
+              Front-end{" "}
+            </Title>
+          </AnimatedText>
 
-          <AnimatedTextDescription>
-            <TextDescription darkMode={localDarkMode}><Line>Com anos de experiência</Line> do mercado de desenvolvimento de software e apaixonado por tecnologia, busco aperfeiçoamento profissional diariamente.</TextDescription>
-            <TextDescription darkMode={localDarkMode}><Line>Sólida experiência</Line> em todo ciclo de desenvolvimento mobile, da prototipação, arquitetura, desenvolvimento, testes e deploy.</TextDescription>
-            <TextDescription darkMode={localDarkMode}><Line>Vivência</Line> em desenvolvimento front-end, utilizando as principais tecnologias do mercado.</TextDescription>
-          </AnimatedTextDescription>
+          <AnimatedText>
+            <TextDescription darkMode={localDarkMode}>
+              <Line>Com anos de experiência</Line> do mercado de desenvolvimento
+              de software e apaixonado por tecnologia, busco aperfeiçoamento
+              profissional diariamente.
+            </TextDescription>
+            <TextDescription darkMode={localDarkMode}>
+              <Line>Sólida experiência</Line> em todo ciclo de desenvolvimento
+              mobile, da prototipação, arquitetura, desenvolvimento, testes e
+              deploy.
+            </TextDescription>
+            <TextDescription darkMode={localDarkMode}>
+              <Line>Vivência</Line> em desenvolvimento front-end, utilizando as
+              principais tecnologias do mercado.
+            </TextDescription>
+          </AnimatedText>
         </Description>
 
         {showScrollButton && (
@@ -105,18 +113,19 @@ export default function Home() {
         )}
       </ContainerDescription>
 
-      <AnimatedTextDescription>
+      <AnimatedText>
         <CardSkill />
-      </AnimatedTextDescription>
+      </AnimatedText>
 
-      <AnimatedTextDescription>
+      <AnimatedText>
         <TitleContact>Contato</TitleContact>
+
         <Form />
-      </AnimatedTextDescription>
+      </AnimatedText>
 
       <FooterWrapper darkMode={localDarkMode}>
         Welliton Araújo - Todos os direitos reservados
       </FooterWrapper>
     </>
-  )
+  );
 }

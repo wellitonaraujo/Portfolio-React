@@ -1,14 +1,15 @@
-import { createGlobalStyle } from 'styled-components';
-import colors from './styles/colors';
+import { createGlobalStyle } from "styled-components";
+import colors from "./styles/colors";
 
 export const GlobalStyle = createGlobalStyle<{ darkMode: boolean }>`
   :root {
     line-height: 1.5;
-    background: ${props => props.darkMode
-    ? `linear-gradient(to top,${colors.black}, ${colors.grey.s500})`
-    : `linear-gradient(to top, ${colors.grey.s100}, ${colors.grey.s100})`
+    background: ${(props) =>
+      props.darkMode
+        ? `linear-gradient(to top,${colors.black}, ${colors.grey.s500})`
+        : `linear-gradient(to top, ${colors.grey.s100}, ${colors.grey.s100})`};
 
-  }; 
+      transition: background 1s;
   
     margin: 0 auto;
     text-align: center;
@@ -26,7 +27,9 @@ export const GlobalStyle = createGlobalStyle<{ darkMode: boolean }>`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to top, ${colors.primary.s400}, ${colors.primary.s300}); 
+    background: linear-gradient(to top, ${colors.primary.s400}, ${
+  colors.primary.s300
+}); 
     border-radius: 10px;
   }
   }
