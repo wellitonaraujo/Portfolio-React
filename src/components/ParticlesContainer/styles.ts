@@ -8,6 +8,7 @@ export const StyledParticles = styled(Particles)`
   height: 100%;
   position: absolute;
   transform: translateZ(0);
+  z-index: -100;
 
   ${mobileMediaQuery} {
     max-width: 100%;
