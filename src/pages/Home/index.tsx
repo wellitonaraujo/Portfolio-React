@@ -105,13 +105,11 @@ export default function Home() {
           </AnimatedText>
         </Description>
 
-        {showScrollButton && (
-          <Link href={`https://wa.me/5591985715267`} target="_blank">
-            <ScrollToTopButton onClick={scrollToTop}>
-              <Arrow icon={faWhatsapp} />
-            </ScrollToTopButton>
-          </Link>
-        )}
+        <Link href={`https://wa.me/5591985715267`} target="_blank">
+          <ScrollToTopButton onClick={scrollToTop}>
+            <Arrow icon={faWhatsapp} />
+          </ScrollToTopButton>
+        </Link>
       </ContainerDescription>
 
       <AnimatedText>
