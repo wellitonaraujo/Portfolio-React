@@ -39,6 +39,7 @@ export default function Home() {
 
   const handleScroll = () => {
     setShowScrollButton(true);
+    showScrollButton;
   };
 
   const scrollToTop = () => {};
