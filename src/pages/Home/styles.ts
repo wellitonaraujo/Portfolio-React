@@ -193,43 +193,43 @@ export const pulseIcon = keyframes`
 
   10% {
     box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
-                0 0 0 10px rgba(245, 132, 0, 0.10),
-                0 0 0 20px rgba(245, 132, 0, 0.05),
-                0 0 10px rgba(0, 0, 0, 0.6);
+                0 0 0 1px rgba(245, 132, 0, 0.10),
+                0 0 0 2px rgba(245, 132, 0, 0.05),
+                0 0 1px rgba(0, 0, 0, 0.6);
   }
 
   30% {
     box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
-                0 0 0 10px rgba(245, 132, 0, 0.10),
-                0 0 0 20px rgba(245, 132, 0, 0.05),
-                0 0 10px rgba(0, 0, 0, 0.6);
+                0 0 0 1px rgba(245, 132, 0, 0.10),
+                0 0 0 2px rgba(245, 132, 0, 0.05),
+                0 0 1px rgba(0, 0, 0, 0.6);
   }
 
   50% {
     box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
-                0 0 0 10px rgba(245, 132, 0, 0.10),
-                0 0 0 20px rgba(245, 132, 0, 0.05),
-                0 0 10px rgba(0, 0, 0, 0.6);
+                0 0 0 1px rgba(245, 132, 0, 0.10),
+                0 0 0 2px rgba(245, 132, 0, 0.05),
+                0 0 1px rgba(0, 0, 0, 0.6);
   }
 
   70% {
     box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
-                0 0 0 10px rgba(245, 132, 0, 0.05),
-                0 0 0 15px rgba(245, 132, 0, 0.02),
+                0 0 0 1px rgba(245, 132, 0, 0.05),
+                0 0 0 1px rgba(245, 132, 0, 0.02),
                 0 0 2px rgba(0, 0, 0, 0.5);
   }
 
   80% {
     box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
-                0 0 0 10px rgba(245, 132, 0, 0.05),
-                0 0 0 15px rgba(245, 132, 0, 0.02),
+                0 0 0 1px rgba(245, 132, 0, 0.05),
+                0 0 0 1px rgba(245, 132, 0, 0.02),
                 0 0 2px rgba(0, 0, 0, 0.5);
   }
 
   100% {
     box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
-                0 0 0 10px rgba(245, 132, 0, 0.05),
-                0 0 0 15px rgba(245, 132, 0, 0.02),
+                0 0 0 1px rgba(245, 132, 0, 0.05),
+                0 0 0 1px rgba(245, 132, 0, 0.02),
                 0 0 2px rgba(0, 0, 0, 0.5);
   }
 `;
@@ -239,12 +239,12 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
 }>`
   width: 2rem;
   height: 2rem;
-  margin-top: 50%;
+  margin-top: 100%;
   cursor: pointer;
   border-radius: 50%;
   border: 1px solid ${colors.white};
   transition: transform 0.3s ease;
-  padding: 10%;
+  padding: 25%;
   color: ${colors.white};
   animation: ${pulseIcon} 5s infinite;
 
@@ -263,7 +263,10 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
 `;
 
 export const ContainerSolcial = styled.div`
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 4%;
 
   ${mobileMediaQuery} {
     color: ${(props) => props.color || colors.white};

@@ -5,54 +5,15 @@ import colors from "../../styles/colors";
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
 export const pulseIcon = keyframes`
-  0% {
-    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
-                0 0 0 5px rgba(245, 132, 0, 0.05),
-                0 0 0 10px rgba(245, 132, 0, 0.02),
-                0 0 5px rgba(0, 0, 0, 0.5);
-  }
-
-  10% {
-    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
-                0 0 0 10px rgba(245, 132, 0, 0.10),
-                0 0 0 20px rgba(245, 132, 0, 0.05),
-                0 0 10px rgba(0, 0, 0, 0.6);
-  }
-
-  30% {
-    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
-                0 0 0 10px rgba(245, 132, 0, 0.10),
-                0 0 0 20px rgba(245, 132, 0, 0.05),
-                0 0 10px rgba(0, 0, 0, 0.6);
-  }
-
-  50% {
-    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
-                0 0 0 10px rgba(245, 132, 0, 0.10),
-                0 0 0 20px rgba(245, 132, 0, 0.05),
-                0 0 10px rgba(0, 0, 0, 0.6);
-  }
-
-  70% {
-    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
-                0 0 0 10px rgba(245, 132, 0, 0.05),
-                0 0 0 15px rgba(245, 132, 0, 0.02),
-                0 0 2px rgba(0, 0, 0, 0.5);
-  }
-
-  80% {
-    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
-                0 0 0 10px rgba(245, 132, 0, 0.05),
-                0 0 0 15px rgba(245, 132, 0, 0.02),
-                0 0 2px rgba(0, 0, 0, 0.5);
-  }
-
-  100% {
-    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
-                0 0 0 10px rgba(245, 132, 0, 0.05),
-                0 0 0 15px rgba(245, 132, 0, 0.02),
-                0 0 2px rgba(0, 0, 0, 0.5);
-  }
+0% {
+  transform: scale(1);
+}
+50% {
+  transform: scale(1.1);
+}
+100% {
+  transform: scale(1);
+}
 `;
 
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
@@ -63,11 +24,10 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
   margin-top: 50%;
   cursor: pointer;
   border-radius: 50%;
-  border: 1px solid ${colors.white};
+  border: 1px solid white;
   transition: transform 0.3s ease;
   padding: 10%;
-  color: ${colors.white};
-  animation: ${pulseIcon} 5s infinite;
+  color: white;
 
   &:hover {
     transform: scale(1.1);
@@ -88,7 +48,7 @@ export const VerticalLine = styled.div<{ darkMode: boolean }>`
   z-index: 100;
   top: 0;
   left: 0;
-  width: 4%;
+  width: 3%;
   height: 100%;
   background: linear-gradient(
     to top,

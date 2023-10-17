@@ -56,7 +56,13 @@ export default function Home() {
   return (
     <>
       <ContainerDescription>
-        <Image darkMode={localDarkMode} src={profile} alt="Eu" id="sobre" />
+        <Image
+          darkMode={localDarkMode}
+          src={profile}
+          alt="Eu"
+          id="sobre"
+          loading="lazy"
+        />
 
         <ParticlesContainer />
 
