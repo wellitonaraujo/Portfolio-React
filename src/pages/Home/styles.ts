@@ -287,43 +287,37 @@ export const AnimatedTextDescriptionWrapper = styled.div<{
 
 export const ScrollToTopButton = styled.button`
   position: fixed;
-  width: 3.5rem;
-  height: 3.5rem;
-  bottom: 40px;
-  right: 40px;
-  background: linear-gradient(
-    to top,
-    ${colors.primary.s400},
-    ${colors.primary.s300}
-  );
-  color: #fff;
-  font-weight: 700;
+  width: 4rem;
+  height: 4rem;
+  bottom: 70px;
+  right: 70px;
+  background: #03d361;
   padding: 10px;
   border: none;
   border-radius: 50%;
-  opacity: 0.8;
   cursor: pointer;
   color: inherit;
   animation: ${pulseicon} 3s infinite;
+
   ${mobileMediaQuery} {
-    display: none;
+    display: block;
     width: 3.1rem;
     height: 3.1rem;
-    bottom: 15px;
-    right: 10px;
+    bottom: 30px;
+    right: 30px;
     padding: 8px;
-    font-size: 14px;
-    opacity: 0.4;
-    color: inherit;
   }
 `;
 
-export const Arrow = styled.img`
-  width: 20px;
-  height: 20px;
-
+export const Arrow = styled(FontAwesomeIcon)`
+  width: 2.7rem;
+  height: 2.7rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   ${mobileMediaQuery} {
-    width: 50%; /* Reduz o tamanho da imagem */
+    width: 80%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
   }
 `;
@@ -341,5 +335,24 @@ export const FooterWrapper = styled.footer<{ darkMode: boolean }>`
     font-size: 0.65rem;
     margin: 0;
     margin-top: 2rem;
+  }
+`;
+
+export const Link = styled.a`
+  font-size: 2rem;
+  background: linear-gradient(
+    to bottom,
+    ${colors.primary.s400},
+    ${colors.primary.s300}
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  font-weight: 800;
+
+  ${mobileMediaQuery} {
+    flex-direction: column; /* Altere para uma coluna em dispositivos móveis */
+    font-size: 1rem; /* Reduz o tamanho da fonte */
   }
 `;

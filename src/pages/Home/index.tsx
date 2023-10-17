@@ -1,12 +1,12 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import ParticlesContainer from "../../components/ParticlesContainer";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { AnimatedText } from "../../components/AnimatedText";
 import { useTheme } from "../../context/ThemeContext";
 import CardSkill from "../../components/CardSkill";
 import profile from "../../assets/profile.jpeg";
 import Toggle from "../../components/Toggle";
 import { useEffect, useState } from "react";
-import arrow from "../../assets/arrow.png";
 import Form from "../../components/Form";
 import {
   StyledFontAwesomeIcon,
@@ -24,6 +24,7 @@ import {
   Image,
   Title,
   Line,
+  Link,
 } from "./styles";
 
 export default function Home() {
@@ -37,19 +38,10 @@ export default function Home() {
   }, [darkMode]);
 
   const handleScroll = () => {
-    if (window.scrollY > 100) {
-      setShowScrollButton(true);
-    } else {
-      setShowScrollButton(false);
-    }
+    setShowScrollButton(true);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  const scrollToTop = () => {};
 
   window.addEventListener("scroll", handleScroll);
 
@@ -80,7 +72,11 @@ export default function Home() {
           <ContainerToggle>
             <Toggle />
           </ContainerToggle>
-          <TextDescription darkMode={localDarkMode} children="Olá, sou o" />
+          <TextDescription
+            darkMode={localDarkMode}
+            children="Olá, sou o"
+            style={{ margin: 0 }}
+          />
           <Welliton darkMode={localDarkMode}>Welliton Araujo</Welliton>
 
           <AnimatedText>
@@ -110,9 +106,11 @@ export default function Home() {
         </Description>
 
         {showScrollButton && (
-          <ScrollToTopButton onClick={scrollToTop}>
-            <Arrow src={arrow} />
-          </ScrollToTopButton>
+          <Link href={`https://wa.me/5591985715267`} target="_blank">
+            <ScrollToTopButton onClick={scrollToTop}>
+              <Arrow icon={faWhatsapp} />
+            </ScrollToTopButton>
+          </Link>
         )}
       </ContainerDescription>
 

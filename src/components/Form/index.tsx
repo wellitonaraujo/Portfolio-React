@@ -1,4 +1,3 @@
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FormEvent, useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
@@ -102,7 +101,6 @@ const Form = () => {
   };
 
   const EmailAddress = "welliton.araujo@uol.com.br";
-  const PhoneNumber = "5591985715267";
 
   return (
     <ContainerContact>
@@ -163,13 +161,6 @@ const Form = () => {
             <Title>{EmailAddress}</Title>
           </Link>
         </ContainerIcons>
-
-        <Link href={`https://wa.me/${PhoneNumber}`} target="_blank">
-          <ContainerIcons>
-            <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faWhatsapp} />
-            <Title>(91) 98571-5267</Title>
-          </ContainerIcons>
-        </Link>
       </Description>
     </ContainerContact>
   );
