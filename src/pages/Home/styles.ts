@@ -335,9 +335,9 @@ export const FooterWrapper = styled.footer<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     width: 100%;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     margin: 0;
-    margin-top: 2rem;
+    margin-bottom: 4rem;
   }
 `;
 
