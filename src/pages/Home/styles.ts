@@ -143,6 +143,7 @@ export const Image = styled.img<{ darkMode: boolean }>`
   animation: ${pulse} 3s infinite;
 
   ${mobileMediaQuery} {
+    margin-left: 10%;
     width: 40%; /* Reduz o tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
     border: 4px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
