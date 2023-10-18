@@ -14,7 +14,7 @@ export const Navbar = styled.nav`
 
   ${mobileMediaQuery} {
     position: fixed;
-    bottom: 15px;
+    bottom: 10px;
     background-color: #121214;
     width: 100%;
     text-align: center;
@@ -23,7 +23,7 @@ export const Navbar = styled.nav`
     flex-direction: row;
     border-radius: 9rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-top: solid 2px #3b3a3a;
+    border: solid 1px #585858;
   }
 `;
 
