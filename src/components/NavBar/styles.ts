@@ -15,11 +15,11 @@ export const Navbar = styled.nav`
   ${mobileMediaQuery} {
     position: fixed;
     bottom: 0;
-    background-color: #333;
+    background-color: #121214;
     width: 100%;
     text-align: center;
     justify-content: center;
-    height: 4rem;
+    height: 5rem;
     flex-direction: row;
     border-radius: 1.5rem 1.5rem 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
