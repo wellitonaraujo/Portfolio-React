@@ -9,7 +9,7 @@ export const ContainerDescription = styled.div`
   margin-top: 1rem;
   align-items: center;
   flex-direction: row;
-
+  margin-top: 15%;
   ${mobileMediaQuery} {
     flex-direction: column; /* Altera a direção para empilhamento */
     text-align: center; /* Centraliza o texto */
@@ -44,7 +44,7 @@ export const TextDescription = styled.p<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     font-size: 0.8rem; /* Reduz o tamanho da fonte */
-    padding-top: 1rem;
+    padding-top: ;
   }
 `;
 
