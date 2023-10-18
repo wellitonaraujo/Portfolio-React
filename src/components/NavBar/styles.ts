@@ -16,13 +16,13 @@ export const Navbar = styled.nav`
     position: fixed;
     bottom: 0;
     background-color: #333;
-    color: #fff;
     width: 100%;
     text-align: center;
     justify-content: center;
-    height: 3.5rem;
+    height: 4rem;
     flex-direction: row;
     border-radius: 1.5rem 1.5rem 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -68,6 +68,7 @@ export const NavItem = styled.li<{ darkMode: boolean }>`
   }
 
   ${mobileMediaQuery} {
+    color: ${(props) => (props.darkMode ? "#fff" : "#fff")};
     font-size: 0.9rem;
     border-bottom: none;
     margin: 2rem;
