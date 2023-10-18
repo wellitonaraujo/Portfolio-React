@@ -3,25 +3,27 @@ import { NavItem, NavUl, Navbar, UlToggle } from "./styles";
 import { useEffect, useState } from "react";
 import Toggle from "../Toggle";
 
-type SectionId = "sobre" | "skills" | "contatos";
+type NavItem = "sobre" | "skills" | "contatos";
 
 export default function NavBar() {
-  const [activeNavItem, setActiveNavItem] = useState<SectionId | null>("sobre");
-  const [localDarkMode, setLocalDarkMode] = useState(false);
+  const [activeNavItem, setActiveNavItem] = useState<string>("sobre");
+  const [localDarkMode, setLocalDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
+
+  const navItems: NavItem[] = ["sobre", "skills", "contatos"];
 
   useEffect(() => {
     setLocalDarkMode(darkMode);
   }, [darkMode]);
 
-  const handleNavItemClick = (sectionId: SectionId) => {
+  const handleNavItemClick = (sectionId: NavItem) => {
+    const scrollToOptions: ScrollToOptions = { behavior: "smooth" };
+
     sectionId === "sobre"
-      ? (window.scrollTo({ top: 0, behavior: "smooth" }),
-        setActiveNavItem(sectionId))
-      : (document
-          .getElementById(sectionId)
-          ?.scrollIntoView({ behavior: "smooth" }),
-        setActiveNavItem(sectionId));
+      ? window.scrollTo({ top: 0, ...scrollToOptions })
+      : document.getElementById(sectionId)?.scrollIntoView(scrollToOptions);
+
+    setActiveNavItem(sectionId);
   };
 
   return (
@@ -32,29 +34,16 @@ export default function NavBar() {
             <Toggle />
           </UlToggle>
 
-          <NavItem
-            darkMode={localDarkMode}
-            className={activeNavItem === "sobre" ? "active" : ""}
-            onClick={() => handleNavItemClick("sobre")}
-          >
-            Sobre
-          </NavItem>
-
-          <NavItem
-            darkMode={localDarkMode}
-            className={activeNavItem === "skills" ? "active" : ""}
-            onClick={() => handleNavItemClick("skills")}
-          >
-            Skills
-          </NavItem>
-
-          <NavItem
-            darkMode={localDarkMode}
-            className={activeNavItem === "contatos" ? "active" : ""}
-            onClick={() => handleNavItemClick("contatos")}
-          >
-            Contato
-          </NavItem>
+          {navItems.map((item) => (
+            <NavItem
+              key={item}
+              darkMode={localDarkMode}
+              className={activeNavItem === item ? "active" : ""}
+              onClick={() => handleNavItemClick(item)}
+            >
+              {item}
+            </NavItem>
+          ))}
         </NavUl>
       </Navbar>
     </>
