@@ -336,7 +336,7 @@ export const FooterWrapper = styled.footer<{ darkMode: boolean }>`
     width: 100%;
     font-size: 0.6rem;
     margin: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 `;
 
