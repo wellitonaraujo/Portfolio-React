@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../styles/colors";
-import textSizes from "../../styles/text-sizes";
 
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
@@ -14,14 +13,30 @@ export const Navbar = styled.nav`
   z-index: 100;
 
   ${mobileMediaQuery} {
-    display: none;
+    position: fixed;
+    bottom: 0;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    height: 3.5rem;
+    flex-direction: row;
+    border-radius: 1.5rem 1.5rem 0 0;
   }
 `;
 
 export const NavUl = styled.ul`
   display: flex;
-  font-size: ${textSizes.title.t1.fontSize};
   list-style: none;
+  padding: 0;
+  justify-content: center;
+
+  ${mobileMediaQuery} {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const NavItem = styled.li<{ darkMode: boolean }>`
@@ -50,5 +65,35 @@ export const NavItem = styled.li<{ darkMode: boolean }>`
     border-bottom: 5px solid ${colors.primary.s300};
     transform: scale(1.05);
     border-radius: 0 0 0 5px;
+  }
+
+  ${mobileMediaQuery} {
+    font-size: 0.9rem;
+    border-bottom: none;
+    margin: 2rem;
+    text-align: center;
+
+    &.active {
+      background: linear-gradient(
+        to bottom,
+        ${colors.primary.s400},
+        ${colors.primary.s300}
+      );
+      -webkit-background-clip: text; /* Aplica o gradiente ao texto */
+      background-clip: text; /* Aplica o gradiente ao texto */
+      color: transparent; /* Torna o texto transparente */
+      border-bottom: 2px solid ${colors.primary.s300};
+      transform: scale(1.05);
+      border-radius: 0 0 0 5px;
+    }
+  }
+`;
+
+export const UlToggle = styled.ul`
+  margin-right: 100px;
+
+  ${mobileMediaQuery} {
+    margin-right: 0;
+    display: none;
   }
 `;

@@ -44,7 +44,6 @@ export const TextDescription = styled.p<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     font-size: 0.8rem; /* Reduz o tamanho da fonte */
-    padding-top: ;
   }
 `;
 
@@ -306,8 +305,8 @@ export const ScrollToTopButton = styled.button`
     display: block;
     width: 3.1rem;
     height: 3.1rem;
-    bottom: 30px;
-    right: 30px;
+    bottom: 80px;
+    right: 20px;
     padding: 8px;
   }
 `;

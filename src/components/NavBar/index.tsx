@@ -1,5 +1,5 @@
 import { useTheme } from "../../context/ThemeContext";
-import { NavItem, NavUl, Navbar } from "./styles";
+import { NavItem, NavUl, Navbar, UlToggle } from "./styles";
 import { useEffect, useState } from "react";
 import Toggle from "../Toggle";
 
@@ -28,9 +28,9 @@ export default function NavBar() {
     <>
       <Navbar>
         <NavUl>
-          <li style={{ paddingRight: 100 }}>
+          <UlToggle>
             <Toggle />
-          </li>
+          </UlToggle>
 
           <NavItem
             darkMode={localDarkMode}
