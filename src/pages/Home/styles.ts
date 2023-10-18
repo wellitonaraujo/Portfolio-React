@@ -13,6 +13,7 @@ export const ContainerDescription = styled.div`
   ${mobileMediaQuery} {
     flex-direction: column; /* Altera a direção para empilhamento */
     text-align: center; /* Centraliza o texto */
+    width: 90%;
   }
 `;
 
@@ -29,7 +30,8 @@ export const Description = styled.div`
   padding-left: 4rem;
 
   ${mobileMediaQuery} {
-    padding: 0; /* Remove o espaçamento à esquerda */
+    padding: 0;
+    margin: 0 auto;
   }
 `;
 
@@ -263,10 +265,8 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
 `;
 
 export const ContainerSolcial = styled.div`
-  display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin-left: 4%;
+  margin-left: 50px;
 
   ${mobileMediaQuery} {
     color: ${(props) => props.color || colors.white};
@@ -298,6 +298,7 @@ export const ScrollToTopButton = styled.button`
   cursor: pointer;
   color: inherit;
   animation: ${pulseicon} 3s infinite;
+  z-index: 100;
 
   ${mobileMediaQuery} {
     display: block;
