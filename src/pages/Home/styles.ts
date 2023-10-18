@@ -246,12 +246,12 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
   margin-top: 100%;
   cursor: pointer;
   border-radius: 50%;
-  border: 1px solid ${colors.white};
+  border: 1px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   transition: transform 0.3s ease;
   padding: 25%;
   color: ${colors.white};
   animation: ${pulseIcon} 5s infinite;
-
+  color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   &:hover {
     transform: scale(1.1);
   }
