@@ -39,11 +39,11 @@ export const Description = styled.div`
 export const TextDescription = styled.p<{ darkMode: boolean }>`
   color: ${(props) => (props.darkMode ? "#CECECE" : "#1c1c1c")};
   align-content: flex-end;
-  line-height: 1.7;
+  line-height: 2;
   font-size: 1.1rem;
 
   ${mobileMediaQuery} {
-    font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    font-size: 0.8rem; /* Reduz o tamanho da fonte */
     padding-top: 1rem;
   }
 `;
