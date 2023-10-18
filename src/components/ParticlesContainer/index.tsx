@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 import { Engine } from "tsparticles-engine";
 import { StyledParticles } from "./styles";
 import { loadFull } from "tsparticles";
@@ -10,12 +10,12 @@ const ParticlesContainer = () => {
   }, []);
 
   const particlesLoaded = useCallback(async () => {}, []);
-  const [localDarkMode, setLocalDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const { darkMode } = useTheme();
 
   useEffect(() => {
-    setLocalDarkMode(darkMode);
+    setIsDarkMode(darkMode);
   }, [darkMode]);
 
   return (
@@ -58,7 +58,7 @@ const ParticlesContainer = () => {
             value: "#e68e2e",
           },
           links: {
-            color: localDarkMode ? "#f5deb5" : "#1b1b1b",
+            color: isDarkMode ? "#f5deb5" : "#1b1b1b",
             distance: 160,
             enable: true,
             opacity: 0.5,

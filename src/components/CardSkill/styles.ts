@@ -3,6 +3,10 @@ import colors from "../../styles/colors";
 
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
+export const SkillsSection = styled.div`
+  margin-top: 30%;
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;

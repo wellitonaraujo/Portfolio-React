@@ -1,4 +1,4 @@
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 import { NavItem, NavUl, Navbar, UlToggle } from "./styles";
 import { useEffect, useState } from "react";
 import Toggle from "../Toggle";
@@ -7,13 +7,13 @@ type NavItem = "sobre" | "skills" | "contatos";
 
 export default function NavBar() {
   const [activeNavItem, setActiveNavItem] = useState<string>("sobre");
-  const [localDarkMode, setLocalDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
 
   const navItems: NavItem[] = ["sobre", "skills", "contatos"];
 
   useEffect(() => {
-    setLocalDarkMode(darkMode);
+    setIsDarkMode(darkMode);
   }, [darkMode]);
 
   const handleNavItemClick = (sectionId: NavItem) => {
@@ -37,7 +37,7 @@ export default function NavBar() {
           {navItems.map((item) => (
             <NavItem
               key={item}
-              darkMode={localDarkMode}
+              darkMode={isDarkMode}
               className={activeNavItem === item ? "active" : ""}
               onClick={() => handleNavItemClick(item)}
             >

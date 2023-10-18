@@ -1,6 +1,6 @@
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FormEvent, useEffect, useState } from "react";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 import { StyledFontAwesomeIcon } from "./styles";
 import emailjs from "@emailjs/browser";
 import {
@@ -33,11 +33,11 @@ const Form = () => {
     mensagem: null,
   });
 
-  const [localDarkMode, setLocalDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const { darkMode } = useTheme();
 
   useEffect(() => {
-    setLocalDarkMode(darkMode);
+    setIsDarkMode(darkMode);
   }, [darkMode]);
 
   const handleInputChange = (
@@ -109,7 +109,7 @@ const Form = () => {
           <FormGroup>
             <Label htmlFor="nome">Nome:</Label>
             <Input
-              darkMode={localDarkMode}
+              darkMode={isDarkMode}
               type="text"
               id="nome"
               name="nome"
@@ -123,7 +123,7 @@ const Form = () => {
           <FormGroup>
             <Label htmlFor="email">Email:</Label>
             <Input
-              darkMode={localDarkMode}
+              darkMode={isDarkMode}
               id="email"
               name="email"
               value={email}
@@ -136,7 +136,7 @@ const Form = () => {
           <FormGroup>
             <Label htmlFor="mensagem">Mensagem:</Label>
             <TextArea
-              darkMode={localDarkMode}
+              darkMode={isDarkMode}
               id="mensagem"
               name="mensagem"
               value={mensagem}
@@ -156,7 +156,7 @@ const Form = () => {
         {/*<Title> Teresina, PI - Brasil </Title>*/}
 
         <ContainerIcons>
-          <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faEnvelope} />
+          <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faEnvelope} />
           <Link href={`mailto:${EmailAddress}`}>
             <Title>{EmailAddress}</Title>
           </Link>

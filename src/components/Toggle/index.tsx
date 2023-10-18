@@ -1,5 +1,5 @@
 import { ToggleInput, ToggleSlider, ToggleSwitch } from "./styles";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 import React from "react";
 
 const Toggle: React.FC = () => {

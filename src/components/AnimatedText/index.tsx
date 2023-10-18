@@ -1,5 +1,5 @@
-import { useInView } from "react-intersection-observer";
 import { AnimatedTextDescriptionWrapper } from "../../pages/Home/styles";
+import { useInView } from "react-intersection-observer";
 
 export const AnimatedText = ({ children }: React.PropsWithChildren) => {
   const [ref, inView] = useInView({

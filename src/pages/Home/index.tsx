@@ -2,7 +2,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import ParticlesContainer from "../../components/ParticlesContainer";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { AnimatedText } from "../../components/AnimatedText";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 import CardSkill from "../../components/CardSkill";
 import profile from "../../assets/profile.jpeg";
 import Toggle from "../../components/Toggle";
@@ -29,12 +29,12 @@ import {
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [localDarkMode, setLocalDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const { darkMode } = useTheme();
 
   useEffect(() => {
-    setLocalDarkMode(darkMode);
+    setIsDarkMode(darkMode);
   }, [darkMode]);
 
   const handleScroll = () => {
@@ -50,7 +50,7 @@ export default function Home() {
     <>
       <ContainerDescription>
         <Image
-          darkMode={localDarkMode}
+          darkMode={isDarkMode}
           src={profile}
           alt="Eu"
           id="sobre"
@@ -61,11 +61,11 @@ export default function Home() {
 
         <ContainerSolcial>
           <a href="https://github.com/wellitonaraujo" target="_blank">
-            <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faGithub} />
+            <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faGithub} />
           </a>
 
           <a href="https://www.linkedin.com/in/wellitonaraujo/" target="_blank">
-            <StyledFontAwesomeIcon darkMode={localDarkMode} icon={faLinkedin} />
+            <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faLinkedin} />
           </a>
         </ContainerSolcial>
 
@@ -74,32 +74,32 @@ export default function Home() {
             <Toggle />
           </ContainerToggle>
           <TextDescription
-            darkMode={localDarkMode}
+            darkMode={isDarkMode}
             children="Olá, sou o"
             style={{ margin: 0 }}
           />
-          <Welliton darkMode={localDarkMode}>Welliton Araujo</Welliton>
+          <Welliton darkMode={isDarkMode}>Welliton Araujo</Welliton>
 
           <AnimatedText>
             <Title>
               Desenvolvedor Mobile{" "}
-              <StyledAmpersand darkMode={localDarkMode}>&</StyledAmpersand>{" "}
+              <StyledAmpersand darkMode={isDarkMode}>&</StyledAmpersand>{" "}
               Front-end{" "}
             </Title>
           </AnimatedText>
 
           <AnimatedText>
-            <TextDescription darkMode={localDarkMode}>
+            <TextDescription darkMode={isDarkMode}>
               <Line>Com anos de experiência</Line> do mercado de desenvolvimento
               de software e apaixonado por tecnologia, busco aperfeiçoamento
               profissional diariamente.
             </TextDescription>
-            <TextDescription darkMode={localDarkMode}>
+            <TextDescription darkMode={isDarkMode}>
               <Line>Sólida experiência</Line> em todo ciclo de desenvolvimento
               mobile, da prototipação, arquitetura, desenvolvimento, testes e
               deploy.
             </TextDescription>
-            <TextDescription darkMode={localDarkMode}>
+            <TextDescription darkMode={isDarkMode}>
               <Line>Vivência</Line> em desenvolvimento front-end, utilizando as
               principais tecnologias do mercado.
             </TextDescription>
@@ -122,7 +122,7 @@ export default function Home() {
         <Form />
       </AnimatedText>
 
-      <FooterWrapper darkMode={localDarkMode}>
+      <FooterWrapper darkMode={isDarkMode}>
         Welliton Araújo - Todos os direitos reservados
       </FooterWrapper>
     </>

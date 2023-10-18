@@ -1,16 +1,16 @@
 import { VerticalLine } from "./styles";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 import { useEffect, useState } from "react";
 
 function Vertical() {
-  const [localDarkMode, setLocalDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const { darkMode } = useTheme();
 
   useEffect(() => {
-    setLocalDarkMode(darkMode);
+    setIsDarkMode(darkMode);
   }, [darkMode]);
 
-  return <VerticalLine darkMode={localDarkMode}></VerticalLine>;
+  return <VerticalLine darkMode={isDarkMode}></VerticalLine>;
 }
 
 export default Vertical;
