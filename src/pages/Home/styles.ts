@@ -6,7 +6,7 @@ const mobileMediaQuery = `@media (max-width: 767px)`;
 
 export const ContainerDescription = styled.div`
   display: flex;
-  margin-top: 10%;
+  margin-top: 1rem;
   align-items: center;
   flex-direction: row;
 
@@ -21,6 +21,7 @@ export const ContainerToggle = styled.div`
   display: none;
   ${mobileMediaQuery} {
     display: block;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -43,7 +44,7 @@ export const TextDescription = styled.p<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     font-size: 0.9rem; /* Reduz o tamanho da fonte */
-    margin-top: 1.3rem;
+    padding-top: 1rem;
   }
 `;
 
