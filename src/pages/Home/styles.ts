@@ -305,7 +305,7 @@ export const ScrollToTopButton = styled.button`
     display: block;
     width: 3.1rem;
     height: 3.1rem;
-    bottom: 100px;
+    bottom: 70px;
     right: 20px;
     padding: 8px;
   }

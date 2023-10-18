@@ -14,16 +14,16 @@ export const Navbar = styled.nav`
 
   ${mobileMediaQuery} {
     position: fixed;
-    bottom: 10px;
+    bottom: 0px;
     background-color: #121214;
     width: 100%;
     text-align: center;
     justify-content: center;
-    height: 4rem;
+    height: 3.5rem;
     flex-direction: row;
-    border-radius: 9rem;
+    border-radius: 1.5rem 1.5rem 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border: solid 1px #585858;
+    border-top: solid 1px #585858;
   }
 `;
 
