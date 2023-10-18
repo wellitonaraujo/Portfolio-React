@@ -23,6 +23,7 @@ export const Navbar = styled.nav`
     flex-direction: row;
     border-radius: 1.5rem 1.5rem 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: solid 1px #3b3a3a;
   }
 `;
 
