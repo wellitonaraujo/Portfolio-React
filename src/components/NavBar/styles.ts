@@ -14,14 +14,14 @@ export const Navbar = styled.nav`
 
   ${mobileMediaQuery} {
     position: fixed;
-    bottom: 0;
+    bottom: 15px;
     background-color: #121214;
     width: 100%;
     text-align: center;
     justify-content: center;
-    height: 5rem;
+    height: 4rem;
     flex-direction: row;
-    border-radius: 1.5rem 1.5rem 0 0;
+    border-radius: 9rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-top: solid 2px #3b3a3a;
   }
