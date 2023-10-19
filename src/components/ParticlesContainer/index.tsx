@@ -58,7 +58,7 @@ const ParticlesContainer = () => {
             value: "#e68e2e",
           },
           links: {
-            color: isDarkMode ? "#f5deb5" : "#1b1b1b",
+            color: isDarkMode ? "#f5deb5" : "#a6a6a6",
             distance: 160,
             enable: true,
             opacity: 0.5,
