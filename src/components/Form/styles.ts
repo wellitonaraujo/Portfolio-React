@@ -54,8 +54,7 @@ export const Label = styled.label`
 export const Input = styled.input<{ darkMode: boolean }>`
   width: 100%;
   padding: 15px;
-  border: 0.5px solid
-    ${(props) => (props.darkMode ? colors.primary.s400 : "#3b3a3a")};
+  border: 1px solid ${(props) => (props.darkMode ? "#3b3a3a" : "#231F20")};
   background-color: ${(props) => (props.darkMode ? "#231F20" : "#F5F5F5")};
   color: ${(props) => (props.darkMode ? "#F5F5F5" : "#231F20")};
   font-size: 1.1rem;
@@ -64,7 +63,9 @@ export const Input = styled.input<{ darkMode: boolean }>`
   ${mobileMediaQuery} {
     width: 90%;
     padding: 10px;
-    border: 0.5px solid ${(props) => (props.darkMode ? "#F5F5F5" : "#231F20")};
+
+    border: 1px solid ${(props) => (props.darkMode ? "#3b3a3a" : "#231F20")};
+
     color: ${(props) => (props.darkMode ? "#F5F5F5" : "#231F20")};
   }
 `;
@@ -72,8 +73,7 @@ export const Input = styled.input<{ darkMode: boolean }>`
 export const TextArea = styled.textarea<{ darkMode: boolean }>`
   width: 100%;
   padding: 15px;
-  border: 0.5px solid
-    ${(props) => (props.darkMode ? colors.primary.s400 : "#3b3a3a")};
+  border: 1px solid ${(props) => (props.darkMode ? "#3b3a3a" : "#231F20")};
   background-color: ${(props) => (props.darkMode ? "#231F20" : "#F5F5F5")};
   color: ${(props) => (props.darkMode ? "#F5F5F5" : "#231F20")};
   font-size: 1.1rem;
@@ -82,7 +82,7 @@ export const TextArea = styled.textarea<{ darkMode: boolean }>`
   ${mobileMediaQuery} {
     width: 90%;
     padding: 12px;
-    border: 0.5px solid ${(props) => (props.darkMode ? "#F5F5F5" : "#231F20")};
+    border: 1px solid ${(props) => (props.darkMode ? "#3b3a3a" : "#231F20")};
     color: ${(props) => (props.darkMode ? "#F5F5F5" : "#231F20")};
   }
 `;

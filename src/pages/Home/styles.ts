@@ -303,8 +303,8 @@ export const ScrollToTopButton = styled.button`
 
   ${mobileMediaQuery} {
     display: block;
-    width: 3.1rem;
-    height: 3.1rem;
+    width: 2.8rem;
+    height: 2.8rem;
     bottom: 70px;
     right: 20px;
     padding: 8px;
@@ -326,7 +326,7 @@ export const Arrow = styled(FontAwesomeIcon)`
 
 export const FooterWrapper = styled.footer<{ darkMode: boolean }>`
   background-color: ${(props) => (props.darkMode ? "#242424" : "#CECECE")};
-  color: ${(props) => (props.darkMode ? "#CECECE" : "#231F20")};
+  color: ${(props) => (props.darkMode ? "#F58400" : "#231F20")};
   padding: 20px 0;
   text-align: center;
   width: 100%;

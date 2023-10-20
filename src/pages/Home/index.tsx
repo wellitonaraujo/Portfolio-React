@@ -126,7 +126,7 @@ export default function Home() {
       </AnimatedText>
 
       <FooterWrapper darkMode={isDarkMode}>
-        Welliton Araújo - Todos os direitos reservados
+        Welliton Araújo - 2023
       </FooterWrapper>
     </>
   );
