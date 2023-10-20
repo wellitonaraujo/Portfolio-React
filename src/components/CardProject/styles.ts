@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import colors from "../../styles/colors";
+import { Carousel } from "react-responsive-carousel";
 
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
 export const SkillsSection = styled.div`
-  margin-top: 30%;
+  margin-bottom: 30%;
+  margin-top: 10%;
 `;
 
 export const Container = styled.div`
@@ -19,13 +21,21 @@ export const Container = styled.div`
 
 export const DataContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
 
   ${mobileMediaQuery} {
     column-count: 2;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
+  }
+`;
+
+export const StyledCarousel = styled(Carousel)`
+  display: flex; // Inicialmente, oculte o carrossel
+
+  ${mobileMediaQuery} {
+    display: block; // Ative o carrossel no mobileMediaQuery
   }
 `;
 
@@ -36,12 +46,12 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  width: 190px;
-  height: 207px;
+  width: 210px;
+  height: 432px;
   flex-shrink: 0;
   justify-content: center;
   transition: transform 0.3s ease-in-out;
-  margin: 20px 20px 20px 0;
+  margin: 20px 40px 20px 0;
   &:hover {
     transform: scale(1.05);
     cursor: pointer;
@@ -49,10 +59,9 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     width: 45%;
-    height: 150px;
+    height: 100%;
     margin: 0 auto;
-    margin-bottom: 10px;
-    border: 0.5px solid ${(props) => (props.darkMode ? "#F58400" : "#3b3a3a")};
+    margin-bottom: 20px;
   }
 `;
 
@@ -97,8 +106,21 @@ export const SubTitle = styled.p`
   }
 `;
 
+export const ProjectName = styled.p<{ darkMode: boolean }>`
+  color: ${(props) => (props.darkMode ? "#F58400" : "#000")};
+  align-content: flex-end;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin: 0;
+  ${mobileMediaQuery} {
+    line-height: 3rem;
+    font-size: 0.7rem; /* Reduz o tamanho da fonte */
+    //margin-top: 1.3rem;
+  }
+`;
+
 export const Image = styled.img`
-  width: 35%;
+  width: 70%;
   height: auto;
   margin: 5px auto;
   object-fit: cover;
@@ -108,11 +130,12 @@ export const Image = styled.img`
 export const TextDescription = styled.p<{ darkMode: boolean }>`
   color: ${(props) => (props.darkMode ? "#fff" : "#000")};
   align-content: flex-end;
-  line-height: 1.7;
-  font-size: 1.1rem;
-
+  line-height: 1;
+  font-size: 1rem;
+  margin-top: 10px;
   ${mobileMediaQuery} {
     font-size: 0.7rem; /* Reduz o tamanho da fonte */
     //margin-top: 1.3rem;
+    line-height: 2rem;
   }
 `;

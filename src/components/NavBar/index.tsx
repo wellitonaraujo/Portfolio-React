@@ -3,14 +3,14 @@ import { NavItem, NavUl, Navbar, UlToggle } from "./styles";
 import { useEffect, useState } from "react";
 import Toggle from "../Toggle";
 
-type NavItem = "sobre" | "skills" | "contatos";
+type NavItem = "Sobre" | "Tecnologias" | "Projetos" | "Contatos";
 
 export default function NavBar() {
-  const [activeNavItem, setActiveNavItem] = useState<string>("sobre");
+  const [activeNavItem, setActiveNavItem] = useState<string>("Sobre");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
 
-  const navItems: NavItem[] = ["sobre", "skills", "contatos"];
+  const navItems: NavItem[] = ["Sobre", "Tecnologias", "Projetos", "Contatos"];
 
   useEffect(() => {
     setIsDarkMode(darkMode);
@@ -19,7 +19,7 @@ export default function NavBar() {
   const handleNavItemClick = (sectionId: NavItem) => {
     const scrollToOptions: ScrollToOptions = { behavior: "smooth" };
 
-    sectionId === "sobre"
+    sectionId === "Sobre"
       ? window.scrollTo({ top: 0, ...scrollToOptions })
       : document.getElementById(sectionId)?.scrollIntoView(scrollToOptions);
 
