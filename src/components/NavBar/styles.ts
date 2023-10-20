@@ -70,9 +70,9 @@ export const NavItem = styled.li<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     color: ${(props) => (props.darkMode ? "#fff" : "#fff")};
-    font-size: 0.9rem;
+    font-size: 0.68rem;
     border-bottom: none;
-    margin: 2rem;
+    margin: 1rem;
     text-align: center;
 
     &.active {

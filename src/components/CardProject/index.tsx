@@ -1,18 +1,22 @@
 import { useTheme } from "../../context/useTheme";
 import { useEffect, useState } from "react";
-import TitleSkills from "../TitleSkills";
-import { skillsData } from "./skillData";
+
+//import { Carousel } from "react-responsive-carousel";
+//import "react-responsive-carousel/lib/styles/carousel.min.css"; // Importe os estilos do carrossel
+
 import {
-  TextDescription,
   ImageContainer,
   DataContainer,
   SkillsSection,
   Container,
-  Image,
   Title,
+  Image,
+  ProjectName,
+  TextDescription,
 } from "./styles";
+import { projectsData } from "./projectsData";
 
-export default function CardSkill() {
+export default function CardProject() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
 
@@ -22,20 +26,24 @@ export default function CardSkill() {
 
   return (
     <SkillsSection>
-      <Title id="Skills">Skills</Title>
+      <Title id="Projetos">Projetos</Title>
+
       <Container>
         <DataContainer>
-          {skillsData.map((skill, index) => (
+          {projectsData.map((skill, index) => (
             <ImageContainer darkMode={isDarkMode} key={index}>
-              <Image src={skill.src} alt={skill.alt} />
-              <TextDescription darkMode={isDarkMode}>
+              <ProjectName darkMode={isDarkMode}>
                 {skill.description}
+              </ProjectName>
+
+              <Image src={skill.src} alt={skill.alt} />
+
+              <TextDescription darkMode={isDarkMode}>
+                {skill.skill}
               </TextDescription>
             </ImageContainer>
           ))}
         </DataContainer>
-
-        <TitleSkills />
       </Container>
     </SkillsSection>
   );

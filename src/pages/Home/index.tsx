@@ -26,6 +26,7 @@ import {
   Line,
   Link,
 } from "./styles";
+import CardProject from "../../components/CardProject";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -116,6 +117,8 @@ export default function Home() {
       <AnimatedText>
         <CardSkill />
       </AnimatedText>
+
+      <CardProject />
 
       <AnimatedText>
         <TitleContact>Contato</TitleContact>
