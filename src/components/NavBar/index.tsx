@@ -3,14 +3,14 @@ import { NavItem, NavUl, Navbar, UlToggle } from "./styles";
 import { useEffect, useState } from "react";
 import Toggle from "../Toggle";
 
-type NavItem = "Sobre" | "Tecnologias" | "Projetos" | "Contatos";
+type NavItem = "Sobre" | "Tecnologias" | "Projetos" | "Contato";
 
 export default function NavBar() {
   const [activeNavItem, setActiveNavItem] = useState<string>("Sobre");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
 
-  const navItems: NavItem[] = ["Sobre", "Tecnologias", "Projetos", "Contatos"];
+  const navItems: NavItem[] = ["Sobre", "Tecnologias", "Projetos", "Contato"];
 
   useEffect(() => {
     setIsDarkMode(darkMode);

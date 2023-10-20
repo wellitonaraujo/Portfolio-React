@@ -22,7 +22,7 @@ export default function CardSkill() {
 
   return (
     <SkillsSection>
-      <Title id="Tecnologias">Skills</Title>
+      <Title id="Tecnologias">Tecnologias</Title>
       <Container>
         <DataContainer>
           {skillsData.map((skill, index) => (

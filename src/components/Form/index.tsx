@@ -104,7 +104,7 @@ const Form = () => {
 
   return (
     <ContainerContact>
-      <FormContainer id="Contatos">
+      <FormContainer id="Contato">
         <form onSubmit={enviarEmail}>
           <FormGroup>
             <Label htmlFor="nome">Nome:</Label>

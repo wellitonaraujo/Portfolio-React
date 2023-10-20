@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle<{ darkMode: boolean }>`
     line-height: 1.3;
     background: ${(props) =>
       props.darkMode
-        ? `linear-gradient(to top,${colors.black}, ${colors.background})`
+        ? `linear-gradient(to top,${colors.background}, ${colors.background})`
         : `linear-gradient(to top, ${colors.grey.s100}, ${colors.grey.s100})`};
 
     margin: 0 auto;

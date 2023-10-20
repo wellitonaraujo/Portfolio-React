@@ -33,7 +33,7 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => (props.darkMode ? "#121214" : "#F5F5F5")};
-
+  border: 1px solid ${(props) => (props.darkMode ? "#3b3a3a" : "#fff")};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   width: 190px;
@@ -52,7 +52,7 @@ export const ImageContainer = styled.div<{ darkMode: boolean }>`
     height: 150px;
     margin: 0 auto;
     margin-bottom: 10px;
-    border: 0.5px solid ${(props) => (props.darkMode ? "#F58400" : "#3b3a3a")};
+    border: 1px solid ${(props) => (props.darkMode ? "#3b3a3a" : "#fff")};
   }
 `;
 
