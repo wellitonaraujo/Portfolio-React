@@ -3,6 +3,7 @@ import wgamer from "../../assets/wgamer.png";
 import weather from "../../assets/weather.png";
 import shoppingdev from "../../assets/shoppingdev.png";
 import signin from "../../assets/signin.png";
+import yourcoffee from "../../assets/yourcoffee.png";
 
 interface Projets {
   src: string;
@@ -13,9 +14,9 @@ interface Projets {
 
 export const projectsData: Projets[] = [
   {
-    src: wgamer,
-    alt: "React Native",
-    description: "Wgamer",
+    src: yourcoffee,
+    alt: "Swift/SwiftUI",
+    description: "Your Coffee",
     skill: "Swift/SwiftUI",
   },
   {
