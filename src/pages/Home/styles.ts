@@ -116,22 +116,22 @@ export const TitleContact = styled.p`
 
 export const pulse = keyframes`
   0% {
-    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.10),
-                0 0 0 10px rgba(245, 132, 0, 0.05),
-                0 0 0 20px rgba(245, 132, 0, 0.02),
-                0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
+                0 0 0 5px rgba(245, 132, 0, 0.05),
+                0 0 0 10px rgba(245, 132, 0, 0.02),
+                0 0 5px rgba(0, 0, 0, 0.5);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(245, 132, 0, 0.20),
-                0 0 0 20px rgba(245, 132, 0, 0.10),
-                0 0 0 30px rgba(245, 132, 0, 0.05),
-                0 0 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
+                0 0 0 10px rgba(245, 132, 0, 0.10),
+                0 0 0 20px rgba(245, 132, 0, 0.05),
+                0 0 10px rgba(0, 0, 0, 0.6);
   }
   100% {
-    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.10),
-                0 0 0 15px rgba(245, 132, 0, 0.05),
-                0 0 0 20px rgba(245, 132, 0, 0.02),
-                0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
+                0 0 0 10px rgba(245, 132, 0, 0.05),
+                0 0 0 10px rgba(245, 132, 0, 0.02),
+                0 0 2px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -139,7 +139,7 @@ export const Image = styled.img<{ darkMode: boolean }>`
   width: 30%;
   height: 30%;
   border-radius: 50%;
-  border: 8px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
+  border: 5px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   animation: ${pulse} 3s infinite;
 
   ${mobileMediaQuery} {

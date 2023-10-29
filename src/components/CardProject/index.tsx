@@ -1,3 +1,4 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "../../context/useTheme";
 import { useEffect, useState } from "react";
 
@@ -13,6 +14,7 @@ import {
   Image,
   ProjectName,
   TextDescription,
+  StyledFontAwesomeIcon,
 } from "./styles";
 import { projectsData } from "./projectsData";
 
@@ -40,6 +42,12 @@ export default function CardProject() {
 
               <TextDescription darkMode={isDarkMode}>
                 {skill.skill}
+                <a href={skill.link} target="_blank">
+                  <StyledFontAwesomeIcon
+                    darkMode={isDarkMode}
+                    icon={faGithub}
+                  />
+                </a>
               </TextDescription>
             </ImageContainer>
           ))}

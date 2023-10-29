@@ -10,33 +10,49 @@ interface Projets {
   alt: string;
   description: string;
   skill: string;
+  link?: string;
 }
 
 export const projectsData: Projets[] = [
   {
     src: yourcoffee,
-    alt: "Swift/SwiftUI",
+    alt: "SwiftUI",
     description: "Your Coffee",
-    skill: "Swift/SwiftUI",
+    skill: "SwiftUI",
+    link: "https://github.com/wellitonaraujo/YourCoffee-SwiftUI",
   },
   {
     src: weather,
     alt: "weather",
     description: "Weather",
-    skill: "Swift/SwiftUI",
+    skill: "SwiftUI",
+    link: "https://github.com/wellitonaraujo/WeatherApp-SwiftUI",
   },
-  { src: signin, alt: "signin", description: "Signin", skill: "Swift/SwiftUI" },
+  {
+    src: signin,
+    alt: "signin",
+    description: "Signin",
+    skill: "SwiftUI",
+    link: "https://github.com/wellitonaraujo/signIn-screen-swiftUI",
+  },
   {
     src: portfolio,
     alt: "portfolio",
     description: "Portfolio",
-    skill: "Swift/SwiftUI",
+    skill: "SwiftUI",
   },
-  { src: wgamer, alt: "wgamer", description: "Wgamer", skill: "Swift/SwiftUI" },
+  {
+    src: wgamer,
+    alt: "wgamer",
+    description: "Wgamer",
+    skill: "SwiftUI",
+    link: "https://github.com/wellitonaraujo/wgamer-app",
+  },
   {
     src: shoppingdev,
     alt: "shoppingdev",
     description: "Shoppingdev",
-    skill: "Swift/SwiftUI",
+    skill: "SwiftUI",
+    link: "https://github.com/wellitonaraujo/shoppingDev-swiftUI",
   },
 ];

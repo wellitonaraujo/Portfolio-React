@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import colors from "../../styles/colors";
 import { Carousel } from "react-responsive-carousel";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const mobileMediaQuery = `@media (max-width: 767px)`;
 
@@ -16,6 +17,23 @@ export const Container = styled.div`
 
   ${mobileMediaQuery} {
     flex-direction: column;
+  }
+`;
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
+  darkMode: boolean;
+}>`
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  color: ${colors.white};
+  color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  ${mobileMediaQuery} {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 `;
 
@@ -130,12 +148,15 @@ export const Image = styled.img`
 
 export const TextDescription = styled.p<{ darkMode: boolean }>`
   color: ${(props) => (props.darkMode ? "#fff" : "#000")};
-  align-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  display: flex;
   line-height: 1;
   font-size: 1rem;
   margin-top: 10px;
   ${mobileMediaQuery} {
-    font-size: 0.7rem; /* Reduz o tamanho da fonte */
+    font-size: 0.7rem;
     //margin-top: 1.3rem;
     line-height: 2rem;
   }
