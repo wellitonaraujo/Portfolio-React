@@ -2,6 +2,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import ParticlesContainer from "../../components/ParticlesContainer";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { AnimatedText } from "../../components/AnimatedText";
+import CardProject from "../../components/CardProject";
 import CardSkill from "../../components/CardSkill";
 import { useTheme } from "../../context/useTheme";
 import profile from "../../assets/perfil.jpeg";
@@ -26,7 +27,6 @@ import {
   Line,
   Link,
 } from "./styles";
-import CardProject from "../../components/CardProject";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
