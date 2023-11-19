@@ -4,7 +4,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { AnimatedText } from "../../components/AnimatedText";
 import CardSkill from "../../components/CardSkill";
 import { useTheme } from "../../context/useTheme";
-import profile from "../../assets/1.png";
+import profile from "../../assets/perfil.jpeg";
 import Toggle from "../../components/Toggle";
 import { useEffect, useState } from "react";
 import Form from "../../components/Form";
