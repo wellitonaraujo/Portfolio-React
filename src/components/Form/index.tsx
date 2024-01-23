@@ -100,7 +100,7 @@ const Form = () => {
     }
   };
 
-  const EmailAddress = "welliton.araujo@uol.com.br";
+  const EmailAddress = "wellitonaraujodev@gmail.com";
 
   return (
     <ContainerContact>
