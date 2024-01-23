@@ -5,7 +5,7 @@ import { AnimatedText } from "../../components/AnimatedText";
 import CardProject from "../../components/CardProject";
 import CardSkill from "../../components/CardSkill";
 import { useTheme } from "../../context/useTheme";
-import profile from "../../assets/perfil.jpeg";
+import profile from "../../assets/eu.jpeg";
 import Toggle from "../../components/Toggle";
 import { useEffect, useState } from "react";
 import Form from "../../components/Form";
