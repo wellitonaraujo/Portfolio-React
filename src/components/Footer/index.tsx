@@ -12,7 +12,7 @@ const FooterD = () => {
   }, [darkMode]);
 
   return (
-    <FooterWrapper darkMode={isDarkMode}>Welliton Araújo - 2023</FooterWrapper>
+    <FooterWrapper darkMode={isDarkMode}>Welliton Araújo - 2024</FooterWrapper>
   );
 };
 
