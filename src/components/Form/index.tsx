@@ -26,7 +26,7 @@ const Form = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
-  const [errors, setErrors] = useState<Errors>({
+  const [errors, ] = useState<Errors>({
     nome: null,
     email: null,
     mensagem: null,
