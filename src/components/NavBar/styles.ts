@@ -41,11 +41,14 @@ export const NavUl = styled.ul`
 `;
 
 export const NavItem = styled.li<{ darkMode: boolean }>`
-  font-size: 20px;
+  display: flex;
+  align-items: center; /* Alinha os ícones verticalmente */
+  font-size: 1.2rem;
   color: ${(props) => (props.darkMode ? "#fff" : "#000")};
   margin-right: 100px;
   border-bottom: 5px solid transparent;
   transition: transform 0.2s;
+
   &:hover {
     color: ${colors.primary.s300};
     cursor: pointer;
@@ -60,34 +63,44 @@ export const NavItem = styled.li<{ darkMode: boolean }>`
       ${colors.primary.s400},
       ${colors.primary.s300}
     );
-    -webkit-background-clip: text; /* Aplica o gradiente ao texto */
-    background-clip: text; /* Aplica o gradiente ao texto */
-    color: transparent; /* Torna o texto transparente */
+    -webkit-background-clip: text;
+    background-clip: text;
     border-bottom: 5px solid ${colors.primary.s300};
     transform: scale(1.05);
     border-radius: 0 0 0 5px;
   }
 
+  span.icon {
+      display: none; // Garante que o ícone seja exibido
+    }
+
   ${mobileMediaQuery} {
     color: ${(props) => (props.darkMode ? "#fff" : "#fff")};
-    font-size: 0.65rem;
-    border-bottom: none;
+    font-size: 1.5rem; /* Ajuste o tamanho dos ícones para uma aparência melhor em dispositivos móveis */
     margin: 0.8rem;
     text-align: center;
+    margin: 40%;
 
     &.active {
-      background: linear-gradient(
-        to bottom,
-        ${colors.primary.s400},
-        ${colors.primary.s300}
-      );
-      -webkit-background-clip: text; /* Aplica o gradiente ao texto */
-      background-clip: text; /* Aplica o gradiente ao texto */
-      color: transparent; /* Torna o texto transparente */
-      border-bottom: 2px solid ${colors.primary.s300};
-      transform: scale(1.05);
-      border-radius: 0 0 0 5px;
-    }
+    background: linear-gradient(
+      to bottom,
+      ${colors.primary.s400},
+      ${colors.primary.s300}
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    border-bottom: 5px solid ${colors.primary.s300};
+    transform: scale(1.05);
+    border-radius: 0 0 0 5px;
+  }
+
+    span.label {
+        display: none;
+      }
+
+      span.icon {
+        display: inline;
+      }
   }
 `;
 

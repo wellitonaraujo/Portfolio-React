@@ -1,4 +1,4 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import ParticlesContainer from "../../components/ParticlesContainer";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { AnimatedText } from "../../components/AnimatedText";
@@ -68,6 +68,10 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/wellitonaraujo/" target="_blank">
             <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faLinkedin} />
           </a>
+
+          <a href="https://youtube.com/@wellitonaraujo_dev?si=HxiOxEwAmJiJmGY2" target="_blank">
+            <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faYoutube} />
+          </a>
         </ContainerSolcial>
 
         <Description>
@@ -95,11 +99,12 @@ export default function Home() {
               de software e apaixonado por tecnologia, busco aperfeiçoamento
               profissional diariamente.
             </TextDescription>
+            
             <TextDescription darkMode={isDarkMode}>
-              <Line>Sólida experiência</Line> em todo ciclo de desenvolvimento
-              mobile, da prototipação, arquitetura, desenvolvimento, testes e
-              deploy.
+              <Line>Experiência consistente</Line> em todo o ciclo de desenvolvimento mobile,
+               abrangendo prototipagem, arquitetura, desenvolvimento, testes e deploy.
             </TextDescription>
+
             <TextDescription darkMode={isDarkMode}>
               <Line>Vivência</Line> em desenvolvimento front-end, utilizando as
               principais tecnologias do mercado.
