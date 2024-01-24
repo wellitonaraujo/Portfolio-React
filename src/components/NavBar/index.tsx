@@ -2,21 +2,34 @@ import { useTheme } from "../../context/useTheme";
 import { NavItem, NavUl, Navbar, UlToggle } from "./styles";
 import { useEffect, useState } from "react";
 import Toggle from "../Toggle";
+import { IoPerson } from "react-icons/io5"; // Sobre
+import { BsTools } from "react-icons/bs"; // Tecnologias
+import { BsBuildingCheck } from "react-icons/bs";
+import { GrContact } from "react-icons/gr"; // Contato
 
-type NavItem = "Sobre" | "Tecnologias" | "Projetos" | "Contato";
+type NavItem = {
+  id: string;
+  label: string;
+  icon: JSX.Element;
+};
 
 export default function NavBar() {
   const [activeNavItem, setActiveNavItem] = useState<string>("Sobre");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
 
-  const navItems: NavItem[] = ["Sobre", "Tecnologias", "Projetos", "Contato"];
+  const navItems: NavItem[] = [
+    { id: "Sobre", label: "Sobre", icon: <IoPerson /> },
+    { id: "Tecnologias", label: "Tecnologias", icon: <BsTools /> },
+    { id: "Projetos", label: "Projetos", icon: <BsBuildingCheck /> },
+    { id: "Contato", label: "Contato", icon: <GrContact /> },
+  ];
 
   useEffect(() => {
     setIsDarkMode(darkMode);
   }, [darkMode]);
 
-  const handleNavItemClick = (sectionId: NavItem) => {
+  const handleNavItemClick = (sectionId: string) => {
     const scrollToOptions: ScrollToOptions = { behavior: "smooth" };
 
     sectionId === "Sobre"
@@ -36,12 +49,14 @@ export default function NavBar() {
 
           {navItems.map((item) => (
             <NavItem
-              key={item}
+              key={item.id}
               darkMode={isDarkMode}
-              className={activeNavItem === item ? "active" : ""}
-              onClick={() => handleNavItemClick(item)}
+              className={activeNavItem === item.id ? "active" : ""}
+              onClick={() => handleNavItemClick(item.id)}
             >
-              {item}
+              
+              <span className="icon">{item.icon}</span>
+              <span className="label">{item.label}</span>
             </NavItem>
           ))}
         </NavUl>

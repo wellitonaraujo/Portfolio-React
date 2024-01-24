@@ -2,7 +2,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FormEvent, useEffect, useState } from "react";
 import { useTheme } from "../../context/useTheme";
 import { StyledFontAwesomeIcon } from "./styles";
-import emailjs from "@emailjs/browser";
 import {
   ContainerContact,
   ContainerIcons,
@@ -55,49 +54,9 @@ const Form = () => {
     }
   };
 
-  const validarForm = () => {
-    const novosErros: Errors = {
-      nome: null,
-      email: null,
-      mensagem: null,
-    };
-
-    if (!nome.trim()) {
-      novosErros.nome = "O campo Nome é obrigatório.";
-    }
-
-    if (!email.trim()) {
-      novosErros.email = "O campo Email é obrigatório.";
-    }
-
-    if (!mensagem.trim()) {
-      novosErros.mensagem = "O campo Mensagem é obrigatório.";
-    }
-
-    setErrors(novosErros);
-    return Object.values(novosErros).every((error) => error === null);
-  };
 
   const enviarEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (validarForm()) {
-      emailjs
-        .sendForm(
-          "seu_servico_emailjs",
-          "seu_template_emailjs",
-          e.currentTarget,
-          "seu_usuario_emailjs"
-        )
-        .then((response) => {
-          console.log("E-mail enviado com sucesso!", response);
-          // Lógica para mostrar uma mensagem de sucesso ao usuário
-        })
-        .catch((error) => {
-          console.error("Erro ao enviar e-mail:", error);
-          // Lógica para mostrar uma mensagem de erro ao usuário
-        });
-    }
   };
 
   const EmailAddress = "wellitonaraujodev@gmail.com";
@@ -106,8 +65,7 @@ const Form = () => {
     <ContainerContact>
       <FormContainer id="Contato">
         <form onSubmit={enviarEmail}>
-          <FormGroup>
-            <Label htmlFor="nome">Nome:</Label>
+          <FormGroup> 
             <Input
               darkMode={isDarkMode}
               type="text"
