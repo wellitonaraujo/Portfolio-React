@@ -13,7 +13,7 @@ export const ContainerDescription = styled.div`
   ${mobileMediaQuery} {
     flex-direction: column; /* Altera a direção para empilhamento */
     text-align: center; /* Centraliza o texto */
-    width: 90%;
+    width: 100%;
   }
 `;
 
@@ -32,7 +32,7 @@ export const Description = styled.div`
 
   ${mobileMediaQuery} {
     padding: 0;
-    margin: 0 auto;
+    margin: 3rem 0;
   }
 `;
 
@@ -143,11 +143,11 @@ export const Image = styled.img<{ darkMode: boolean }>`
   animation: ${pulse} 3s infinite;
 
   ${mobileMediaQuery} {
-    margin-left: 10%;
-    width: 40%; /* Reduz o tamanho da imagem */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 40%;
+    height: auto; 
     border: 4px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
     animation: none;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -237,15 +237,12 @@ export const pulseIcon = keyframes`
   }
 `;
 
-export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
-  darkMode: boolean;
-}>`
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{darkMode: boolean}>`
   width: 2rem;
   height: 2rem;
   margin-top: 100%;
   cursor: pointer;
   border-radius: 50%;
-  //  border: 1px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
   transition: transform 0.3s ease;
   padding: 25%;
   color: ${colors.white};
@@ -256,25 +253,23 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
   }
 
   ${mobileMediaQuery} {
-    margin: 1rem 1rem;
-    width: 30px;
-    height: 30px;
+    margin: 0 1rem;
     animation: none;
     border: none;
     color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
+    padding: 0;
   }
 `;
 
 export const ContainerSolcial = styled.div`
   flex-direction: column;
-  margin-left: 50px;
-
+  margin-left: 2rem;
   ${mobileMediaQuery} {
     color: ${(props) => props.color || colors.white};
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: flex-end;
+    margin: 0 auto;
   }
 `;
 
