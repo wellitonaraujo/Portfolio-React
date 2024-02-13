@@ -265,11 +265,12 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
 
 export const ContainerSolcial = styled.div`
   flex-direction: column;
-  margin-left: 1rem;
+  margin-left: 3rem;
   ${mobileMediaQuery} {
     color: ${(props) => props.color || colors.white};
     flex-direction: row;
     justify-content: space-around;
+    margin: 0;
   }
 `;
 

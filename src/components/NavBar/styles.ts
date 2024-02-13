@@ -9,7 +9,7 @@ export const Navbar = styled.nav`
   color: ${colors.white};
   width: 100%;
   z-index: 100;
-  justify-content: end;
+  justify-content: start;
 
   ${mobileMediaQuery} {
     position: fixed;
