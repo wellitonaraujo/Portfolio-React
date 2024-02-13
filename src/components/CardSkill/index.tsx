@@ -11,10 +11,17 @@ import {
   Image,
   Title,
 } from "./styles";
+import { useLanguage } from "../../context/useLanguage";
+import en from "../../translation/en/en";
+import pt from "../../translation/pt/pt";
 
 export default function CardSkill() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
+
+  const { language } = useLanguage();
+
+  const texts = language === "en" ? en : pt;
 
   useEffect(() => {
     setIsDarkMode(darkMode);
@@ -22,7 +29,7 @@ export default function CardSkill() {
 
   return (
     <SkillsSection>
-      <Title id="Tecnologias">Tecnologias</Title>
+      <Title id="Tecnologias">{texts.technologies.title}</Title>
       <Container>
         <DataContainer>
           {skillsData.map((skill, index) => (

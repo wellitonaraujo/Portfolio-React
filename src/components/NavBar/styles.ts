@@ -6,15 +6,15 @@ const mobileMediaQuery = `@media (max-width: 767px)`;
 export const Navbar = styled.nav`
   display: flex;
   position: fixed;
-  justify-content: flex-end;
   color: ${colors.white};
-  left: 0;
   width: 100%;
   z-index: 100;
+  justify-content: end;
 
   ${mobileMediaQuery} {
     position: fixed;
     bottom: 0px;
+    left: 0;
     background-color: #121214;
     width: 100%;
     text-align: center;
@@ -42,7 +42,7 @@ export const NavUl = styled.ul`
 
 export const NavItem = styled.li<{ darkMode: boolean }>`
   display: flex;
-  align-items: center; /* Alinha os ícones verticalmente */
+  align-items: center;
   font-size: 1.2rem;
   color: ${(props) => (props.darkMode ? "#fff" : "#000")};
   margin-right: 100px;
@@ -66,13 +66,13 @@ export const NavItem = styled.li<{ darkMode: boolean }>`
     -webkit-background-clip: text;
     background-clip: text;
     border-bottom: 5px solid ${colors.primary.s300};
-    transform: scale(1.05);
+
     border-radius: 0 0 0 5px;
   }
 
   span.icon {
-      display: none; // Garante que o ícone seja exibido
-    }
+    display: none; // Garante que o ícone seja exibido
+  }
 
   ${mobileMediaQuery} {
     color: ${(props) => (props.darkMode ? "#fff" : "#fff")};
@@ -82,25 +82,25 @@ export const NavItem = styled.li<{ darkMode: boolean }>`
     margin: 40%;
 
     &.active {
-    background: linear-gradient(
-      to bottom,
-      ${colors.primary.s400},
-      ${colors.primary.s300}
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    border-bottom: 5px solid ${colors.primary.s300};
-    transform: scale(1.05);
-    border-radius: 0 0 0 5px;
-  }
+      background: linear-gradient(
+        to bottom,
+        ${colors.primary.s400},
+        ${colors.primary.s300}
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      border-bottom: 5px solid ${colors.primary.s300};
+      transform: scale(1.05);
+      border-radius: 0 0 0 5px;
+    }
 
     span.label {
-        display: none;
-      }
+      display: none;
+    }
 
-      span.icon {
-        display: inline;
-      }
+    span.icon {
+      display: inline;
+    }
   }
 `;
 

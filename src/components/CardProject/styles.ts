@@ -19,7 +19,9 @@ export const Container = styled.div`
     flex-direction: column;
   }
 `;
-export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{darkMode: boolean}>`
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
+  darkMode: boolean;
+}>`
   width: 2rem;
   height: 2rem;
   cursor: pointer;

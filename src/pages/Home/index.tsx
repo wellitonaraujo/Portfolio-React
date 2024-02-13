@@ -1,11 +1,17 @@
-import { faGithub, faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import ParticlesContainer from "../../components/ParticlesContainer";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { AnimatedText } from "../../components/AnimatedText";
 import CardProject from "../../components/CardProject";
 import CardSkill from "../../components/CardSkill";
 import { useTheme } from "../../context/useTheme";
+
 import profile from "../../assets/eu.jpeg";
+
 import Toggle from "../../components/Toggle";
 import { useEffect, useState } from "react";
 import Form from "../../components/Form";
@@ -24,15 +30,21 @@ import {
   Arrow,
   Image,
   Title,
-  Line,
   Link,
 } from "./styles";
+import { useLanguage } from "../../context/useLanguage";
+import en from "../../translation/en/en";
+import pt from "../../translation/pt/pt";
+import LanguageToggle from "../../components/LanguageToggle";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const { darkMode } = useTheme();
+  const { language } = useLanguage();
+
+  const texts = language === "en" ? en : pt;
 
   useEffect(() => {
     setIsDarkMode(darkMode);
@@ -61,6 +73,7 @@ export default function Home() {
         <ParticlesContainer />
 
         <ContainerSolcial>
+          <LanguageToggle />
           <a href="https://github.com/wellitonaraujo" target="_blank">
             <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faGithub} />
           </a>
@@ -69,7 +82,10 @@ export default function Home() {
             <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faLinkedin} />
           </a>
 
-          <a href="https://youtube.com/@wellitonaraujo_dev?si=HxiOxEwAmJiJmGY2" target="_blank">
+          <a
+            href="https://youtube.com/@wellitonaraujo_dev?si=HxiOxEwAmJiJmGY2"
+            target="_blank"
+          >
             <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faYoutube} />
           </a>
         </ContainerSolcial>
@@ -78,16 +94,17 @@ export default function Home() {
           <ContainerToggle>
             <Toggle />
           </ContainerToggle>
-          <TextDescription
-            darkMode={isDarkMode}
-            children="Olá, sou o"
-            style={{ margin: 0 }}
-          />
+
+          <TextDescription darkMode={isDarkMode} style={{ margin: 0 }}>
+            {" "}
+            {texts.welcome}
+          </TextDescription>
+
           <Welliton darkMode={isDarkMode}>Welliton Araujo</Welliton>
 
           <AnimatedText>
             <Title>
-              Desenvolvedor Mobile{" "}
+              {texts.title}{" "}
               <StyledAmpersand darkMode={isDarkMode}>&</StyledAmpersand>{" "}
               Front-end{" "}
             </Title>
@@ -95,19 +112,15 @@ export default function Home() {
 
           <AnimatedText>
             <TextDescription darkMode={isDarkMode}>
-              <Line>Com anos de experiência</Line> do mercado de desenvolvimento
-              de software e apaixonado por tecnologia, busco aperfeiçoamento
-              profissional diariamente.
-            </TextDescription>
-            
-            <TextDescription darkMode={isDarkMode}>
-              <Line>Experiência consistente</Line> em todo o ciclo de desenvolvimento mobile,
-               abrangendo prototipagem, arquitetura, desenvolvimento, testes e deploy.
+              {texts.experienceDescription}
             </TextDescription>
 
             <TextDescription darkMode={isDarkMode}>
-              <Line>Vivência</Line> em desenvolvimento front-end, utilizando as
-              principais tecnologias do mercado.
+              {texts.mobileDevelopmentDescription}
+            </TextDescription>
+
+            <TextDescription darkMode={isDarkMode}>
+              {texts.frontendDevelopmentDescription}
             </TextDescription>
           </AnimatedText>
         </Description>
@@ -126,12 +139,12 @@ export default function Home() {
       <CardProject />
 
       <AnimatedText>
-        <TitleContact>Contato</TitleContact>
+        <TitleContact>{texts.form.contact_title}</TitleContact>
         <Form />
       </AnimatedText>
 
       <FooterWrapper darkMode={isDarkMode}>
-        Welliton Araújo - 2023
+        Welliton Araújo - 2024
       </FooterWrapper>
     </>
   );
