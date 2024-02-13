@@ -17,10 +17,17 @@ import {
   StyledFontAwesomeIcon,
 } from "./styles";
 import { projectsData } from "./projectsData";
+import { useLanguage } from "../../context/useLanguage";
+import pt from "../../translation/pt/pt";
+import en from "../../translation/en/en";
 
 export default function CardProject() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
+
+  const { language } = useLanguage();
+
+  const texts = language === "en" ? en : pt;
 
   useEffect(() => {
     setIsDarkMode(darkMode);
@@ -28,7 +35,7 @@ export default function CardProject() {
 
   return (
     <SkillsSection>
-      <Title id="Projetos">Projetos</Title>
+      <Title id="Projetos">{texts.navbar.projects}</Title>
 
       <Container>
         <DataContainer>

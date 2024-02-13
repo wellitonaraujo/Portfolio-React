@@ -61,8 +61,8 @@ const ParticlesContainer = () => {
             color: isDarkMode ? "#f5deb5" : "#a6a6a6",
             distance: 160,
             enable: true,
-            opacity: 0.5,
-            width: 1,
+            opacity: 0.2,
+            width: 0.8,
           },
           collisions: {
             enable: true,
@@ -73,9 +73,9 @@ const ParticlesContainer = () => {
             outModes: {
               default: "bounce",
             },
-            random: false,
+            random: true,
             speed: 1,
-            straight: false,
+            straight: true,
           },
           number: {
             density: {

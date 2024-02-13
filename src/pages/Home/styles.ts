@@ -144,7 +144,7 @@ export const Image = styled.img<{ darkMode: boolean }>`
 
   ${mobileMediaQuery} {
     width: 40%;
-    height: auto; 
+    height: auto;
     border: 4px solid ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
     animation: none;
     margin-bottom: 2rem;
@@ -237,14 +237,16 @@ export const pulseIcon = keyframes`
   }
 `;
 
-export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{darkMode: boolean}>`
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
+  darkMode: boolean;
+}>`
   width: 2rem;
   height: 2rem;
-  margin-top: 100%;
+  margin-top: 3rem;
   cursor: pointer;
   border-radius: 50%;
   transition: transform 0.3s ease;
-  padding: 25%;
+  padding: 20%;
   color: ${colors.white};
   animation: ${pulseIcon} 5s infinite;
   color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
@@ -263,13 +265,12 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{darkMode: boolean}
 
 export const ContainerSolcial = styled.div`
   flex-direction: column;
-  margin-left: 2rem;
+  margin-left: 3rem;
   ${mobileMediaQuery} {
     color: ${(props) => props.color || colors.white};
-    display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin: 0 auto;
+    justify-content: space-around;
+    margin: 0;
   }
 `;
 

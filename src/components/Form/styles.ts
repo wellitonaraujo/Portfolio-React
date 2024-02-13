@@ -7,10 +7,12 @@ const mobileMediaQuery = `@media (max-width: 767px)`;
 export const FormContainer = styled.div`
   width: 100%;
   margin: 0 auto;
-  display: flex; /* Adicionado para usar flexbox */
-  flex-direction: column; /* Os elementos filhos serão empilhados verticalmente */
+  display: flex;
+  padding: 0 4rem;
+  flex-direction: column;
   ${mobileMediaQuery} {
     width: 100%;
+    padding: 0;
   }
 `;
 

@@ -15,6 +15,9 @@ import {
   Title,
   Link,
 } from "./styles";
+import { useLanguage } from "../../context/useLanguage";
+import en from "../../translation/en/en";
+import pt from "../../translation/pt/pt";
 
 type Errors = {
   nome: string | null;
@@ -26,7 +29,7 @@ const Form = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
-  const [errors, ] = useState<Errors>({
+  const [errors] = useState<Errors>({
     nome: null,
     email: null,
     mensagem: null,
@@ -34,6 +37,10 @@ const Form = () => {
 
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { darkMode } = useTheme();
+
+  const { language } = useLanguage();
+
+  const texts = language === "en" ? en : pt;
 
   useEffect(() => {
     setIsDarkMode(darkMode);
@@ -54,7 +61,6 @@ const Form = () => {
     }
   };
 
-
   const enviarEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
@@ -65,7 +71,8 @@ const Form = () => {
     <ContainerContact>
       <FormContainer id="Contato">
         <form onSubmit={enviarEmail}>
-          <FormGroup> 
+          <FormGroup>
+            <Label htmlFor="email">{texts.form.name}:</Label>
             <Input
               darkMode={isDarkMode}
               type="text"
@@ -79,7 +86,7 @@ const Form = () => {
           </FormGroup>
 
           <FormGroup>
-            <Label htmlFor="email">Email:</Label>
+            <Label htmlFor="email">{texts.form.email}:</Label>
             <Input
               darkMode={isDarkMode}
               id="email"
@@ -92,7 +99,7 @@ const Form = () => {
           </FormGroup>
 
           <FormGroup>
-            <Label htmlFor="mensagem">Mensagem:</Label>
+            <Label htmlFor="mensagem">{texts.form.message}:</Label>
             <TextArea
               darkMode={isDarkMode}
               id="mensagem"
@@ -106,7 +113,7 @@ const Form = () => {
               <span className="error">{errors.mensagem}</span>
             )}
           </FormGroup>
-          <Button disabled>Enviar</Button>
+          <Button disabled>{texts.form.btn_send}</Button>
         </form>
       </FormContainer>
 

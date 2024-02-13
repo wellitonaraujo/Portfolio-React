@@ -1,11 +1,17 @@
-import { useTheme } from "../../context/useTheme";
 import { NavItem, NavUl, Navbar, UlToggle } from "./styles";
+import { useLanguage } from "../../context/useLanguage";
+import { useTheme } from "../../context/useTheme";
+import { BsBuildingCheck } from "react-icons/bs";
 import { useEffect, useState } from "react";
-import Toggle from "../Toggle";
+
 import { IoPerson } from "react-icons/io5"; // Sobre
 import { BsTools } from "react-icons/bs"; // Tecnologias
-import { BsBuildingCheck } from "react-icons/bs";
 import { GrContact } from "react-icons/gr"; // Contato
+
+import en from "../../translation/en/en";
+import pt from "../../translation/pt/pt";
+
+import Toggle from "../Toggle";
 
 type NavItem = {
   id: string;
@@ -18,11 +24,15 @@ export default function NavBar() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const { darkMode } = useTheme();
 
+  const { language } = useLanguage();
+
+  const texts = language === "en" ? en : pt;
+
   const navItems: NavItem[] = [
-    { id: "Sobre", label: "Sobre", icon: <IoPerson /> },
-    { id: "Tecnologias", label: "Tecnologias", icon: <BsTools /> },
-    { id: "Projetos", label: "Projetos", icon: <BsBuildingCheck /> },
-    { id: "Contato", label: "Contato", icon: <GrContact /> },
+    { id: "Sobre", label: texts.navbar.about, icon: <IoPerson /> },
+    { id: "Tecnologias", label: texts.navbar.technologies, icon: <BsTools /> },
+    { id: "Projetos", label: texts.navbar.projects, icon: <BsBuildingCheck /> },
+    { id: "Contato", label: texts.navbar.contact, icon: <GrContact /> },
   ];
 
   useEffect(() => {
@@ -54,7 +64,6 @@ export default function NavBar() {
               className={activeNavItem === item.id ? "active" : ""}
               onClick={() => handleNavItemClick(item.id)}
             >
-              
               <span className="icon">{item.icon}</span>
               <span className="label">{item.label}</span>
             </NavItem>

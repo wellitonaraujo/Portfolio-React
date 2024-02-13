@@ -4,15 +4,18 @@ import AppRoutes from "./routes/app.routes";
 import NavBar from "./components/NavBar";
 import Global from "./Global";
 import "./App.css";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
-    <ThemeProvider>
-      <NavBar />
-      <Global />
-      <AppRoutes />
-      <Vertical />
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <NavBar />
+        <Global />
+        <AppRoutes />
+        <Vertical />
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 
