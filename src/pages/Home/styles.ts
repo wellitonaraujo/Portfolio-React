@@ -188,35 +188,35 @@ export const pulseicon = keyframes`
 
 export const pulseIcon = keyframes`
   0% {
-    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
-                0 0 0 5px rgba(245, 132, 0, 0.05),
-                0 0 0 10px rgba(245, 132, 0, 0.02),
+    box-shadow: 0 0 0 1px rgba(245, 132, 0, 0.10),
+                0 0 0 3px rgba(245, 132, 0, 0.05),
+                0 0 0 5px rgba(245, 132, 0, 0.02),
                 0 0 5px rgba(0, 0, 0, 0.5);
   }
 
   10% {
-    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
+    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.20),
                 0 0 0 1px rgba(245, 132, 0, 0.10),
                 0 0 0 2px rgba(245, 132, 0, 0.05),
                 0 0 1px rgba(0, 0, 0, 0.6);
   }
 
   30% {
-    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
+    box-shadow: 0 0 0 3px rgba(245, 132, 0, 0.20),
                 0 0 0 1px rgba(245, 132, 0, 0.10),
                 0 0 0 2px rgba(245, 132, 0, 0.05),
                 0 0 1px rgba(0, 0, 0, 0.6);
   }
 
   50% {
-    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.20),
+    box-shadow: 0 0 0 4px rgba(245, 132, 0, 0.20),
                 0 0 0 1px rgba(245, 132, 0, 0.10),
                 0 0 0 2px rgba(245, 132, 0, 0.05),
                 0 0 1px rgba(0, 0, 0, 0.6);
   }
 
   70% {
-    box-shadow: 0 0 0 2px rgba(245, 132, 0, 0.10),
+    box-shadow: 0 0 0 5px rgba(245, 132, 0, 0.10),
                 0 0 0 1px rgba(245, 132, 0, 0.05),
                 0 0 0 1px rgba(245, 132, 0, 0.02),
                 0 0 2px rgba(0, 0, 0, 0.5);
@@ -242,11 +242,11 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{
 }>`
   width: 2rem;
   height: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   cursor: pointer;
   border-radius: 50%;
   transition: transform 0.3s ease;
-  padding: 20%;
+  padding: 12%;
   color: ${colors.white};
   animation: ${pulseIcon} 5s infinite;
   color: ${(props) => (props.darkMode ? "#fff" : "#3b3a3a")};
@@ -350,7 +350,7 @@ export const Link = styled.a`
   font-weight: 800;
 
   ${mobileMediaQuery} {
-    flex-direction: column; /* Altere para uma coluna em dispositivos móveis */
-    font-size: 1rem; /* Reduz o tamanho da fonte */
+    flex-direction: column;
+    font-size: 1rem;
   }
 `;

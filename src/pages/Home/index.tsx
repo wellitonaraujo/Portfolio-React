@@ -73,7 +73,7 @@ export default function Home() {
         <ParticlesContainer />
 
         <ContainerSolcial>
-          <LanguageToggle />
+          {/* <LanguageToggle /> */}
           <a href="https://github.com/wellitonaraujo" target="_blank">
             <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faGithub} />
           </a>
@@ -94,7 +94,7 @@ export default function Home() {
           <ContainerToggle>
             <Toggle />
           </ContainerToggle>
-
+          <LanguageToggle />
           <TextDescription darkMode={isDarkMode} style={{ margin: 0 }}>
             {" "}
             {texts.welcome}
