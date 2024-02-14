@@ -8,11 +8,9 @@ export const FormContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   display: flex;
-  padding: 0 4rem;
   flex-direction: column;
   ${mobileMediaQuery} {
     width: 100%;
-    padding: 0;
   }
 `;
 
