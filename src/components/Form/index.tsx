@@ -1,7 +1,7 @@
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FormEvent, useEffect, useState } from "react";
 import { useTheme } from "../../context/useTheme";
-import { StyledFontAwesomeIcon } from "./styles";
+import { StyledFontAwesomeIcon, SuccessMessage } from "./styles";
 import {
   ContainerContact,
   ContainerIcons,
@@ -18,6 +18,7 @@ import {
 import { useLanguage } from "../../context/useLanguage";
 import en from "../../translation/en/en";
 import pt from "../../translation/pt/pt";
+import axios from "axios";
 
 type Errors = {
   nome: string | null;
@@ -29,12 +30,14 @@ const Form = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
-  const [errors] = useState<Errors>({
+  const [errors, setErrors] = useState<Errors>({
     nome: null,
     email: null,
     mensagem: null,
   });
 
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { darkMode } = useTheme();
 
@@ -46,23 +49,49 @@ const Form = () => {
     setIsDarkMode(darkMode);
   }, [darkMode]);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoading(true);
+    setIsSuccess(false);
+    try {
+      await axios.post("http://localhost:3001/send-email", {
+        name: nome,
+        email: email,
+        message: mensagem,
+      });
+      setIsSuccess(true);
 
-    // Atualize o estado com os valores dos campos de entrada
-    if (name === "nome") {
-      setNome(value);
-    } else if (name === "email") {
-      setEmail(value);
-    } else if (name === "mensagem") {
-      setMensagem(value);
+      setNome("");
+      setEmail("");
+      setMensagem("");
+      setErrors({ nome: null, email: null, mensagem: null });
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response?.data?.errors) {
+        setErrors({
+          nome: error.response?.data?.errors?.nome || null,
+          email: error.response?.data?.errors?.email || null,
+          mensagem: error.response?.data?.errors?.mensagem || null,
+        });
+      } else {
+        console.error("Erro ao enviar o email:", error);
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const enviarEmail = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleNomeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNome(event.target.value);
+  };
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
+  const handleMensagemChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setMensagem(event.target.value);
   };
 
   const EmailAddress = "wellitonaraujodev@gmail.com";
@@ -70,16 +99,16 @@ const Form = () => {
   return (
     <ContainerContact>
       <FormContainer id="Contato">
-        <form onSubmit={enviarEmail}>
+        <form onSubmit={handleSubmit}>
           <FormGroup>
-            <Label htmlFor="email">{texts.form.name}:</Label>
+            <Label htmlFor="nome">{texts.form.name}:</Label>
             <Input
               darkMode={isDarkMode}
               type="text"
               id="nome"
               name="nome"
               value={nome}
-              onChange={handleInputChange}
+              onChange={handleNomeChange}
               required
             />
             {errors.nome && <span className="error">{errors.nome}</span>}
@@ -92,7 +121,7 @@ const Form = () => {
               id="email"
               name="email"
               value={email}
-              onChange={handleInputChange}
+              onChange={handleEmailChange}
               required
             />
             {errors.email && <span className="error">{errors.email}</span>}
@@ -105,21 +134,22 @@ const Form = () => {
               id="mensagem"
               name="mensagem"
               value={mensagem}
-              onChange={handleInputChange}
-              required
+              onChange={handleMensagemChange}
             />
-
             {errors.mensagem && (
               <span className="error">{errors.mensagem}</span>
             )}
           </FormGroup>
-          <Button disabled>{texts.form.btn_send}</Button>
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? "Enviando..." : texts.form.btn_send}
+          </Button>
+          {isSuccess && (
+            <SuccessMessage>Mensagem enviada com sucesso!</SuccessMessage>
+          )}
         </form>
       </FormContainer>
 
       <Description id="contatos">
-        {/*<Title> Teresina, PI - Brasil </Title>*/}
-
         <ContainerIcons>
           <StyledFontAwesomeIcon darkMode={isDarkMode} icon={faEnvelope} />
           <Link href={`mailto:${EmailAddress}`}>
