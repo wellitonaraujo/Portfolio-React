@@ -135,11 +135,8 @@ export const Title = styled.p`
     padding-right: 25px;
   }
 `;
-interface ButtonProps {
-  disabled?: boolean;
-}
 
-export const Button = styled.div<ButtonProps>`
+export const Button = styled.button`
   background: linear-gradient(
     to top,
     ${colors.primary.s400},
@@ -151,13 +148,7 @@ export const Button = styled.div<ButtonProps>`
   padding: 15px;
   border: none;
   border-radius: 4px;
-  //cursor: pointer;
-
-  ${({ disabled }) =>
-    disabled &&
-    `
-    cursor: not-allowed;
-  `}
+  cursor: pointer;
 
   ${mobileMediaQuery} {
     width: 90%;
@@ -195,10 +186,14 @@ export const ContainerIcons = styled.div`
   align-items: center;
 
   ${mobileMediaQuery} {
-    display: flex; /* Exibir os elementos em uma linha (row) */
-    align-items: center; /* Alinhar verticalmente no centro */
+    display: flex;
+    align-items: center;
     border-bottom: 0.1px solid ${colors.grey.s400};
     margin-bottom: 30px;
   }
 `;
-//Agendar até dia 24/10
+
+export const SuccessMessage = styled.div`
+  color: green;
+  margin-top: 10px;
+`;
