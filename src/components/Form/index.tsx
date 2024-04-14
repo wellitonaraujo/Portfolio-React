@@ -54,11 +54,14 @@ const Form = () => {
     setIsLoading(true);
     setIsSuccess(false);
     try {
-      await axios.post("http://localhost:3001/send-email", {
-        name: nome,
-        email: email,
-        message: mensagem,
-      });
+      await axios.post(
+        "https://sendemail-backend-tzwr.onrender.com/send-email",
+        {
+          name: nome,
+          email: email,
+          message: mensagem,
+        }
+      );
       setIsSuccess(true);
 
       setNome("");
